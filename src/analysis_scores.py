@@ -16,12 +16,12 @@ Order of business:
 from __future__ import annotations
 
 import viz
-from statlib import mean, quantile, two_proportion_z, wilson_interval
+from statlib import quantile, wilson_interval
 from surveylib import (DIMENSION_ORDER, FIELD_WINDOW, FIGURES, MIN_GROUP, SURVEY_NAME,
-                       dimension_score, dimension_values, driver_items, enps, favourable,
-                       group_by, load_instrument, load_responses, load_teams, md_table,
-                       outcome_items, pct, reportable, representation_gap, respondents,
-                       response_rate, segment_comparison)
+                       dimension_score, driver_items, enps, favourable, group_by,
+                       load_instrument, load_responses, load_teams, md_table, outcome_items,
+                       pct, reportable, representation_gap, respondents, response_rate,
+                       segment_comparison)
 
 
 def enps_verdict(net: dict) -> str:
@@ -91,17 +91,14 @@ def run() -> str:
     flagged = []
     for dim in DIMENSION_ORDER:
         row_values = []
-        for dept in departments:
-            group = [r for r in answered if r["department"] == dept]
-            if not reportable(group):
+        for entry in segment_comparison(answered, "department", items_by_dim[dim]):
+            if entry["suppressed"]:
                 row_values.append(float("nan"))
                 continue
-            k, n, rate = favourable(dimension_values(group, items_by_dim[dim]))
-            all_k, all_n, _ = favourable(dimension_values(answered, items_by_dim[dim]))
-            z, p = two_proportion_z(k, n, all_k - k, all_n - n)
-            row_values.append(rate)
-            if p < 0.01 and rate < all_k / all_n:
-                flagged.append((dept, dim, rate, rate - all_k / all_n, p))
+            row_values.append(entry["favourable"])
+            if entry["p"] < 0.01 and entry["vs_company"] < 0:
+                flagged.append((entry["segment"], dim, entry["favourable"],
+                                entry["vs_company"], entry["p"]))
         matrix.append(row_values)
 
     viz.heatmap(
