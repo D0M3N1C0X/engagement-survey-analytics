@@ -184,8 +184,10 @@ def run() -> str:
 
 def stability_note(table: list[dict]) -> str:
     """Describe what the bootstrap actually showed, rather than assuming it was clean."""
-    unstable = [t for t in table if t["rank"][1] - t["rank"][0] >= 2]
     parts = []
+    # Dimensions already described as the leader or the second tier are not
+    # listed again as unstable - that would say two things about one name.
+    unstable = [t for t in table[3:] if t["rank"][1] - t["rank"][0] >= 2]
     top = table[0]
     if top["rank"] == (1, 1):
         parts.append(f"**{top['dimension']}** finished first in every single resample, so "
@@ -197,16 +199,19 @@ def stability_note(table: list[dict]) -> str:
                      "dimensions as a group rather than a ranking.")
 
     tier = table[1:3]
-    if all(t["rank"][1] <= 3 for t in tier):
+    ceiling = max(t["rank"][1] for t in tier)
+    if ceiling <= 4:
         names = " and ".join(f"**{t['dimension']}**" for t in tier)
-        parts.append(f"{names} never left the top three either, although they trade second "
-                     "and third place with each other - so plan for both, and do not argue "
-                     "about which is second.")
+        parts.append(f"{names} never fell below {ceiling}th, so they are the second tier - "
+                     "but they trade places with each other, and arguing about which of them "
+                     "is second is arguing about noise.")
+
     if unstable:
-        names = ", ".join(f"**{t['dimension']}**" for t in unstable)
-        parts.append(f"{names} move by two or more places across resamples: their order "
-                     "relative to each other is not a finding, and any read-out that "
-                     "presents them as 'the fifth priority' is over-reading the data.")
+        named = ", ".join(f"**{t['dimension']}**" for t in unstable[:3])
+        rest = f" and {len(unstable) - 3} others" if len(unstable) > 3 else ""
+        parts.append(f"{named}{rest} move by two or more places between resamples. Their "
+                     "order relative to each other is not a finding, and a read-out that "
+                     "calls one of them 'the fifth priority' is reading noise.")
     else:
         parts.append("No dimension moved by more than one place, which is unusually stable "
                      "for a survey of this size.")

@@ -126,7 +126,7 @@ Eight dimensions explain **38%** of the variation in the engagement index across
 
 The weights were recomputed on **120 bootstrap resamples** of the respondent pool. The rank range column shows where each dimension landed across those runs.
 
-**Manager Support** finished first in every single resample, so the headline of this analysis is not a sampling artefact. **Career Growth**, **Recognition**, **Workload & Wellbeing**, **Pay & Benefits**, **Leadership & Direction**, **Inclusion & Belonging**, **Tools & Process** move by two or more places across resamples: their order relative to each other is not a finding, and any read-out that presents them as 'the fifth priority' is over-reading the data.
+**Manager Support** finished first in every single resample, so the headline of this analysis is not a sampling artefact. **Career Growth** and **Recognition** never fell below 4th, so they are the second tier - but they trade places with each other, and arguing about which of them is second is arguing about noise. **Workload & Wellbeing**, **Pay & Benefits**, **Leadership & Direction** and 2 others move by two or more places between resamples. Their order relative to each other is not a finding, and a read-out that calls one of them 'the fifth priority' is reading noise.
 
 ### The priority quadrant
 
