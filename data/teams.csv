@@ -1,0 +1,150 @@
+team_id,team_name,department,country,manager_id,manager_tenure_months,team_size
+T001,Operations IT 001,Operations,IT,M001,25,20
+T002,Operations IT 002,Operations,IT,M002,19,21
+T003,Operations IT 003,Operations,IT,M003,5,11
+T004,Operations DE 004,Operations,DE,M004,17,17
+T005,Operations IT 005,Operations,IT,M005,6,52
+T006,Operations PL 006,Operations,PL,M006,28,13
+T007,Operations PL 007,Operations,PL,M007,3,30
+T008,Operations DE 008,Operations,DE,M008,28,16
+T009,Operations PL 009,Operations,PL,M009,10,24
+T010,Operations PL 010,Operations,PL,M010,12,28
+T011,Operations IT 011,Operations,IT,M011,6,53
+T012,Operations IT 012,Operations,IT,M012,27,25
+T013,Operations PL 013,Operations,PL,M013,28,42
+T014,Operations DE 014,Operations,DE,M014,34,24
+T015,Operations DE 015,Operations,DE,M015,53,10
+T016,Operations PL 016,Operations,PL,M016,20,18
+T017,Operations IT 017,Operations,IT,M017,6,15
+T018,Operations PL 018,Operations,PL,M018,19,17
+T019,Operations ES 019,Operations,ES,M019,11,27
+T020,Operations PL 020,Operations,PL,M020,6,22
+T021,Operations IT 021,Operations,IT,M021,28,15
+T022,Operations IT 022,Operations,IT,M022,27,18
+T023,Operations DE 023,Operations,DE,M023,35,49
+T024,Operations ES 024,Operations,ES,M024,49,10
+T025,Operations PL 025,Operations,PL,M025,3,22
+T026,Operations IT 026,Operations,IT,M026,3,11
+T027,Operations IT 027,Operations,IT,M027,2,4
+T028,Operations PL 028,Operations,PL,M028,14,42
+T029,Operations IT 029,Operations,IT,M029,20,21
+T030,Operations IT 030,Operations,IT,M030,11,25
+T031,Operations IT 031,Operations,IT,M031,24,39
+T032,Operations PL 032,Operations,PL,M032,117,14
+T033,Operations DE 033,Operations,DE,M033,7,42
+T034,Operations PL 034,Operations,PL,M034,9,36
+T035,Operations ES 035,Operations,ES,M035,53,38
+T036,Operations IT 036,Operations,IT,M036,2,35
+T037,Operations IT 037,Operations,IT,M037,96,8
+T038,Operations ES 038,Operations,ES,M038,15,23
+T039,Operations IT 039,Operations,IT,M039,31,17
+T040,Operations ES 040,Operations,ES,M040,50,44
+T041,Operations DE 041,Operations,DE,M041,43,12
+T042,Operations IT 042,Operations,IT,M042,50,24
+T043,Operations PL 043,Operations,PL,M043,40,51
+T044,Operations IT 044,Operations,IT,M044,51,15
+T045,Operations DE 045,Operations,DE,M045,14,14
+T046,Operations IT 046,Operations,IT,M046,33,27
+T047,Operations ES 047,Operations,ES,M047,54,26
+T048,Operations IT 048,Operations,IT,M048,28,11
+T049,Customer PL 049,Customer Service,PL,M049,15,18
+T050,Customer PL 050,Customer Service,PL,M050,76,24
+T051,Customer PL 051,Customer Service,PL,M051,19,25
+T052,Customer IT 052,Customer Service,IT,M052,21,15
+T053,Customer PL 053,Customer Service,PL,M053,26,34
+T054,Customer IT 054,Customer Service,IT,M054,11,37
+T055,Customer PL 055,Customer Service,PL,M055,75,36
+T056,Customer PL 056,Customer Service,PL,M056,37,23
+T057,Customer PL 057,Customer Service,PL,M057,38,24
+T058,Customer ES 058,Customer Service,ES,M058,88,42
+T059,Customer IT 059,Customer Service,IT,M059,4,40
+T060,Customer IT 060,Customer Service,IT,M060,70,17
+T061,Customer DE 061,Customer Service,DE,M061,66,15
+T062,Customer IT 062,Customer Service,IT,M062,22,51
+T063,Customer DE 063,Customer Service,DE,M063,23,55
+T064,Customer IT 064,Customer Service,IT,M064,2,20
+T065,Customer PL 065,Customer Service,PL,M065,31,27
+T066,Customer IT 066,Customer Service,IT,M066,108,26
+T067,Customer IT 067,Customer Service,IT,M067,11,13
+T068,Customer PL 068,Customer Service,PL,M068,10,14
+T069,Customer ES 069,Customer Service,ES,M069,4,14
+T070,Customer DE 070,Customer Service,DE,M070,85,10
+T071,Customer DE 071,Customer Service,DE,M071,4,30
+T072,Customer PL 072,Customer Service,PL,M072,80,42
+T073,Customer IT 073,Customer Service,IT,M073,5,18
+T074,Customer IT 074,Customer Service,IT,M074,12,15
+T075,Customer IT 075,Customer Service,IT,M075,14,36
+T076,Customer IT 076,Customer Service,IT,M076,26,7
+T077,Customer PL 077,Customer Service,PL,M077,53,16
+T078,Customer PL 078,Customer Service,PL,M078,23,23
+T079,Customer ES 079,Customer Service,ES,M079,38,32
+T080,Customer PL 080,Customer Service,PL,M080,6,30
+T081,Customer DE 081,Customer Service,DE,M081,4,11
+T082,Customer ES 082,Customer Service,ES,M082,10,40
+T083,Customer PL 083,Customer Service,PL,M083,11,19
+T084,Customer ES 084,Customer Service,ES,M084,103,13
+T085,Commercial PL 085,Commercial,PL,M085,21,19
+T086,Commercial IT 086,Commercial,IT,M086,11,25
+T087,Commercial PL 087,Commercial,PL,M087,12,12
+T088,Commercial PL 088,Commercial,PL,M088,34,17
+T089,Commercial ES 089,Commercial,ES,M089,127,34
+T090,Commercial DE 090,Commercial,DE,M090,56,14
+T091,Commercial DE 091,Commercial,DE,M091,6,44
+T092,Commercial PL 092,Commercial,PL,M092,54,26
+T093,Commercial ES 093,Commercial,ES,M093,9,28
+T094,Commercial IT 094,Commercial,IT,M094,56,8
+T095,Commercial DE 095,Commercial,DE,M095,22,27
+T096,Commercial DE 096,Commercial,DE,M096,24,5
+T097,Commercial IT 097,Commercial,IT,M097,4,31
+T098,Commercial DE 098,Commercial,DE,M098,113,18
+T099,Commercial PL 099,Commercial,PL,M099,45,25
+T100,Commercial DE 100,Commercial,DE,M100,10,29
+T101,Commercial PL 101,Commercial,PL,M101,3,35
+T102,Commercial DE 102,Commercial,DE,M102,12,18
+T103,Commercial PL 103,Commercial,PL,M103,69,26
+T104,Commercial ES 104,Commercial,ES,M104,20,16
+T105,Commercial ES 105,Commercial,ES,M105,9,39
+T106,Commercial IT 106,Commercial,IT,M106,24,36
+T107,Technology IT 107,Technology,IT,M107,67,49
+T108,Technology IT 108,Technology,IT,M108,2,33
+T109,Technology PL 109,Technology,PL,M109,6,5
+T110,Technology PL 110,Technology,PL,M110,43,20
+T111,Technology IT 111,Technology,IT,M111,71,40
+T112,Technology PL 112,Technology,PL,M112,28,19
+T113,Technology PL 113,Technology,PL,M113,5,21
+T114,Technology IT 114,Technology,IT,M114,11,40
+T115,Technology IT 115,Technology,IT,M115,66,26
+T116,Technology DE 116,Technology,DE,M116,25,38
+T117,Technology IT 117,Technology,IT,M117,43,34
+T118,Technology IT 118,Technology,IT,M118,6,31
+T119,Technology PL 119,Technology,PL,M119,114,24
+T120,Technology DE 120,Technology,DE,M120,17,18
+T121,Technology IT 121,Technology,IT,M121,22,15
+T122,Technology ES 122,Technology,ES,M122,6,17
+T123,Technology IT 123,Technology,IT,M123,10,16
+T124,Technology PL 124,Technology,PL,M124,17,18
+T125,Technology PL 125,Technology,PL,M125,3,22
+T126,Technology ES 126,Technology,ES,M126,31,8
+T127,Finance IT 127,Finance & Legal,IT,M127,17,42
+T128,Finance ES 128,Finance & Legal,ES,M128,2,23
+T129,Finance DE 129,Finance & Legal,DE,M129,28,9
+T130,Finance PL 130,Finance & Legal,PL,M130,60,4
+T131,Finance IT 131,Finance & Legal,IT,M131,24,51
+T132,Finance ES 132,Finance & Legal,ES,M132,45,32
+T133,Finance PL 133,Finance & Legal,PL,M133,9,24
+T134,Finance DE 134,Finance & Legal,DE,M134,10,46
+T135,Finance DE 135,Finance & Legal,DE,M135,24,30
+T136,Finance PL 136,Finance & Legal,PL,M136,2,28
+T137,Finance PL 137,Finance & Legal,PL,M137,66,19
+T138,Finance IT 138,Finance & Legal,IT,M138,38,24
+T139,Finance IT 139,Finance & Legal,IT,M139,18,10
+T140,People DE 140,People & Workplace,DE,M140,3,18
+T141,People PL 141,People & Workplace,PL,M141,49,20
+T142,People PL 142,People & Workplace,PL,M142,13,35
+T143,People IT 143,People & Workplace,IT,M143,12,39
+T144,People PL 144,People & Workplace,PL,M144,18,49
+T145,People ES 145,People & Workplace,ES,M145,9,31
+T146,People IT 146,People & Workplace,IT,M146,16,52
+T147,People ES 147,People & Workplace,ES,M147,82,44
+T148,People IT 148,People & Workplace,IT,M148,2,20
+T149,People PL 149,People & Workplace,PL,M149,7,34

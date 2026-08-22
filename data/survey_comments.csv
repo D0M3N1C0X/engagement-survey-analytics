@@ -1,0 +1,1235 @@
+comment_id,response_id,question,comment_text
+C00001,R00007,what_to_change,"Honestly, we hear about decisions that affect us from other teams first."
+C00002,R00007,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00003,R00019,what_to_change,The main issue is that leadership talks about transparency and then reorganises without warning.
+C00004,R00020,what_works,My team is genuinely welcoming and people look out for each other. Please keep it.
+C00005,R00040,what_to_change,Every week is firefighting; there is no capacity left for anything planned. This needs fixing this year.
+C00006,R00040,what_works,I can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00007,R00044,what_to_change,"Honestly, my manager cancels our one to ones more often than we hold them. It should not be this hard."
+C00008,R00046,what_to_change,New joiners are hired above people already doing the job. The rest of my experience here is positive. My first month was three days of induction and then nothing.
+C00009,R00046,what_works,"Genuinely, the last town hall actually answered the hard questions honestly. Please keep it. The pension contribution and the extra leave days are genuinely good."
+C00010,R00052,what_to_change,Training budget exists on paper but every request gets postponed.
+C00011,R00052,what_works,My team is genuinely welcoming and people look out for each other. That should be the standard everywhere.
+C00012,R00060,what_to_change,There is no visible route from my role to the next one. It is the one thing I would change.
+C00013,R00060,what_works,The new scheduling tool has saved us hours every week. Please keep it.
+C00014,R00065,what_to_change,My salary has not kept up with inflation for two years running. Nothing has changed since the last survey.
+C00015,R00066,what_to_change,Everything important is decided in English at a speed that excludes half the room. It should not be this hard.
+C00016,R00077,what_to_change,"Honestly, new joiners are hired above people already doing the job. This needs fixing this year."
+C00017,R00077,what_works,"Genuinely, my manager makes a point of recognising good work publicly. That should be the standard everywhere."
+C00018,R00080,what_to_change,To be direct: we are permanently short-staffed and the overtime has stopped feeling optional. It should not be this hard.
+C00019,R00083,what_to_change,"To be direct: i did not have a laptop for my first week, which set the tone."
+C00020,R00088,what_works,"Genuinely, my manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere. My onboarding buddy made the first weeks much easier."
+C00021,R00090,what_to_change,We hire externally for roles that people inside could grow into.
+C00022,R00090,what_works,One thing that works: my team is genuinely welcoming and people look out for each other.
+C00023,R00092,what_to_change,"Honestly, getting access to a tool takes weeks and nobody owns the process. I am already looking at other options. Everything important is decided in English at a speed that excludes half the room."
+C00024,R00095,what_works,"Genuinely, the team shout-outs in our monthly meeting are a small thing that works."
+C00025,R00098,what_to_change,"Honestly, leadership talks about transparency and then reorganises without warning. The rest of my experience here is positive."
+C00026,R00098,what_works,My team is genuinely welcoming and people look out for each other.
+C00027,R00104,what_works,"I always know where I stand with my manager, which I value. That should be the standard everywhere."
+C00028,R00108,what_to_change,The office rules changed twice this year with no explanation. It is the one thing I would change.
+C00029,R00108,what_works,My manager makes a point of recognising good work publicly.
+C00030,R00116,what_to_change,The office rules changed twice this year with no explanation. The same voices dominate every meeting and the rest of us stop trying.
+C00031,R00116,what_works,My team lead backs us up when things go wrong and that builds trust.
+C00032,R00119,what_to_change,"I did not have a laptop for my first week, which set the tone. The rest of my experience here is positive."
+C00033,R00119,what_works,My team is genuinely welcoming and people look out for each other.
+C00034,R00122,what_to_change,My first month was three days of induction and then nothing. It should not be this hard.
+C00035,R00126,what_to_change,"Honestly, everything important is decided in English at a speed that excludes half the room. It is the one thing I would change."
+C00036,R00126,what_works,My manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere. The internal move I made last year was handled really well.
+C00037,R00128,what_to_change,"Promotions here go to people who are visible to leadership, not to people who deliver."
+C00038,R00128,what_works,I can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00039,R00129,what_works,One thing that works: my onboarding buddy made the first weeks much easier. The new scheduling tool has saved us hours every week.
+C00040,R00148,what_to_change,The main issue is that there is no visible route from my role to the next one. Otherwise this is a good place to work.
+C00041,R00154,what_to_change,To be direct: my manager cancels our one to ones more often than we hold them. I answer messages at 10pm because there is no other way to keep up.
+C00042,R00156,what_to_change,The approval process takes longer than the work itself. Otherwise this is a good place to work. The office rules changed twice this year with no explanation.
+C00043,R00156,what_works,I can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00044,R00170,what_to_change,Feedback only arrives when something goes wrong.
+C00045,R00172,what_to_change,"Honestly, promotions here go to people who are visible to leadership, not to people who deliver. The rest of my experience here is positive. Strategy changes every quarter and nobody explains why."
+C00046,R00172,what_works,My manager is genuinely supportive and gives me feedback I can use.
+C00047,R00175,what_to_change,"I did not have a laptop for my first week, which set the tone."
+C00048,R00175,what_works,The last town hall actually answered the hard questions honestly.
+C00049,R00179,what_to_change,My first month was three days of induction and then nothing. The rest of my experience here is positive.
+C00050,R00179,what_works,The pension contribution and the extra leave days are genuinely good.
+C00051,R00181,what_to_change,My first month was three days of induction and then nothing. Frankly it is exhausting.
+C00052,R00185,what_to_change,The main issue is that shift patterns get published too late to plan anything around them. This needs fixing this year.
+C00053,R00189,what_to_change,We hire externally for roles that people inside could grow into.
+C00054,R00196,what_to_change,New joiners are hired above people already doing the job. It is the one thing I would change.
+C00055,R00204,what_to_change,My first month was three days of induction and then nothing. The same voices dominate every meeting and the rest of us stop trying.
+C00056,R00206,what_to_change,The approval process takes longer than the work itself. Otherwise this is a good place to work.
+C00057,R00206,what_works,"Genuinely, i always know where I stand with my manager, which I value. That should be the standard everywhere."
+C00058,R00208,what_to_change,Shift patterns get published too late to plan anything around them. The rest of my experience here is positive.
+C00059,R00208,what_works,My team lead backs us up when things go wrong and that builds trust. That should be the standard everywhere. The new scheduling tool has saved us hours every week.
+C00060,R00210,what_to_change,To be direct: everything important is decided in English at a speed that excludes half the room. This needs fixing this year.
+C00061,R00217,what_to_change,Every week is firefighting; there is no capacity left for anything planned. It should not be this hard.
+C00062,R00217,what_works,My manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere.
+C00063,R00222,what_works,"I always know where I stand with my manager, which I value. That should be the standard everywhere."
+C00064,R00229,what_works,"One thing that works: i always know where I stand with my manager, which I value."
+C00065,R00237,what_to_change,The main issue is that i commute an hour to sit on video calls I could take from home. It should not be this hard.
+C00066,R00237,what_works,One thing that works: my team is genuinely welcoming and people look out for each other. That should be the standard everywhere.
+C00067,R00238,what_to_change,Holiday requests get refused because we do not have the cover.
+C00068,R00238,what_works,I can raise a concern here without worrying about how it will be taken.
+C00069,R00248,what_to_change,To be direct: i have been in the same grade for four years with no conversation about what comes next. I am already looking at other options.
+C00070,R00254,what_to_change,To be direct: new joiners are hired above people already doing the job. This needs fixing this year.
+C00071,R00254,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. Please keep it.
+C00072,R00269,what_to_change,The approval process takes longer than the work itself.
+C00073,R00283,what_to_change,"Honestly, shift patterns get published too late to plan anything around them. The rest of my experience here is positive."
+C00074,R00284,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. It is the main reason people are looking elsewhere."
+C00075,R00285,what_to_change,The main issue is that good work is expected and never mentioned; mistakes are mentioned immediately. This needs fixing this year. Training budget exists on paper but every request gets postponed.
+C00076,R00285,what_works,The last town hall actually answered the hard questions honestly.
+C00077,R00287,what_to_change,"Promotions here go to people who are visible to leadership, not to people who deliver. This needs fixing this year."
+C00078,R00291,what_to_change,"Honestly, the office rules changed twice this year with no explanation. Frankly it is exhausting. I have been in the same grade for four years with no conversation about what comes next."
+C00079,R00296,what_to_change,Training budget exists on paper but every request gets postponed. Otherwise this is a good place to work.
+C00080,R00296,what_works,"Genuinely, my team lead protects our workload and it makes a real difference. That should be the standard everywhere."
+C00081,R00312,what_to_change,To be direct: there is no visible route from my role to the next one. Frankly it is exhausting.
+C00082,R00316,what_to_change,The main issue is that good work is expected and never mentioned; mistakes are mentioned immediately. It should not be this hard.
+C00083,R00316,what_works,One thing that works: my team is genuinely welcoming and people look out for each other. The pension contribution and the extra leave days are genuinely good.
+C00084,R00320,what_to_change,Holiday requests get refused because we do not have the cover.
+C00085,R00320,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust. Please keep it."
+C00086,R00321,what_to_change,New joiners are hired above people already doing the job.
+C00087,R00321,what_works,I can raise a concern here without worrying about how it will be taken.
+C00088,R00327,what_to_change,"Two people left my team last year and neither was replaced, so the work just moved to us. I am already looking at other options."
+C00089,R00330,what_works,The new scheduling tool has saved us hours every week.
+C00090,R00331,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. It is the one thing I would change."
+C00091,R00331,what_works,"Genuinely, the direction for the year is clear and I can see how my work fits."
+C00092,R00335,what_to_change,To be direct: the team delivered a difficult project and nobody outside noticed. This needs fixing this year. Every week is firefighting; there is no capacity left for anything planned.
+C00093,R00356,what_to_change,"Honestly, the team delivered a difficult project and nobody outside noticed. This needs fixing this year. Holiday requests get refused because we do not have the cover."
+C00094,R00356,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. Please keep it.
+C00095,R00357,what_to_change,"To be direct: promotions here go to people who are visible to leadership, not to people who deliver. The rest of my experience here is positive."
+C00096,R00362,what_to_change,New joiners are hired above people already doing the job.
+C00097,R00372,what_to_change,The main issue is that we are permanently short-staffed and the overtime has stopped feeling optional.
+C00098,R00377,what_to_change,To be direct: i commute an hour to sit on video calls I could take from home. Frankly it is exhausting.
+C00099,R00377,what_works,"Genuinely, my onboarding buddy made the first weeks much easier. My manager makes a point of recognising good work publicly."
+C00100,R00383,what_to_change,To be direct: my manager cancels our one to ones more often than we hold them. I am already looking at other options.
+C00101,R00385,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. I am already looking at other options."
+C00102,R00385,what_works,"Genuinely, the last town hall actually answered the hard questions honestly. Please keep it."
+C00103,R00389,what_works,"Genuinely, my manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere."
+C00104,R00391,what_to_change,To be direct: i commute an hour to sit on video calls I could take from home. This needs fixing this year.
+C00105,R00391,what_works,I can raise a concern here without worrying about how it will be taken.
+C00106,R00395,what_to_change,"Honestly, i answer messages at 10pm because there is no other way to keep up. This needs fixing this year."
+C00107,R00402,what_to_change,The office rules changed twice this year with no explanation. It is the one thing I would change.
+C00108,R00402,what_works,"Genuinely, my manager is genuinely supportive and gives me feedback I can use."
+C00109,R00406,what_to_change,My first month was three days of induction and then nothing. This needs fixing this year.
+C00110,R00406,what_works,My team lead backs us up when things go wrong and that builds trust. Please keep it.
+C00111,R00411,what_to_change,To be direct: good work is expected and never mentioned; mistakes are mentioned immediately. The rest of my experience here is positive.
+C00112,R00412,what_to_change,The office rules changed twice this year with no explanation. The rest of my experience here is positive. Everything important is decided in English at a speed that excludes half the room.
+C00113,R00412,what_works,My manager is genuinely supportive and gives me feedback I can use.
+C00114,R00413,what_to_change,"Honestly, new joiners are hired above people already doing the job. Otherwise this is a good place to work. My manager avoids difficult conversations, so problems in the team just continue."
+C00115,R00413,what_works,"Genuinely, my development plan is real and we actually review it. Please keep it. My manager makes a point of recognising good work publicly."
+C00116,R00415,what_works,My team lead backs us up when things go wrong and that builds trust. Please keep it.
+C00117,R00434,what_to_change,The approval process takes longer than the work itself. It is the one thing I would change.
+C00118,R00434,what_works,One thing that works: the last town hall actually answered the hard questions honestly. That should be the standard everywhere.
+C00119,R00435,what_to_change,The main issue is that the same voices dominate every meeting and the rest of us stop trying.
+C00120,R00436,what_to_change,The main issue is that the approval process takes longer than the work itself. Otherwise this is a good place to work. Recognition stops at my manager and never travels further up.
+C00121,R00444,what_works,"Genuinely, the direction for the year is clear and I can see how my work fits."
+C00122,R00453,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust."
+C00123,R00458,what_to_change,The main issue is that getting access to a tool takes weeks and nobody owns the process. The rest of my experience here is positive.
+C00124,R00458,what_works,My manager is genuinely supportive and gives me feedback I can use.
+C00125,R00467,what_to_change,I commute an hour to sit on video calls I could take from home. This needs fixing this year.
+C00126,R00467,what_works,My manager is genuinely supportive and gives me feedback I can use.
+C00127,R00479,what_to_change,"Two people left my team last year and neither was replaced, so the work just moved to us. Our systems do not talk to each other so we rekey the same data twice."
+C00128,R00479,what_works,My team lead backs us up when things go wrong and that builds trust. That should be the standard everywhere. My development plan is real and we actually review it.
+C00129,R00482,what_to_change,"I did not have a laptop for my first week, which set the tone."
+C00130,R00482,what_works,My manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere.
+C00131,R00486,what_to_change,"To be direct: i did not have a laptop for my first week, which set the tone. This needs fixing this year."
+C00132,R00488,what_to_change,"Honestly, my salary has not kept up with inflation for two years running. This needs fixing this year."
+C00133,R00492,what_works,The direction for the year is clear and I can see how my work fits. That should be the standard everywhere.
+C00134,R00495,what_works,One thing that works: my onboarding buddy made the first weeks much easier.
+C00135,R00503,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken."
+C00136,R00512,what_to_change,The main issue is that training budget exists on paper but every request gets postponed.
+C00137,R00512,what_works,My team is genuinely welcoming and people look out for each other.
+C00138,R00513,what_works,The team shout-outs in our monthly meeting are a small thing that works.
+C00139,R00515,what_to_change,Shift patterns get published too late to plan anything around them.
+C00140,R00518,what_to_change,"Honestly, recognition stops at my manager and never travels further up. Otherwise this is a good place to work."
+C00141,R00518,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust. Please keep it."
+C00142,R00526,what_to_change,Training budget exists on paper but every request gets postponed. Frankly it is exhausting. Getting access to a tool takes weeks and nobody owns the process.
+C00143,R00526,what_works,My team is genuinely welcoming and people look out for each other.
+C00144,R00527,what_to_change,Recognition stops at my manager and never travels further up. I am already looking at other options.
+C00145,R00528,what_to_change,"Honestly, good work is expected and never mentioned; mistakes are mentioned immediately."
+C00146,R00530,what_works,The last town hall actually answered the hard questions honestly.
+C00147,R00532,what_to_change,Training budget exists on paper but every request gets postponed. Frankly it is exhausting. Benefits are fine but the base salary is below what I am offered elsewhere.
+C00148,R00540,what_to_change,"Honestly, the office rules changed twice this year with no explanation. Nothing has changed since the last survey. I raised the same issue three times and nothing came back."
+C00149,R00544,what_to_change,The main issue is that training budget exists on paper but every request gets postponed. It should not be this hard.
+C00150,R00544,what_works,My team lead backs us up when things go wrong and that builds trust.
+C00151,R00553,what_to_change,My manager cancels our one to ones more often than we hold them. Nothing has changed since the last survey.
+C00152,R00555,what_to_change,The main issue is that training budget exists on paper but every request gets postponed. Nothing has changed since the last survey.
+C00153,R00559,what_to_change,"Honestly, my manager cancels our one to ones more often than we hold them. This needs fixing this year."
+C00154,R00574,what_to_change,I have been in the same grade for four years with no conversation about what comes next. We hear about decisions that affect us from other teams first.
+C00155,R00574,what_works,One thing that works: the last town hall actually answered the hard questions honestly. That should be the standard everywhere.
+C00156,R00575,what_works,My team is genuinely welcoming and people look out for each other.
+C00157,R00581,what_to_change,To be direct: the office rules changed twice this year with no explanation. Otherwise this is a good place to work. The same voices dominate every meeting and the rest of us stop trying.
+C00158,R00581,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken. That should be the standard everywhere. My onboarding buddy made the first weeks much easier.
+C00159,R00586,what_to_change,There is no visible route from my role to the next one. It is the one thing I would change.
+C00160,R00586,what_works,One thing that works: the last town hall actually answered the hard questions honestly. Please keep it.
+C00161,R00596,what_to_change,The main issue is that my first month was three days of induction and then nothing.
+C00162,R00596,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken.
+C00163,R00601,what_to_change,"I did not have a laptop for my first week, which set the tone. The rest of my experience here is positive."
+C00164,R00601,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. Please keep it. My onboarding buddy made the first weeks much easier.
+C00165,R00602,what_to_change,To be direct: we are permanently short-staffed and the overtime has stopped feeling optional.
+C00166,R00608,what_to_change,"Two people left my team last year and neither was replaced, so the work just moved to us."
+C00167,R00608,what_works,My team is genuinely welcoming and people look out for each other.
+C00168,R00609,what_to_change,Getting access to a tool takes weeks and nobody owns the process. This needs fixing this year.
+C00169,R00609,what_works,My manager makes a point of recognising good work publicly. My team is genuinely welcoming and people look out for each other.
+C00170,R00629,what_to_change,Recognition stops at my manager and never travels further up. It is the one thing I would change.
+C00171,R00632,what_to_change,The main issue is that i have been in the same grade for four years with no conversation about what comes next. It is the one thing I would change.
+C00172,R00635,what_to_change,"Honestly, leadership talks about transparency and then reorganises without warning."
+C00173,R00635,what_works,I can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00174,R00637,what_to_change,The main issue is that shift patterns get published too late to plan anything around them.
+C00175,R00637,what_works,"Genuinely, i always know where I stand with my manager, which I value."
+C00176,R00639,what_to_change,"Honestly, i answer messages at 10pm because there is no other way to keep up. It is the one thing I would change."
+C00177,R00643,what_to_change,My first month was three days of induction and then nothing. It is the one thing I would change. The team delivered a difficult project and nobody outside noticed.
+C00178,R00649,what_to_change,I answer messages at 10pm because there is no other way to keep up. Otherwise this is a good place to work.
+C00179,R00649,what_works,My team is genuinely welcoming and people look out for each other. Please keep it.
+C00180,R00651,what_to_change,The main issue is that strategy changes every quarter and nobody explains why. It is the main reason people are looking elsewhere.
+C00181,R00652,what_to_change,"I did not have a laptop for my first week, which set the tone. Otherwise this is a good place to work. The team delivered a difficult project and nobody outside noticed."
+C00182,R00652,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00183,R00659,what_to_change,To be direct: our systems do not talk to each other so we rekey the same data twice. It should not be this hard.
+C00184,R00659,what_works,The direction for the year is clear and I can see how my work fits.
+C00185,R00661,what_to_change,The approval process takes longer than the work itself.
+C00186,R00663,what_to_change,To be direct: getting access to a tool takes weeks and nobody owns the process. It should not be this hard.
+C00187,R00668,what_to_change,My first month was three days of induction and then nothing.
+C00188,R00671,what_to_change,"Honestly, recognition stops at my manager and never travels further up."
+C00189,R00671,what_works,The direction for the year is clear and I can see how my work fits. That should be the standard everywhere.
+C00190,R00681,what_to_change,"Benefits are fine but the base salary is below what I am offered elsewhere. Otherwise this is a good place to work. Promotions here go to people who are visible to leadership, not to people who deliver."
+C00191,R00681,what_works,One thing that works: my team is genuinely welcoming and people look out for each other.
+C00192,R00687,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust.
+C00193,R00690,what_to_change,"I did not have a laptop for my first week, which set the tone. Good work is expected and never mentioned; mistakes are mentioned immediately."
+C00194,R00692,what_to_change,"Honestly, i did not have a laptop for my first week, which set the tone. We hire externally for roles that people inside could grow into."
+C00195,R00692,what_works,The hybrid arrangement works well for me and my team coordinates it sensibly. That should be the standard everywhere.
+C00196,R00696,what_to_change,"Town halls are broadcasts, not conversations - questions get filtered. Otherwise this is a good place to work."
+C00197,R00696,what_works,One thing that works: my manager is genuinely supportive and gives me feedback I can use.
+C00198,R00703,what_to_change,"Honestly, i answer messages at 10pm because there is no other way to keep up. The pay bands are a secret, which makes it impossible to trust the process."
+C00199,R00703,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken."
+C00200,R00720,what_to_change,"I commute an hour to sit on video calls I could take from home. It is the one thing I would change. Promotions here go to people who are visible to leadership, not to people who deliver."
+C00201,R00720,what_works,One thing that works: the pension contribution and the extra leave days are genuinely good. Since we added two people the pressure has come down a lot.
+C00202,R00734,what_to_change,Training budget exists on paper but every request gets postponed. Otherwise this is a good place to work. I raised the same issue three times and nothing came back.
+C00203,R00734,what_works,The team shout-outs in our monthly meeting are a small thing that works. That should be the standard everywhere.
+C00204,R00738,what_to_change,The approval process takes longer than the work itself. The rest of my experience here is positive. The office rules changed twice this year with no explanation.
+C00205,R00738,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. Please keep it.
+C00206,R00742,what_to_change,"Honestly, our systems do not talk to each other so we rekey the same data twice. Otherwise this is a good place to work."
+C00207,R00743,what_to_change,To be direct: holiday requests get refused because we do not have the cover. This needs fixing this year.
+C00208,R00760,what_to_change,"Honestly, we are permanently short-staffed and the overtime has stopped feeling optional."
+C00209,R00761,what_to_change,"To be direct: the pay bands are a secret, which makes it impossible to trust the process. It should not be this hard."
+C00210,R00762,what_to_change,We are permanently short-staffed and the overtime has stopped feeling optional.
+C00211,R00767,what_works,The direction for the year is clear and I can see how my work fits. That should be the standard everywhere.
+C00212,R00773,what_to_change,The main issue is that i answer messages at 10pm because there is no other way to keep up.
+C00213,R00786,what_works,"I always know where I stand with my manager, which I value. Please keep it. The team shout-outs in our monthly meeting are a small thing that works."
+C00214,R00794,what_to_change,"Honestly, we hire externally for roles that people inside could grow into. This needs fixing this year."
+C00215,R00797,what_to_change,"I did not have a laptop for my first week, which set the tone. This needs fixing this year."
+C00216,R00802,what_works,One thing that works: my team lead protects our workload and it makes a real difference.
+C00217,R00804,what_to_change,The approval process takes longer than the work itself. The rest of my experience here is positive.
+C00218,R00804,what_works,The last town hall actually answered the hard questions honestly. The pension contribution and the extra leave days are genuinely good.
+C00219,R00806,what_works,One thing that works: the new scheduling tool has saved us hours every week.
+C00220,R00810,what_works,"Genuinely, the team shout-outs in our monthly meeting are a small thing that works."
+C00221,R00819,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. Every week is firefighting; there is no capacity left for anything planned."
+C00222,R00821,what_to_change,Every week is firefighting; there is no capacity left for anything planned. Nothing has changed since the last survey. Shift patterns get published too late to plan anything around them.
+C00223,R00824,what_to_change,To be direct: benefits are fine but the base salary is below what I am offered elsewhere.
+C00224,R00824,what_works,I can raise a concern here without worrying about how it will be taken. Please keep it.
+C00225,R00843,what_to_change,"Honestly, every week is firefighting; there is no capacity left for anything planned. This needs fixing this year."
+C00226,R00848,what_to_change,To be direct: getting access to a tool takes weeks and nobody owns the process. This needs fixing this year.
+C00227,R00848,what_works,"I always know where I stand with my manager, which I value."
+C00228,R00850,what_to_change,"Honestly, new joiners are hired above people already doing the job. Nothing has changed since the last survey."
+C00229,R00860,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust."
+C00230,R00871,what_to_change,I have been in the same grade for four years with no conversation about what comes next. I am already looking at other options.
+C00231,R00872,what_to_change,Our systems do not talk to each other so we rekey the same data twice. It is the main reason people are looking elsewhere.
+C00232,R00882,what_to_change,"Town halls are broadcasts, not conversations - questions get filtered. This needs fixing this year."
+C00233,R00885,what_to_change,To be direct: i raised the same issue three times and nothing came back. Frankly it is exhausting.
+C00234,R00887,what_works,One thing that works: the team shout-outs in our monthly meeting are a small thing that works. Please keep it.
+C00235,R00888,what_to_change,There is no visible route from my role to the next one. The rest of my experience here is positive. Our systems do not talk to each other so we rekey the same data twice.
+C00236,R00888,what_works,"Genuinely, the hybrid arrangement works well for me and my team coordinates it sensibly. My development plan is real and we actually review it."
+C00237,R00892,what_to_change,I commute an hour to sit on video calls I could take from home. It should not be this hard. The team delivered a difficult project and nobody outside noticed.
+C00238,R00897,what_to_change,To be direct: training budget exists on paper but every request gets postponed.
+C00239,R00905,what_works,One thing that works: the last town hall actually answered the hard questions honestly.
+C00240,R00909,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. This needs fixing this year."
+C00241,R00911,what_to_change,I have been in the same grade for four years with no conversation about what comes next. Otherwise this is a good place to work.
+C00242,R00911,what_works,One thing that works: flexibility around school hours is the main reason I stay. Please keep it.
+C00243,R00919,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00244,R00921,what_works,One thing that works: my development plan is real and we actually review it. Please keep it.
+C00245,R00936,what_works,"Genuinely, my manager makes a point of recognising good work publicly. Please keep it."
+C00246,R00940,what_to_change,To be direct: i have been in the same grade for four years with no conversation about what comes next. Nothing has changed since the last survey.
+C00247,R00945,what_to_change,My first month was three days of induction and then nothing. It is the one thing I would change.
+C00248,R00945,what_works,"Genuinely, i always know where I stand with my manager, which I value. Please keep it."
+C00249,R00946,what_to_change,"The main issue is that the pay bands are a secret, which makes it impossible to trust the process. It should not be this hard."
+C00250,R00947,what_to_change,Every week is firefighting; there is no capacity left for anything planned. It should not be this hard.
+C00251,R00952,what_to_change,New joiners are hired above people already doing the job.
+C00252,R00952,what_works,The direction for the year is clear and I can see how my work fits. Please keep it.
+C00253,R00953,what_to_change,The team delivered a difficult project and nobody outside noticed. It should not be this hard.
+C00254,R00953,what_works,"Genuinely, the last town hall actually answered the hard questions honestly."
+C00255,R00957,what_to_change,"To be direct: my manager avoids difficult conversations, so problems in the team just continue. Otherwise this is a good place to work. Benefits are fine but the base salary is below what I am offered elsewhere."
+C00256,R00959,what_to_change,"Honestly, the pay bands are a secret, which makes it impossible to trust the process. Frankly it is exhausting."
+C00257,R00959,what_works,I can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00258,R00963,what_to_change,The main issue is that i commute an hour to sit on video calls I could take from home. It should not be this hard.
+C00259,R00973,what_to_change,To be direct: leadership talks about transparency and then reorganises without warning. It should not be this hard.
+C00260,R00973,what_works,The pension contribution and the extra leave days are genuinely good.
+C00261,R00983,what_to_change,"Honestly, our systems do not talk to each other so we rekey the same data twice. Otherwise this is a good place to work."
+C00262,R00994,what_to_change,Leadership talks about transparency and then reorganises without warning. I am already looking at other options.
+C00263,R00994,what_works,The hybrid arrangement works well for me and my team coordinates it sensibly. Please keep it. My onboarding buddy made the first weeks much easier.
+C00264,R00998,what_to_change,To be direct: i commute an hour to sit on video calls I could take from home. The rest of my experience here is positive.
+C00265,R01000,what_to_change,"Honestly, the approval process takes longer than the work itself. It should not be this hard."
+C00266,R01011,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. I answer messages at 10pm because there is no other way to keep up."
+C00267,R01011,what_works,The direction for the year is clear and I can see how my work fits.
+C00268,R01014,what_to_change,The office rules changed twice this year with no explanation. This needs fixing this year. Getting access to a tool takes weeks and nobody owns the process.
+C00269,R01014,what_works,One thing that works: my team is genuinely welcoming and people look out for each other.
+C00270,R01015,what_to_change,We are permanently short-staffed and the overtime has stopped feeling optional.
+C00271,R01016,what_to_change,We hire externally for roles that people inside could grow into.
+C00272,R01018,what_to_change,"To be direct: i did not have a laptop for my first week, which set the tone. Otherwise this is a good place to work."
+C00273,R01028,what_to_change,The office rules changed twice this year with no explanation. Frankly it is exhausting.
+C00274,R01030,what_to_change,Getting access to a tool takes weeks and nobody owns the process.
+C00275,R01030,what_works,My team is genuinely welcoming and people look out for each other. That should be the standard everywhere.
+C00276,R01034,what_to_change,Every week is firefighting; there is no capacity left for anything planned. We hire externally for roles that people inside could grow into.
+C00277,R01039,what_to_change,The team delivered a difficult project and nobody outside noticed. It should not be this hard.
+C00278,R01039,what_works,The last town hall actually answered the hard questions honestly. That should be the standard everywhere.
+C00279,R01049,what_to_change,"Honestly, promotions here go to people who are visible to leadership, not to people who deliver. I commute an hour to sit on video calls I could take from home."
+C00280,R01050,what_to_change,"Honestly, i raised the same issue three times and nothing came back. This needs fixing this year."
+C00281,R01050,what_works,"Genuinely, my team lead protects our workload and it makes a real difference. That should be the standard everywhere. The last town hall actually answered the hard questions honestly."
+C00282,R01051,what_to_change,To be direct: training budget exists on paper but every request gets postponed.
+C00283,R01051,what_works,My onboarding buddy made the first weeks much easier.
+C00284,R01054,what_to_change,"Every week is firefighting; there is no capacity left for anything planned. The rest of my experience here is positive. The pay bands are a secret, which makes it impossible to trust the process."
+C00285,R01054,what_works,The direction for the year is clear and I can see how my work fits. That should be the standard everywhere.
+C00286,R01057,what_to_change,There is no visible route from my role to the next one. This needs fixing this year.
+C00287,R01057,what_works,One thing that works: the pension contribution and the extra leave days are genuinely good. That should be the standard everywhere. I can raise a concern here without worrying about how it will be taken.
+C00288,R01066,what_to_change,To be direct: shift patterns get published too late to plan anything around them. It is the one thing I would change.
+C00289,R01066,what_works,"Genuinely, the pension contribution and the extra leave days are genuinely good. Please keep it."
+C00290,R01070,what_to_change,"My manager avoids difficult conversations, so problems in the team just continue. It is the one thing I would change. Our systems do not talk to each other so we rekey the same data twice."
+C00291,R01073,what_to_change,I have been in the same grade for four years with no conversation about what comes next. Nothing has changed since the last survey.
+C00292,R01073,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00293,R01087,what_to_change,"Honestly, new joiners are hired above people already doing the job. It is the one thing I would change. The office rules changed twice this year with no explanation."
+C00294,R01091,what_to_change,My salary has not kept up with inflation for two years running.
+C00295,R01091,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust. Please keep it."
+C00296,R01093,what_works,One thing that works: the team shout-outs in our monthly meeting are a small thing that works. Please keep it.
+C00297,R01096,what_to_change,"To be direct: town halls are broadcasts, not conversations - questions get filtered. Otherwise this is a good place to work."
+C00298,R01096,what_works,My team is genuinely welcoming and people look out for each other.
+C00299,R01099,what_to_change,The office rules changed twice this year with no explanation. The rest of my experience here is positive.
+C00300,R01099,what_works,My manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere.
+C00301,R01102,what_to_change,To be direct: my salary has not kept up with inflation for two years running. It is the one thing I would change.
+C00302,R01102,what_works,My team is genuinely welcoming and people look out for each other.
+C00303,R01109,what_to_change,Our systems do not talk to each other so we rekey the same data twice. It is the one thing I would change.
+C00304,R01109,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken. My team lead protects our workload and it makes a real difference."
+C00305,R01110,what_to_change,I answer messages at 10pm because there is no other way to keep up. The rest of my experience here is positive.
+C00306,R01114,what_to_change,Every week is firefighting; there is no capacity left for anything planned. I am already looking at other options.
+C00307,R01120,what_to_change,Shift patterns get published too late to plan anything around them. Otherwise this is a good place to work.
+C00308,R01120,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. Please keep it.
+C00309,R01128,what_to_change,"Honestly, i did not have a laptop for my first week, which set the tone."
+C00310,R01141,what_works,"One thing that works: i always know where I stand with my manager, which I value. Please keep it."
+C00311,R01143,what_to_change,We hire externally for roles that people inside could grow into.
+C00312,R01143,what_works,Flexibility around school hours is the main reason I stay. That should be the standard everywhere.
+C00313,R01144,what_to_change,"Promotions here go to people who are visible to leadership, not to people who deliver. Frankly it is exhausting."
+C00314,R01146,what_to_change,The main issue is that shift patterns get published too late to plan anything around them. This needs fixing this year. Our systems do not talk to each other so we rekey the same data twice.
+C00315,R01149,what_to_change,"Two people left my team last year and neither was replaced, so the work just moved to us. Nothing has changed since the last survey."
+C00316,R01159,what_to_change,"To be direct: my salary has not kept up with inflation for two years running. I did not have a laptop for my first week, which set the tone."
+C00317,R01159,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken. That should be the standard everywhere."
+C00318,R01169,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. Recognition stops at my manager and never travels further up."
+C00319,R01169,what_works,I can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00320,R01171,what_to_change,Leadership talks about transparency and then reorganises without warning. It is the one thing I would change.
+C00321,R01173,what_to_change,"Two people left my team last year and neither was replaced, so the work just moved to us. Otherwise this is a good place to work."
+C00322,R01174,what_to_change,My salary has not kept up with inflation for two years running. It is the one thing I would change.
+C00323,R01174,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken.
+C00324,R01175,what_to_change,"I did not have a laptop for my first week, which set the tone. It should not be this hard."
+C00325,R01175,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken. My manager makes a point of recognising good work publicly."
+C00326,R01188,what_works,One thing that works: my manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere.
+C00327,R01198,what_to_change,"Honestly, i commute an hour to sit on video calls I could take from home. It is the one thing I would change."
+C00328,R01201,what_works,"One thing that works: i always know where I stand with my manager, which I value. Please keep it."
+C00329,R01205,what_to_change,Getting access to a tool takes weeks and nobody owns the process. Otherwise this is a good place to work.
+C00330,R01205,what_works,One thing that works: my development plan is real and we actually review it.
+C00331,R01210,what_to_change,The main issue is that benefits are fine but the base salary is below what I am offered elsewhere.
+C00332,R01213,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. It should not be this hard."
+C00333,R01216,what_to_change,To be direct: good work is expected and never mentioned; mistakes are mentioned immediately. This needs fixing this year.
+C00334,R01222,what_to_change,"Honestly, there is no visible route from my role to the next one. It should not be this hard."
+C00335,R01225,what_to_change,The main issue is that training budget exists on paper but every request gets postponed. It should not be this hard.
+C00336,R01232,what_to_change,To be direct: my first month was three days of induction and then nothing. It is the one thing I would change.
+C00337,R01233,what_to_change,The main issue is that shift patterns get published too late to plan anything around them. Otherwise this is a good place to work.
+C00338,R01233,what_works,One thing that works: my onboarding buddy made the first weeks much easier.
+C00339,R01236,what_to_change,The main issue is that training budget exists on paper but every request gets postponed. This needs fixing this year.
+C00340,R01236,what_works,"Genuinely, the team shout-outs in our monthly meeting are a small thing that works. That should be the standard everywhere."
+C00341,R01241,what_to_change,The main issue is that good work is expected and never mentioned; mistakes are mentioned immediately. I am already looking at other options.
+C00342,R01246,what_to_change,There is no visible route from my role to the next one. I am already looking at other options.
+C00343,R01246,what_works,One thing that works: the pension contribution and the extra leave days are genuinely good. That should be the standard everywhere.
+C00344,R01248,what_to_change,Our systems do not talk to each other so we rekey the same data twice. It is the one thing I would change.
+C00345,R01248,what_works,The pension contribution and the extra leave days are genuinely good. That should be the standard everywhere.
+C00346,R01257,what_to_change,"Honestly, there is no visible route from my role to the next one."
+C00347,R01257,what_works,My manager is genuinely supportive and gives me feedback I can use. Please keep it.
+C00348,R01258,what_works,The direction for the year is clear and I can see how my work fits. That should be the standard everywhere.
+C00349,R01264,what_to_change,Shift patterns get published too late to plan anything around them. It should not be this hard.
+C00350,R01264,what_works,One thing that works: the pension contribution and the extra leave days are genuinely good. That should be the standard everywhere.
+C00351,R01265,what_to_change,The main issue is that recognition stops at my manager and never travels further up. The same voices dominate every meeting and the rest of us stop trying.
+C00352,R01265,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken."
+C00353,R01277,what_to_change,"Honestly, the pay bands are a secret, which makes it impossible to trust the process."
+C00354,R01279,what_to_change,Strategy changes every quarter and nobody explains why. This needs fixing this year.
+C00355,R01279,what_works,The new scheduling tool has saved us hours every week. Please keep it.
+C00356,R01281,what_to_change,"Honestly, the office rules changed twice this year with no explanation. I am already looking at other options."
+C00357,R01284,what_to_change,There is no visible route from my role to the next one. This needs fixing this year.
+C00358,R01287,what_to_change,"Honestly, the approval process takes longer than the work itself."
+C00359,R01287,what_works,Flexibility around school hours is the main reason I stay.
+C00360,R01288,what_to_change,The main issue is that training budget exists on paper but every request gets postponed. It should not be this hard.
+C00361,R01288,what_works,One thing that works: my onboarding buddy made the first weeks much easier.
+C00362,R01292,what_works,One thing that works: my manager is genuinely supportive and gives me feedback I can use. Please keep it.
+C00363,R01293,what_to_change,"To be direct: promotions here go to people who are visible to leadership, not to people who deliver. Otherwise this is a good place to work."
+C00364,R01293,what_works,One thing that works: the pension contribution and the extra leave days are genuinely good. My onboarding buddy made the first weeks much easier.
+C00365,R01298,what_to_change,"Honestly, the office rules changed twice this year with no explanation. It is the one thing I would change."
+C00366,R01298,what_works,The direction for the year is clear and I can see how my work fits. The pension contribution and the extra leave days are genuinely good.
+C00367,R01299,what_works,My team lead backs us up when things go wrong and that builds trust. Please keep it.
+C00368,R01300,what_to_change,Recognition stops at my manager and never travels further up.
+C00369,R01301,what_works,My onboarding buddy made the first weeks much easier.
+C00370,R01304,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere. Otherwise this is a good place to work.
+C00371,R01304,what_works,"Genuinely, the internal move I made last year was handled really well. Please keep it."
+C00372,R01307,what_works,The pension contribution and the extra leave days are genuinely good.
+C00373,R01309,what_to_change,"Honestly, promotions here go to people who are visible to leadership, not to people who deliver. This needs fixing this year."
+C00374,R01312,what_to_change,To be direct: i answer messages at 10pm because there is no other way to keep up. It is the main reason people are looking elsewhere. Leadership talks about transparency and then reorganises without warning.
+C00375,R01315,what_works,I can raise a concern here without worrying about how it will be taken. Please keep it.
+C00376,R01318,what_to_change,"Good work is expected and never mentioned; mistakes are mentioned immediately. It is the one thing I would change. Promotions here go to people who are visible to leadership, not to people who deliver."
+C00377,R01319,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. Please keep it."
+C00378,R01321,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately.
+C00379,R01321,what_works,One thing that works: the new scheduling tool has saved us hours every week.
+C00380,R01322,what_to_change,To be direct: i raised the same issue three times and nothing came back. It is the main reason people are looking elsewhere.
+C00381,R01328,what_works,My team is genuinely welcoming and people look out for each other. That should be the standard everywhere. My manager is genuinely supportive and gives me feedback I can use.
+C00382,R01332,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately. Nothing has changed since the last survey.
+C00383,R01334,what_to_change,The main issue is that my salary has not kept up with inflation for two years running. Frankly it is exhausting. Every week is firefighting; there is no capacity left for anything planned.
+C00384,R01338,what_to_change,My manager cancels our one to ones more often than we hold them. This needs fixing this year. Recognition stops at my manager and never travels further up.
+C00385,R01339,what_to_change,To be direct: there is no visible route from my role to the next one. It is the one thing I would change.
+C00386,R01339,what_works,My team lead protects our workload and it makes a real difference.
+C00387,R01340,what_to_change,To be direct: the team delivered a difficult project and nobody outside noticed.
+C00388,R01342,what_to_change,"Honestly, recognition stops at my manager and never travels further up. It should not be this hard. Promotions here go to people who are visible to leadership, not to people who deliver."
+C00389,R01343,what_to_change,The approval process takes longer than the work itself. This needs fixing this year. My salary has not kept up with inflation for two years running.
+C00390,R01343,what_works,The hybrid arrangement works well for me and my team coordinates it sensibly.
+C00391,R01347,what_to_change,Feedback only arrives when something goes wrong. It should not be this hard.
+C00392,R01347,what_works,One thing that works: my team lead protects our workload and it makes a real difference.
+C00393,R01349,what_to_change,"To be direct: my manager avoids difficult conversations, so problems in the team just continue. It should not be this hard."
+C00394,R01352,what_to_change,"Honestly, new joiners are hired above people already doing the job. This needs fixing this year."
+C00395,R01352,what_works,Since we added two people the pressure has come down a lot. Flexibility around school hours is the main reason I stay.
+C00396,R01358,what_to_change,"Honestly, promotions here go to people who are visible to leadership, not to people who deliver."
+C00397,R01358,what_works,One thing that works: the hybrid arrangement works well for me and my team coordinates it sensibly. Please keep it.
+C00398,R01375,what_to_change,"Honestly, the pay bands are a secret, which makes it impossible to trust the process."
+C00399,R01375,what_works,One thing that works: the new scheduling tool has saved us hours every week. Please keep it.
+C00400,R01381,what_to_change,The main issue is that our systems do not talk to each other so we rekey the same data twice.
+C00401,R01381,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. Please keep it."
+C00402,R01388,what_to_change,Every week is firefighting; there is no capacity left for anything planned. The same voices dominate every meeting and the rest of us stop trying.
+C00403,R01389,what_works,My manager is genuinely supportive and gives me feedback I can use. Please keep it.
+C00404,R01397,what_to_change,Leadership talks about transparency and then reorganises without warning. This needs fixing this year.
+C00405,R01398,what_to_change,"Honestly, we hire externally for roles that people inside could grow into."
+C00406,R01401,what_works,One thing that works: my team lead protects our workload and it makes a real difference.
+C00407,R01402,what_to_change,Recognition stops at my manager and never travels further up. My first month was three days of induction and then nothing.
+C00408,R01402,what_works,"Genuinely, the direction for the year is clear and I can see how my work fits. Please keep it. Flexibility around school hours is the main reason I stay."
+C00409,R01410,what_to_change,"Honestly, new joiners are hired above people already doing the job."
+C00410,R01416,what_to_change,"Honestly, new joiners are hired above people already doing the job. The rest of my experience here is positive."
+C00411,R01417,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately.
+C00412,R01417,what_works,My team lead backs us up when things go wrong and that builds trust.
+C00413,R01418,what_to_change,"Honestly, the team delivered a difficult project and nobody outside noticed. This needs fixing this year. New joiners are hired above people already doing the job."
+C00414,R01418,what_works,The last town hall actually answered the hard questions honestly.
+C00415,R01424,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process."
+C00416,R01429,what_to_change,I commute an hour to sit on video calls I could take from home. Otherwise this is a good place to work.
+C00417,R01436,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately. This needs fixing this year. Benefits are fine but the base salary is below what I am offered elsewhere.
+C00418,R01437,what_works,My team lead backs us up when things go wrong and that builds trust. Please keep it.
+C00419,R01442,what_to_change,The main issue is that i have been in the same grade for four years with no conversation about what comes next. This needs fixing this year.
+C00420,R01442,what_works,One thing that works: the direction for the year is clear and I can see how my work fits. Please keep it.
+C00421,R01445,what_to_change,"I have been in the same grade for four years with no conversation about what comes next. My manager avoids difficult conversations, so problems in the team just continue."
+C00422,R01452,what_to_change,"Honestly, promotions here go to people who are visible to leadership, not to people who deliver. Otherwise this is a good place to work."
+C00423,R01453,what_to_change,The main issue is that there is no visible route from my role to the next one. This needs fixing this year.
+C00424,R01453,what_works,My team is genuinely welcoming and people look out for each other. That should be the standard everywhere.
+C00425,R01456,what_to_change,There is no visible route from my role to the next one.
+C00426,R01456,what_works,My team is genuinely welcoming and people look out for each other. Please keep it.
+C00427,R01465,what_to_change,I commute an hour to sit on video calls I could take from home. It is the one thing I would change.
+C00428,R01465,what_works,The team shout-outs in our monthly meeting are a small thing that works. I can raise a concern here without worrying about how it will be taken.
+C00429,R01467,what_to_change,Shift patterns get published too late to plan anything around them. Otherwise this is a good place to work. The approval process takes longer than the work itself.
+C00430,R01467,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken. That should be the standard everywhere."
+C00431,R01468,what_to_change,We are permanently short-staffed and the overtime has stopped feeling optional.
+C00432,R01468,what_works,My development plan is real and we actually review it. That should be the standard everywhere.
+C00433,R01472,what_works,The internal move I made last year was handled really well. Please keep it. The new scheduling tool has saved us hours every week.
+C00434,R01473,what_to_change,To be direct: holiday requests get refused because we do not have the cover. This needs fixing this year.
+C00435,R01473,what_works,"Genuinely, my manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere."
+C00436,R01475,what_to_change,"The office rules changed twice this year with no explanation. Promotions here go to people who are visible to leadership, not to people who deliver."
+C00437,R01479,what_to_change,The main issue is that the approval process takes longer than the work itself.
+C00438,R01479,what_works,"Genuinely, i always know where I stand with my manager, which I value. My onboarding buddy made the first weeks much easier."
+C00439,R01480,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately. This needs fixing this year. Every week is firefighting; there is no capacity left for anything planned.
+C00440,R01491,what_to_change,My salary has not kept up with inflation for two years running. The rest of my experience here is positive.
+C00441,R01492,what_to_change,"Honestly, i did not have a laptop for my first week, which set the tone. This needs fixing this year. We hire externally for roles that people inside could grow into."
+C00442,R01492,what_works,My manager is genuinely supportive and gives me feedback I can use.
+C00443,R01495,what_to_change,We hire externally for roles that people inside could grow into. Otherwise this is a good place to work.
+C00444,R01498,what_to_change,The main issue is that i raised the same issue three times and nothing came back. This needs fixing this year.
+C00445,R01499,what_to_change,To be direct: there is no visible route from my role to the next one. I am already looking at other options.
+C00446,R01503,what_to_change,To be direct: i have been in the same grade for four years with no conversation about what comes next. Nothing has changed since the last survey. I answer messages at 10pm because there is no other way to keep up.
+C00447,R01504,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere. It should not be this hard.
+C00448,R01505,what_to_change,The approval process takes longer than the work itself. Frankly it is exhausting. I answer messages at 10pm because there is no other way to keep up.
+C00449,R01505,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. My onboarding buddy made the first weeks much easier."
+C00450,R01507,what_to_change,To be direct: strategy changes every quarter and nobody explains why. It should not be this hard. My first month was three days of induction and then nothing.
+C00451,R01507,what_works,The new scheduling tool has saved us hours every week. Please keep it.
+C00452,R01509,what_to_change,"Honestly, my first month was three days of induction and then nothing. Nothing has changed since the last survey."
+C00453,R01512,what_to_change,The team delivered a difficult project and nobody outside noticed. It should not be this hard.
+C00454,R01516,what_to_change,We hear about decisions that affect us from other teams first.
+C00455,R01522,what_to_change,Recognition stops at my manager and never travels further up. Otherwise this is a good place to work.
+C00456,R01522,what_works,Flexibility around school hours is the main reason I stay.
+C00457,R01525,what_to_change,I commute an hour to sit on video calls I could take from home. This needs fixing this year.
+C00458,R01525,what_works,My onboarding buddy made the first weeks much easier. That should be the standard everywhere.
+C00459,R01529,what_to_change,"Town halls are broadcasts, not conversations - questions get filtered. The rest of my experience here is positive."
+C00460,R01530,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. Please keep it."
+C00461,R01532,what_to_change,I answer messages at 10pm because there is no other way to keep up. Otherwise this is a good place to work.
+C00462,R01534,what_works,One thing that works: the direction for the year is clear and I can see how my work fits. My onboarding buddy made the first weeks much easier.
+C00463,R01536,what_to_change,"Honestly, shift patterns get published too late to plan anything around them. It is the main reason people are looking elsewhere."
+C00464,R01545,what_to_change,"Honestly, the pay bands are a secret, which makes it impossible to trust the process."
+C00465,R01549,what_to_change,"Honestly, good work is expected and never mentioned; mistakes are mentioned immediately. This needs fixing this year."
+C00466,R01564,what_works,One thing that works: the direction for the year is clear and I can see how my work fits.
+C00467,R01565,what_to_change,New joiners are hired above people already doing the job. This needs fixing this year.
+C00468,R01568,what_to_change,To be direct: i commute an hour to sit on video calls I could take from home.
+C00469,R01568,what_works,One thing that works: my manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere.
+C00470,R01570,what_to_change,The same voices dominate every meeting and the rest of us stop trying. This needs fixing this year. I raised the same issue three times and nothing came back.
+C00471,R01570,what_works,"Genuinely, the pension contribution and the extra leave days are genuinely good."
+C00472,R01576,what_to_change,Every week is firefighting; there is no capacity left for anything planned. It is the one thing I would change.
+C00473,R01576,what_works,The team shout-outs in our monthly meeting are a small thing that works.
+C00474,R01577,what_works,My manager is genuinely supportive and gives me feedback I can use.
+C00475,R01582,what_to_change,"The main issue is that i did not have a laptop for my first week, which set the tone. Our systems do not talk to each other so we rekey the same data twice."
+C00476,R01583,what_to_change,The approval process takes longer than the work itself. Otherwise this is a good place to work. Recognition stops at my manager and never travels further up.
+C00477,R01583,what_works,"Genuinely, the direction for the year is clear and I can see how my work fits."
+C00478,R01585,what_to_change,"Town halls are broadcasts, not conversations - questions get filtered."
+C00479,R01589,what_to_change,We hear about decisions that affect us from other teams first. The rest of my experience here is positive.
+C00480,R01589,what_works,"Genuinely, i always know where I stand with my manager, which I value."
+C00481,R01598,what_to_change,The approval process takes longer than the work itself. Otherwise this is a good place to work.
+C00482,R01598,what_works,One thing that works: my manager makes a point of recognising good work publicly. Please keep it. The pension contribution and the extra leave days are genuinely good.
+C00483,R01599,what_to_change,"To be direct: my manager avoids difficult conversations, so problems in the team just continue. Otherwise this is a good place to work."
+C00484,R01601,what_works,"One thing that works: i always know where I stand with my manager, which I value. Please keep it."
+C00485,R01606,what_works,The pension contribution and the extra leave days are genuinely good. The last town hall actually answered the hard questions honestly.
+C00486,R01610,what_to_change,The main issue is that shift patterns get published too late to plan anything around them. I am already looking at other options.
+C00487,R01610,what_works,The new scheduling tool has saved us hours every week. Please keep it. The pension contribution and the extra leave days are genuinely good.
+C00488,R01613,what_to_change,Training budget exists on paper but every request gets postponed. Otherwise this is a good place to work.
+C00489,R01613,what_works,My team is genuinely welcoming and people look out for each other. Since we added two people the pressure has come down a lot.
+C00490,R01620,what_to_change,My first month was three days of induction and then nothing. This needs fixing this year.
+C00491,R01620,what_works,I can raise a concern here without worrying about how it will be taken. My team lead backs us up when things go wrong and that builds trust.
+C00492,R01621,what_to_change,To be direct: my first month was three days of induction and then nothing.
+C00493,R01635,what_to_change,The main issue is that my manager cancels our one to ones more often than we hold them. It is the one thing I would change.
+C00494,R01635,what_works,The pension contribution and the extra leave days are genuinely good. Please keep it.
+C00495,R01637,what_to_change,I commute an hour to sit on video calls I could take from home.
+C00496,R01638,what_to_change,To be direct: good work is expected and never mentioned; mistakes are mentioned immediately. I raised the same issue three times and nothing came back.
+C00497,R01638,what_works,Since we added two people the pressure has come down a lot. That should be the standard everywhere.
+C00498,R01643,what_to_change,To be direct: i have been in the same grade for four years with no conversation about what comes next. It should not be this hard. The office rules changed twice this year with no explanation.
+C00499,R01654,what_to_change,Training budget exists on paper but every request gets postponed.
+C00500,R01654,what_works,I can raise a concern here without worrying about how it will be taken.
+C00501,R01656,what_works,My team is genuinely welcoming and people look out for each other.
+C00502,R01662,what_to_change,To be direct: i commute an hour to sit on video calls I could take from home.
+C00503,R01662,what_works,"Genuinely, my onboarding buddy made the first weeks much easier. The hybrid arrangement works well for me and my team coordinates it sensibly."
+C00504,R01665,what_to_change,Everything important is decided in English at a speed that excludes half the room. It should not be this hard.
+C00505,R01665,what_works,One thing that works: my manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere. My team is genuinely welcoming and people look out for each other.
+C00506,R01669,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken."
+C00507,R01675,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken. Please keep it. The internal move I made last year was handled really well."
+C00508,R01677,what_to_change,"The main issue is that i did not have a laptop for my first week, which set the tone. Frankly it is exhausting. Town halls are broadcasts, not conversations - questions get filtered."
+C00509,R01677,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust. The team shout-outs in our monthly meeting are a small thing that works."
+C00510,R01680,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. Please keep it. The internal move I made last year was handled really well.
+C00511,R01685,what_to_change,I commute an hour to sit on video calls I could take from home. This needs fixing this year.
+C00512,R01685,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken."
+C00513,R01690,what_to_change,"Honestly, recognition stops at my manager and never travels further up. It is the one thing I would change. Everything important is decided in English at a speed that excludes half the room."
+C00514,R01690,what_works,One thing that works: the last town hall actually answered the hard questions honestly. That should be the standard everywhere. My team is genuinely welcoming and people look out for each other.
+C00515,R01699,what_works,The pension contribution and the extra leave days are genuinely good. I can raise a concern here without worrying about how it will be taken.
+C00516,R01703,what_to_change,New joiners are hired above people already doing the job. It is the one thing I would change.
+C00517,R01705,what_to_change,"Honestly, the pay bands are a secret, which makes it impossible to trust the process. Otherwise this is a good place to work."
+C00518,R01705,what_works,One thing that works: my manager is genuinely supportive and gives me feedback I can use. Please keep it.
+C00519,R01707,what_to_change,To be direct: my first month was three days of induction and then nothing.
+C00520,R01710,what_to_change,Getting access to a tool takes weeks and nobody owns the process. The rest of my experience here is positive.
+C00521,R01713,what_to_change,To be direct: i commute an hour to sit on video calls I could take from home.
+C00522,R01714,what_to_change,My first month was three days of induction and then nothing.
+C00523,R01716,what_to_change,"Town halls are broadcasts, not conversations - questions get filtered."
+C00524,R01716,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken.
+C00525,R01724,what_to_change,I answer messages at 10pm because there is no other way to keep up. It should not be this hard.
+C00526,R01724,what_works,One thing that works: the new scheduling tool has saved us hours every week.
+C00527,R01728,what_to_change,My first month was three days of induction and then nothing. It should not be this hard.
+C00528,R01728,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. Please keep it. My development plan is real and we actually review it.
+C00529,R01729,what_works,"Genuinely, my onboarding buddy made the first weeks much easier. My team is genuinely welcoming and people look out for each other."
+C00530,R01731,what_to_change,"I did not have a laptop for my first week, which set the tone."
+C00531,R01731,what_works,One thing that works: the direction for the year is clear and I can see how my work fits. The team shout-outs in our monthly meeting are a small thing that works.
+C00532,R01734,what_to_change,The team delivered a difficult project and nobody outside noticed. Our systems do not talk to each other so we rekey the same data twice.
+C00533,R01736,what_to_change,I commute an hour to sit on video calls I could take from home. I am already looking at other options.
+C00534,R01739,what_to_change,The main issue is that shift patterns get published too late to plan anything around them.
+C00535,R01741,what_to_change,My salary has not kept up with inflation for two years running. Frankly it is exhausting. We hear about decisions that affect us from other teams first.
+C00536,R01741,what_works,One thing that works: my onboarding buddy made the first weeks much easier. My development plan is real and we actually review it.
+C00537,R01742,what_to_change,To be direct: training budget exists on paper but every request gets postponed. Nothing has changed since the last survey.
+C00538,R01742,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken. That should be the standard everywhere."
+C00539,R01748,what_to_change,To be direct: i raised the same issue three times and nothing came back. I am already looking at other options.
+C00540,R01758,what_to_change,"Honestly, i have been in the same grade for four years with no conversation about what comes next. Frankly it is exhausting."
+C00541,R01758,what_works,My onboarding buddy made the first weeks much easier.
+C00542,R01759,what_to_change,"Honestly, town halls are broadcasts, not conversations - questions get filtered. I did not have a laptop for my first week, which set the tone."
+C00543,R01767,what_to_change,Leadership talks about transparency and then reorganises without warning.
+C00544,R01767,what_works,"I always know where I stand with my manager, which I value."
+C00545,R01769,what_works,My team lead backs us up when things go wrong and that builds trust. That should be the standard everywhere.
+C00546,R01773,what_to_change,To be direct: benefits are fine but the base salary is below what I am offered elsewhere. The rest of my experience here is positive.
+C00547,R01776,what_to_change,To be direct: our systems do not talk to each other so we rekey the same data twice. It is the one thing I would change.
+C00548,R01778,what_works,I can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00549,R01780,what_to_change,Everything important is decided in English at a speed that excludes half the room. The rest of my experience here is positive.
+C00550,R01800,what_works,Flexibility around school hours is the main reason I stay. Please keep it.
+C00551,R01813,what_to_change,"Honestly, my first month was three days of induction and then nothing."
+C00552,R01816,what_to_change,"Two people left my team last year and neither was replaced, so the work just moved to us. It should not be this hard."
+C00553,R01817,what_works,Since we added two people the pressure has come down a lot. Please keep it.
+C00554,R01821,what_works,My onboarding buddy made the first weeks much easier. Please keep it.
+C00555,R01825,what_to_change,The main issue is that we hear about decisions that affect us from other teams first. My first month was three days of induction and then nothing.
+C00556,R01826,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust."
+C00557,R01828,what_to_change,To be direct: benefits are fine but the base salary is below what I am offered elsewhere. Nothing has changed since the last survey.
+C00558,R01833,what_to_change,We hire externally for roles that people inside could grow into.
+C00559,R01833,what_works,Flexibility around school hours is the main reason I stay. Please keep it.
+C00560,R01842,what_to_change,To be direct: benefits are fine but the base salary is below what I am offered elsewhere. The rest of my experience here is positive.
+C00561,R01842,what_works,"Genuinely, the last town hall actually answered the hard questions honestly. Please keep it. My team lead protects our workload and it makes a real difference."
+C00562,R01849,what_to_change,There is no visible route from my role to the next one. My first month was three days of induction and then nothing.
+C00563,R01851,what_to_change,My salary has not kept up with inflation for two years running.
+C00564,R01854,what_to_change,"To be direct: my first month was three days of induction and then nothing. Promotions here go to people who are visible to leadership, not to people who deliver."
+C00565,R01856,what_to_change,To be direct: the office rules changed twice this year with no explanation. It should not be this hard.
+C00566,R01860,what_to_change,Recognition stops at my manager and never travels further up. It should not be this hard.
+C00567,R01860,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. Please keep it."
+C00568,R01865,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately. It should not be this hard.
+C00569,R01871,what_to_change,My first month was three days of induction and then nothing. Otherwise this is a good place to work.
+C00570,R01871,what_works,One thing that works: my team is genuinely welcoming and people look out for each other. Please keep it.
+C00571,R01872,what_to_change,Everything important is decided in English at a speed that excludes half the room. Otherwise this is a good place to work.
+C00572,R01872,what_works,"Genuinely, the last town hall actually answered the hard questions honestly. My onboarding buddy made the first weeks much easier."
+C00573,R01873,what_to_change,The main issue is that there is no visible route from my role to the next one. Otherwise this is a good place to work.
+C00574,R01873,what_works,One thing that works: the pension contribution and the extra leave days are genuinely good.
+C00575,R01877,what_to_change,The main issue is that the team delivered a difficult project and nobody outside noticed. We hear about decisions that affect us from other teams first.
+C00576,R01877,what_works,My team lead backs us up when things go wrong and that builds trust. That should be the standard everywhere.
+C00577,R01879,what_to_change,"The main issue is that the pay bands are a secret, which makes it impossible to trust the process. It should not be this hard."
+C00578,R01879,what_works,My team is genuinely welcoming and people look out for each other. That should be the standard everywhere. My manager is genuinely supportive and gives me feedback I can use.
+C00579,R01886,what_to_change,To be direct: i have been in the same grade for four years with no conversation about what comes next.
+C00580,R01898,what_to_change,"Honestly, the team delivered a difficult project and nobody outside noticed. The same voices dominate every meeting and the rest of us stop trying."
+C00581,R01899,what_to_change,I commute an hour to sit on video calls I could take from home. This needs fixing this year.
+C00582,R01900,what_to_change,The main issue is that there is no visible route from my role to the next one. The same voices dominate every meeting and the rest of us stop trying.
+C00583,R01901,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately. This needs fixing this year. We hear about decisions that affect us from other teams first.
+C00584,R01911,what_works,"I always know where I stand with my manager, which I value. That should be the standard everywhere."
+C00585,R01919,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust.
+C00586,R01921,what_works,My team is genuinely welcoming and people look out for each other. Please keep it. The hybrid arrangement works well for me and my team coordinates it sensibly.
+C00587,R01922,what_to_change,The main issue is that i have been in the same grade for four years with no conversation about what comes next. The same voices dominate every meeting and the rest of us stop trying.
+C00588,R01922,what_works,I can raise a concern here without worrying about how it will be taken.
+C00589,R01924,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere. Otherwise this is a good place to work. We hire externally for roles that people inside could grow into.
+C00590,R01933,what_to_change,To be direct: my first month was three days of induction and then nothing.
+C00591,R01935,what_to_change,"I did not have a laptop for my first week, which set the tone. Otherwise this is a good place to work."
+C00592,R01936,what_to_change,I have been in the same grade for four years with no conversation about what comes next.
+C00593,R01939,what_to_change,"Honestly, shift patterns get published too late to plan anything around them. Nothing has changed since the last survey."
+C00594,R01940,what_to_change,The office rules changed twice this year with no explanation. This needs fixing this year.
+C00595,R01940,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. Please keep it."
+C00596,R01942,what_to_change,My salary has not kept up with inflation for two years running. It should not be this hard. Good work is expected and never mentioned; mistakes are mentioned immediately.
+C00597,R01942,what_works,"Genuinely, my onboarding buddy made the first weeks much easier. That should be the standard everywhere."
+C00598,R01945,what_to_change,"Honestly, holiday requests get refused because we do not have the cover. Training budget exists on paper but every request gets postponed."
+C00599,R01945,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken. Please keep it. My onboarding buddy made the first weeks much easier."
+C00600,R01949,what_to_change,I commute an hour to sit on video calls I could take from home.
+C00601,R01950,what_to_change,Training budget exists on paper but every request gets postponed.
+C00602,R01956,what_to_change,The main issue is that i have been in the same grade for four years with no conversation about what comes next.
+C00603,R01960,what_to_change,To be direct: good work is expected and never mentioned; mistakes are mentioned immediately. New joiners are hired above people already doing the job.
+C00604,R01963,what_to_change,"Honestly, i raised the same issue three times and nothing came back. It should not be this hard."
+C00605,R01963,what_works,The last town hall actually answered the hard questions honestly. The pension contribution and the extra leave days are genuinely good.
+C00606,R01975,what_to_change,The main issue is that training budget exists on paper but every request gets postponed. It should not be this hard.
+C00607,R01975,what_works,My team is genuinely welcoming and people look out for each other. Please keep it.
+C00608,R01986,what_to_change,"Honestly, training budget exists on paper but every request gets postponed."
+C00609,R01989,what_to_change,We hire externally for roles that people inside could grow into. It is the one thing I would change. Our systems do not talk to each other so we rekey the same data twice.
+C00610,R01989,what_works,The new scheduling tool has saved us hours every week.
+C00611,R01997,what_to_change,To be direct: we are permanently short-staffed and the overtime has stopped feeling optional.
+C00612,R01998,what_works,I can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00613,R02000,what_to_change,There is no visible route from my role to the next one.
+C00614,R02002,what_to_change,The main issue is that leadership talks about transparency and then reorganises without warning. Good work is expected and never mentioned; mistakes are mentioned immediately.
+C00615,R02004,what_to_change,The main issue is that we hire externally for roles that people inside could grow into. This needs fixing this year.
+C00616,R02007,what_to_change,To be direct: i answer messages at 10pm because there is no other way to keep up. It should not be this hard.
+C00617,R02007,what_works,My team lead backs us up when things go wrong and that builds trust. Please keep it.
+C00618,R02008,what_to_change,The main issue is that holiday requests get refused because we do not have the cover. It should not be this hard.
+C00619,R02011,what_works,One thing that works: my team is genuinely welcoming and people look out for each other.
+C00620,R02012,what_to_change,Strategy changes every quarter and nobody explains why. The rest of my experience here is positive.
+C00621,R02014,what_to_change,The main issue is that the team delivered a difficult project and nobody outside noticed. Nothing has changed since the last survey. My manager cancels our one to ones more often than we hold them.
+C00622,R02014,what_works,My team lead protects our workload and it makes a real difference. Please keep it.
+C00623,R02025,what_works,"One thing that works: i always know where I stand with my manager, which I value."
+C00624,R02026,what_to_change,Our systems do not talk to each other so we rekey the same data twice.
+C00625,R02026,what_works,One thing that works: since we added two people the pressure has come down a lot. Please keep it.
+C00626,R02031,what_to_change,To be direct: i commute an hour to sit on video calls I could take from home. Nothing has changed since the last survey.
+C00627,R02032,what_to_change,To be direct: good work is expected and never mentioned; mistakes are mentioned immediately. Otherwise this is a good place to work.
+C00628,R02034,what_to_change,To be direct: everything important is decided in English at a speed that excludes half the room. This needs fixing this year. I answer messages at 10pm because there is no other way to keep up.
+C00629,R02034,what_works,"Genuinely, the new scheduling tool has saved us hours every week. That should be the standard everywhere."
+C00630,R02036,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere. It should not be this hard.
+C00631,R02036,what_works,My team is genuinely welcoming and people look out for each other.
+C00632,R02046,what_to_change,Shift patterns get published too late to plan anything around them. It should not be this hard.
+C00633,R02054,what_to_change,My first month was three days of induction and then nothing. Training budget exists on paper but every request gets postponed.
+C00634,R02054,what_works,"One thing that works: i always know where I stand with my manager, which I value. That should be the standard everywhere."
+C00635,R02058,what_to_change,"Honestly, recognition stops at my manager and never travels further up. I have been in the same grade for four years with no conversation about what comes next."
+C00636,R02058,what_works,My team is genuinely welcoming and people look out for each other.
+C00637,R02063,what_to_change,"Honestly, the same voices dominate every meeting and the rest of us stop trying."
+C00638,R02063,what_works,Since we added two people the pressure has come down a lot. Please keep it. The new scheduling tool has saved us hours every week.
+C00639,R02068,what_to_change,The team delivered a difficult project and nobody outside noticed. This needs fixing this year.
+C00640,R02071,what_to_change,The main issue is that benefits are fine but the base salary is below what I am offered elsewhere. This needs fixing this year.
+C00641,R02071,what_works,The new scheduling tool has saved us hours every week.
+C00642,R02072,what_to_change,"Honestly, the team delivered a difficult project and nobody outside noticed. It is the one thing I would change. New joiners are hired above people already doing the job."
+C00643,R02072,what_works,The new scheduling tool has saved us hours every week. That should be the standard everywhere.
+C00644,R02080,what_to_change,To be direct: the team delivered a difficult project and nobody outside noticed. It is the one thing I would change. I commute an hour to sit on video calls I could take from home.
+C00645,R02080,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. That should be the standard everywhere."
+C00646,R02088,what_to_change,To be direct: i raised the same issue three times and nothing came back. It should not be this hard.
+C00647,R02088,what_works,"Genuinely, my team lead protects our workload and it makes a real difference. Please keep it."
+C00648,R02097,what_to_change,"I did not have a laptop for my first week, which set the tone. I commute an hour to sit on video calls I could take from home."
+C00649,R02101,what_to_change,Shift patterns get published too late to plan anything around them.
+C00650,R02105,what_to_change,Getting access to a tool takes weeks and nobody owns the process. It should not be this hard.
+C00651,R02105,what_works,"Genuinely, i always know where I stand with my manager, which I value."
+C00652,R02107,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust. My team lead protects our workload and it makes a real difference."
+C00653,R02108,what_to_change,The main issue is that we hear about decisions that affect us from other teams first. Recognition stops at my manager and never travels further up.
+C00654,R02108,what_works,Since we added two people the pressure has come down a lot. That should be the standard everywhere. My team is genuinely welcoming and people look out for each other.
+C00655,R02109,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. It is the one thing I would change."
+C00656,R02111,what_to_change,Recognition stops at my manager and never travels further up. It should not be this hard.
+C00657,R02119,what_to_change,"Promotions here go to people who are visible to leadership, not to people who deliver. Nothing has changed since the last survey."
+C00658,R02119,what_works,One thing that works: the new scheduling tool has saved us hours every week.
+C00659,R02120,what_to_change,"To be direct: my first month was three days of induction and then nothing. The pay bands are a secret, which makes it impossible to trust the process."
+C00660,R02121,what_to_change,"To be direct: the pay bands are a secret, which makes it impossible to trust the process. Our systems do not talk to each other so we rekey the same data twice."
+C00661,R02121,what_works,One thing that works: the direction for the year is clear and I can see how my work fits.
+C00662,R02125,what_to_change,Everything important is decided in English at a speed that excludes half the room. It should not be this hard.
+C00663,R02128,what_works,One thing that works: my team is genuinely welcoming and people look out for each other. That should be the standard everywhere.
+C00664,R02130,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. Otherwise this is a good place to work."
+C00665,R02130,what_works,"Genuinely, the last town hall actually answered the hard questions honestly. The internal move I made last year was handled really well."
+C00666,R02143,what_works,"One thing that works: i always know where I stand with my manager, which I value."
+C00667,R02146,what_to_change,Recognition stops at my manager and never travels further up. Otherwise this is a good place to work.
+C00668,R02146,what_works,My team is genuinely welcoming and people look out for each other.
+C00669,R02149,what_to_change,Feedback only arrives when something goes wrong. It is the one thing I would change.
+C00670,R02149,what_works,"Genuinely, the internal move I made last year was handled really well."
+C00671,R02151,what_to_change,I raised the same issue three times and nothing came back. It should not be this hard.
+C00672,R02157,what_to_change,"Honestly, my manager avoids difficult conversations, so problems in the team just continue. It should not be this hard."
+C00673,R02160,what_to_change,My manager cancels our one to ones more often than we hold them.
+C00674,R02160,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken."
+C00675,R02161,what_to_change,"Promotions here go to people who are visible to leadership, not to people who deliver."
+C00676,R02163,what_to_change,"Honestly, feedback only arrives when something goes wrong. This needs fixing this year."
+C00677,R02165,what_to_change,We hear about decisions that affect us from other teams first. It should not be this hard.
+C00678,R02165,what_works,My team is genuinely welcoming and people look out for each other.
+C00679,R02178,what_to_change,There is no visible route from my role to the next one. Otherwise this is a good place to work.
+C00680,R02178,what_works,My onboarding buddy made the first weeks much easier. My team is genuinely welcoming and people look out for each other.
+C00681,R02180,what_to_change,The main issue is that i have been in the same grade for four years with no conversation about what comes next.
+C00682,R02181,what_to_change,The main issue is that recognition stops at my manager and never travels further up.
+C00683,R02181,what_works,"Genuinely, my onboarding buddy made the first weeks much easier. That should be the standard everywhere."
+C00684,R02184,what_to_change,"To be direct: promotions here go to people who are visible to leadership, not to people who deliver."
+C00685,R02184,what_works,The last town hall actually answered the hard questions honestly. The team shout-outs in our monthly meeting are a small thing that works.
+C00686,R02190,what_to_change,Strategy changes every quarter and nobody explains why. It is the one thing I would change. Recognition stops at my manager and never travels further up.
+C00687,R02190,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken.
+C00688,R02193,what_to_change,"Honestly, the pay bands are a secret, which makes it impossible to trust the process."
+C00689,R02196,what_to_change,"Honestly, getting access to a tool takes weeks and nobody owns the process. This needs fixing this year."
+C00690,R02197,what_to_change,The main issue is that new joiners are hired above people already doing the job.
+C00691,R02197,what_works,One thing that works: my onboarding buddy made the first weeks much easier. Please keep it.
+C00692,R02204,what_works,My onboarding buddy made the first weeks much easier.
+C00693,R02210,what_to_change,Training budget exists on paper but every request gets postponed. It should not be this hard.
+C00694,R02210,what_works,One thing that works: my onboarding buddy made the first weeks much easier.
+C00695,R02212,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere.
+C00696,R02213,what_to_change,"Honestly, good work is expected and never mentioned; mistakes are mentioned immediately. Nothing has changed since the last survey."
+C00697,R02219,what_to_change,The main issue is that strategy changes every quarter and nobody explains why. It is the main reason people are looking elsewhere.
+C00698,R02222,what_to_change,The main issue is that benefits are fine but the base salary is below what I am offered elsewhere. Nothing has changed since the last survey.
+C00699,R02223,what_to_change,Recognition stops at my manager and never travels further up. Shift patterns get published too late to plan anything around them.
+C00700,R02225,what_to_change,We are permanently short-staffed and the overtime has stopped feeling optional. Nothing has changed since the last survey.
+C00701,R02228,what_works,My manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere. My manager makes a point of recognising good work publicly.
+C00702,R02232,what_to_change,"Honestly, benefits are fine but the base salary is below what I am offered elsewhere. It should not be this hard."
+C00703,R02232,what_works,My manager is genuinely supportive and gives me feedback I can use. Please keep it.
+C00704,R02237,what_to_change,Leadership talks about transparency and then reorganises without warning. This needs fixing this year.
+C00705,R02237,what_works,One thing that works: my manager makes a point of recognising good work publicly.
+C00706,R02242,what_to_change,The main issue is that i have been in the same grade for four years with no conversation about what comes next. Nothing has changed since the last survey.
+C00707,R02242,what_works,"One thing that works: i always know where I stand with my manager, which I value."
+C00708,R02247,what_to_change,To be direct: i raised the same issue three times and nothing came back. Nothing has changed since the last survey.
+C00709,R02247,what_works,"Genuinely, since we added two people the pressure has come down a lot."
+C00710,R02248,what_to_change,"My manager avoids difficult conversations, so problems in the team just continue."
+C00711,R02248,what_works,The hybrid arrangement works well for me and my team coordinates it sensibly.
+C00712,R02250,what_to_change,"The main issue is that feedback only arrives when something goes wrong. Nothing has changed since the last survey. I did not have a laptop for my first week, which set the tone."
+C00713,R02252,what_to_change,To be direct: i commute an hour to sit on video calls I could take from home.
+C00714,R02255,what_to_change,The team delivered a difficult project and nobody outside noticed.
+C00715,R02257,what_to_change,"Honestly, there is no visible route from my role to the next one. This needs fixing this year."
+C00716,R02270,what_works,One thing that works: my team is genuinely welcoming and people look out for each other. That should be the standard everywhere.
+C00717,R02273,what_works,One thing that works: the direction for the year is clear and I can see how my work fits. That should be the standard everywhere.
+C00718,R02278,what_to_change,To be direct: our systems do not talk to each other so we rekey the same data twice. The rest of my experience here is positive.
+C00719,R02283,what_to_change,"Honestly, benefits are fine but the base salary is below what I am offered elsewhere. Good work is expected and never mentioned; mistakes are mentioned immediately."
+C00720,R02287,what_to_change,To be direct: training budget exists on paper but every request gets postponed. Frankly it is exhausting.
+C00721,R02289,what_to_change,"Honestly, promotions here go to people who are visible to leadership, not to people who deliver. It is the one thing I would change. My first month was three days of induction and then nothing."
+C00722,R02292,what_to_change,"I did not have a laptop for my first week, which set the tone. I am already looking at other options."
+C00723,R02293,what_works,"One thing that works: i always know where I stand with my manager, which I value."
+C00724,R02295,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere. Frankly it is exhausting.
+C00725,R02296,what_to_change,"Honestly, town halls are broadcasts, not conversations - questions get filtered. This needs fixing this year."
+C00726,R02300,what_to_change,New joiners are hired above people already doing the job. It is the one thing I would change. Getting access to a tool takes weeks and nobody owns the process.
+C00727,R02302,what_to_change,The office rules changed twice this year with no explanation. This needs fixing this year.
+C00728,R02303,what_to_change,"Honestly, recognition stops at my manager and never travels further up."
+C00729,R02315,what_to_change,"Honestly, i answer messages at 10pm because there is no other way to keep up. This needs fixing this year."
+C00730,R02318,what_to_change,"My manager avoids difficult conversations, so problems in the team just continue."
+C00731,R02318,what_works,My team is genuinely welcoming and people look out for each other. Please keep it.
+C00732,R02333,what_to_change,My salary has not kept up with inflation for two years running.
+C00733,R02342,what_works,My onboarding buddy made the first weeks much easier.
+C00734,R02346,what_to_change,"Honestly, i have been in the same grade for four years with no conversation about what comes next."
+C00735,R02347,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. Otherwise this is a good place to work."
+C00736,R02347,what_works,My manager is genuinely supportive and gives me feedback I can use.
+C00737,R02353,what_to_change,We hear about decisions that affect us from other teams first.
+C00738,R02354,what_to_change,The main issue is that recognition stops at my manager and never travels further up.
+C00739,R02358,what_to_change,The main issue is that new joiners are hired above people already doing the job. It should not be this hard. Shift patterns get published too late to plan anything around them.
+C00740,R02362,what_to_change,The main issue is that strategy changes every quarter and nobody explains why.
+C00741,R02362,what_works,Since we added two people the pressure has come down a lot.
+C00742,R02368,what_works,One thing that works: the team shout-outs in our monthly meeting are a small thing that works.
+C00743,R02372,what_to_change,The office rules changed twice this year with no explanation.
+C00744,R02372,what_works,My manager is genuinely supportive and gives me feedback I can use. My team is genuinely welcoming and people look out for each other.
+C00745,R02374,what_to_change,Training budget exists on paper but every request gets postponed. Nothing has changed since the last survey. My first month was three days of induction and then nothing.
+C00746,R02375,what_to_change,"The main issue is that leadership talks about transparency and then reorganises without warning. Otherwise this is a good place to work. My manager avoids difficult conversations, so problems in the team just continue."
+C00747,R02375,what_works,The hybrid arrangement works well for me and my team coordinates it sensibly.
+C00748,R02379,what_to_change,The main issue is that good work is expected and never mentioned; mistakes are mentioned immediately.
+C00749,R02379,what_works,My team is genuinely welcoming and people look out for each other. That should be the standard everywhere.
+C00750,R02381,what_to_change,Training budget exists on paper but every request gets postponed. Otherwise this is a good place to work.
+C00751,R02381,what_works,My team lead protects our workload and it makes a real difference. My onboarding buddy made the first weeks much easier.
+C00752,R02393,what_to_change,New joiners are hired above people already doing the job. Otherwise this is a good place to work.
+C00753,R02393,what_works,The last town hall actually answered the hard questions honestly. That should be the standard everywhere.
+C00754,R02394,what_to_change,To be direct: new joiners are hired above people already doing the job.
+C00755,R02394,what_works,One thing that works: my onboarding buddy made the first weeks much easier. Please keep it.
+C00756,R02396,what_to_change,My salary has not kept up with inflation for two years running. It is the one thing I would change.
+C00757,R02396,what_works,Flexibility around school hours is the main reason I stay. Please keep it.
+C00758,R02399,what_to_change,To be direct: training budget exists on paper but every request gets postponed. It should not be this hard.
+C00759,R02399,what_works,My manager makes a point of recognising good work publicly.
+C00760,R02402,what_to_change,"Honestly, getting access to a tool takes weeks and nobody owns the process."
+C00761,R02402,what_works,The last town hall actually answered the hard questions honestly. Please keep it.
+C00762,R02413,what_to_change,I commute an hour to sit on video calls I could take from home.
+C00763,R02413,what_works,"Genuinely, the new scheduling tool has saved us hours every week."
+C00764,R02415,what_works,One thing that works: my team lead protects our workload and it makes a real difference. My onboarding buddy made the first weeks much easier.
+C00765,R02417,what_to_change,To be direct: the team delivered a difficult project and nobody outside noticed. It should not be this hard.
+C00766,R02420,what_works,My team lead backs us up when things go wrong and that builds trust.
+C00767,R02430,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere. It is the one thing I would change.
+C00768,R02434,what_works,"Genuinely, the new scheduling tool has saved us hours every week. That should be the standard everywhere."
+C00769,R02440,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately. Nothing has changed since the last survey.
+C00770,R02441,what_to_change,"Honestly, leadership talks about transparency and then reorganises without warning. The approval process takes longer than the work itself."
+C00771,R02456,what_to_change,"Honestly, i commute an hour to sit on video calls I could take from home."
+C00772,R02456,what_works,"Genuinely, my onboarding buddy made the first weeks much easier."
+C00773,R02457,what_to_change,"Town halls are broadcasts, not conversations - questions get filtered. Otherwise this is a good place to work."
+C00774,R02458,what_to_change,"Honestly, feedback only arrives when something goes wrong. Otherwise this is a good place to work."
+C00775,R02458,what_works,I can raise a concern here without worrying about how it will be taken. That should be the standard everywhere. The internal move I made last year was handled really well.
+C00776,R02459,what_to_change,The main issue is that my salary has not kept up with inflation for two years running. The rest of my experience here is positive.
+C00777,R02459,what_works,One thing that works: since we added two people the pressure has come down a lot. The last town hall actually answered the hard questions honestly.
+C00778,R02471,what_to_change,"Town halls are broadcasts, not conversations - questions get filtered. I did not have a laptop for my first week, which set the tone."
+C00779,R02471,what_works,"Genuinely, my manager is genuinely supportive and gives me feedback I can use."
+C00780,R02479,what_to_change,To be direct: our systems do not talk to each other so we rekey the same data twice.
+C00781,R02479,what_works,My team is genuinely welcoming and people look out for each other. Please keep it.
+C00782,R02481,what_to_change,"The main issue is that there is no visible route from my role to the next one. Town halls are broadcasts, not conversations - questions get filtered."
+C00783,R02481,what_works,One thing that works: my onboarding buddy made the first weeks much easier.
+C00784,R02482,what_to_change,Every week is firefighting; there is no capacity left for anything planned. Otherwise this is a good place to work.
+C00785,R02482,what_works,My onboarding buddy made the first weeks much easier.
+C00786,R02485,what_to_change,"To be direct: promotions here go to people who are visible to leadership, not to people who deliver. It is the one thing I would change. The office rules changed twice this year with no explanation."
+C00787,R02487,what_to_change,The main issue is that the team delivered a difficult project and nobody outside noticed. Nothing has changed since the last survey. The approval process takes longer than the work itself.
+C00788,R02487,what_works,One thing that works: my onboarding buddy made the first weeks much easier. That should be the standard everywhere.
+C00789,R02488,what_to_change,Training budget exists on paper but every request gets postponed. This needs fixing this year.
+C00790,R02491,what_to_change,To be direct: the approval process takes longer than the work itself. It should not be this hard. I commute an hour to sit on video calls I could take from home.
+C00791,R02491,what_works,My team lead backs us up when things go wrong and that builds trust. The internal move I made last year was handled really well.
+C00792,R02496,what_to_change,"Honestly, two people left my team last year and neither was replaced, so the work just moved to us. It should not be this hard."
+C00793,R02503,what_to_change,Training budget exists on paper but every request gets postponed.
+C00794,R02513,what_to_change,The main issue is that i answer messages at 10pm because there is no other way to keep up. It is the one thing I would change. We hire externally for roles that people inside could grow into.
+C00795,R02513,what_works,My onboarding buddy made the first weeks much easier. Please keep it. Flexibility around school hours is the main reason I stay.
+C00796,R02514,what_to_change,The main issue is that we hear about decisions that affect us from other teams first. Otherwise this is a good place to work.
+C00797,R02514,what_works,The hybrid arrangement works well for me and my team coordinates it sensibly.
+C00798,R02518,what_to_change,The main issue is that there is no visible route from my role to the next one.
+C00799,R02518,what_works,"Genuinely, the last town hall actually answered the hard questions honestly."
+C00800,R02526,what_to_change,"My manager avoids difficult conversations, so problems in the team just continue."
+C00801,R02526,what_works,My onboarding buddy made the first weeks much easier. That should be the standard everywhere.
+C00802,R02527,what_to_change,"Recognition stops at my manager and never travels further up. The pay bands are a secret, which makes it impossible to trust the process."
+C00803,R02527,what_works,One thing that works: my onboarding buddy made the first weeks much easier. That should be the standard everywhere.
+C00804,R02535,what_to_change,I have been in the same grade for four years with no conversation about what comes next. It should not be this hard.
+C00805,R02542,what_to_change,Our systems do not talk to each other so we rekey the same data twice. Frankly it is exhausting. Everything important is decided in English at a speed that excludes half the room.
+C00806,R02548,what_to_change,Feedback only arrives when something goes wrong.
+C00807,R02548,what_works,"Genuinely, since we added two people the pressure has come down a lot."
+C00808,R02552,what_to_change,The main issue is that the office rules changed twice this year with no explanation.
+C00809,R02552,what_works,I can raise a concern here without worrying about how it will be taken.
+C00810,R02555,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately. Nothing has changed since the last survey.
+C00811,R02556,what_works,One thing that works: my team lead protects our workload and it makes a real difference.
+C00812,R02557,what_to_change,"My manager avoids difficult conversations, so problems in the team just continue."
+C00813,R02561,what_to_change,To be direct: my first month was three days of induction and then nothing. Otherwise this is a good place to work.
+C00814,R02565,what_to_change,The main issue is that we hear about decisions that affect us from other teams first. This needs fixing this year.
+C00815,R02571,what_to_change,"My salary has not kept up with inflation for two years running. Frankly it is exhausting. My manager avoids difficult conversations, so problems in the team just continue."
+C00816,R02572,what_to_change,My first month was three days of induction and then nothing. It should not be this hard.
+C00817,R02578,what_to_change,Holiday requests get refused because we do not have the cover. Otherwise this is a good place to work. Feedback only arrives when something goes wrong.
+C00818,R02588,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. Please keep it.
+C00819,R02590,what_to_change,The same voices dominate every meeting and the rest of us stop trying. The rest of my experience here is positive.
+C00820,R02590,what_works,"Genuinely, my manager makes a point of recognising good work publicly."
+C00821,R02594,what_to_change,Everything important is decided in English at a speed that excludes half the room. It is the one thing I would change.
+C00822,R02594,what_works,"Genuinely, flexibility around school hours is the main reason I stay."
+C00823,R02607,what_to_change,I answer messages at 10pm because there is no other way to keep up.
+C00824,R02607,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken. Please keep it."
+C00825,R02608,what_to_change,I have been in the same grade for four years with no conversation about what comes next.
+C00826,R02608,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. Please keep it."
+C00827,R02613,what_to_change,"Honestly, good work is expected and never mentioned; mistakes are mentioned immediately. The rest of my experience here is positive."
+C00828,R02613,what_works,"Genuinely, i always know where I stand with my manager, which I value. That should be the standard everywhere."
+C00829,R02614,what_works,"Genuinely, my manager makes a point of recognising good work publicly."
+C00830,R02615,what_to_change,To be direct: feedback only arrives when something goes wrong. The rest of my experience here is positive.
+C00831,R02618,what_to_change,Holiday requests get refused because we do not have the cover. Nothing has changed since the last survey. We hire externally for roles that people inside could grow into.
+C00832,R02619,what_works,"Genuinely, the last town hall actually answered the hard questions honestly. That should be the standard everywhere."
+C00833,R02624,what_to_change,I commute an hour to sit on video calls I could take from home.
+C00834,R02627,what_to_change,We hire externally for roles that people inside could grow into. The rest of my experience here is positive.
+C00835,R02627,what_works,One thing that works: flexibility around school hours is the main reason I stay.
+C00836,R02628,what_to_change,"Promotions here go to people who are visible to leadership, not to people who deliver."
+C00837,R02632,what_to_change,"Honestly, my manager cancels our one to ones more often than we hold them."
+C00838,R02635,what_to_change,"Honestly, the same voices dominate every meeting and the rest of us stop trying. My manager avoids difficult conversations, so problems in the team just continue."
+C00839,R02635,what_works,The new scheduling tool has saved us hours every week.
+C00840,R02637,what_to_change,The main issue is that my salary has not kept up with inflation for two years running. I answer messages at 10pm because there is no other way to keep up.
+C00841,R02638,what_works,My manager is genuinely supportive and gives me feedback I can use. Please keep it.
+C00842,R02641,what_to_change,"Honestly, the office rules changed twice this year with no explanation. It should not be this hard."
+C00843,R02643,what_to_change,To be direct: new joiners are hired above people already doing the job. It should not be this hard.
+C00844,R02647,what_to_change,To be direct: benefits are fine but the base salary is below what I am offered elsewhere. It should not be this hard.
+C00845,R02647,what_works,My onboarding buddy made the first weeks much easier. Please keep it.
+C00846,R02648,what_to_change,"Honestly, i answer messages at 10pm because there is no other way to keep up. Otherwise this is a good place to work. Everything important is decided in English at a speed that excludes half the room."
+C00847,R02650,what_to_change,The office rules changed twice this year with no explanation. This needs fixing this year.
+C00848,R02653,what_to_change,To be direct: there is no visible route from my role to the next one. It is the one thing I would change.
+C00849,R02657,what_to_change,"I did not have a laptop for my first week, which set the tone. It should not be this hard."
+C00850,R02658,what_to_change,The main issue is that the team delivered a difficult project and nobody outside noticed. We hire externally for roles that people inside could grow into.
+C00851,R02659,what_to_change,To be direct: leadership talks about transparency and then reorganises without warning. Otherwise this is a good place to work.
+C00852,R02667,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust.
+C00853,R02672,what_works,The team shout-outs in our monthly meeting are a small thing that works.
+C00854,R02677,what_works,My manager is genuinely supportive and gives me feedback I can use. Since we added two people the pressure has come down a lot.
+C00855,R02678,what_to_change,"Honestly, holiday requests get refused because we do not have the cover. It is the one thing I would change. My first month was three days of induction and then nothing."
+C00856,R02682,what_to_change,There is no visible route from my role to the next one. It should not be this hard.
+C00857,R02685,what_to_change,My first month was three days of induction and then nothing. Benefits are fine but the base salary is below what I am offered elsewhere.
+C00858,R02685,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. Please keep it."
+C00859,R02687,what_to_change,"Honestly, we hear about decisions that affect us from other teams first. The rest of my experience here is positive."
+C00860,R02687,what_works,My team is genuinely welcoming and people look out for each other. Please keep it.
+C00861,R02691,what_to_change,My salary has not kept up with inflation for two years running. It should not be this hard.
+C00862,R02691,what_works,My onboarding buddy made the first weeks much easier. Please keep it. Since we added two people the pressure has come down a lot.
+C00863,R02697,what_to_change,Training budget exists on paper but every request gets postponed. It should not be this hard.
+C00864,R02697,what_works,My team lead backs us up when things go wrong and that builds trust.
+C00865,R02699,what_to_change,The main issue is that recognition stops at my manager and never travels further up. My manager cancels our one to ones more often than we hold them.
+C00866,R02699,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. The pension contribution and the extra leave days are genuinely good."
+C00867,R02706,what_to_change,"I raised the same issue three times and nothing came back. It should not be this hard. Promotions here go to people who are visible to leadership, not to people who deliver."
+C00868,R02707,what_works,"One thing that works: flexibility around school hours is the main reason I stay. I always know where I stand with my manager, which I value."
+C00869,R02713,what_to_change,The main issue is that good work is expected and never mentioned; mistakes are mentioned immediately. This needs fixing this year.
+C00870,R02721,what_works,My manager makes a point of recognising good work publicly. That should be the standard everywhere.
+C00871,R02724,what_to_change,To be direct: good work is expected and never mentioned; mistakes are mentioned immediately.
+C00872,R02724,what_works,The pension contribution and the extra leave days are genuinely good. That should be the standard everywhere.
+C00873,R02729,what_to_change,Leadership talks about transparency and then reorganises without warning.
+C00874,R02729,what_works,"Genuinely, the new scheduling tool has saved us hours every week. That should be the standard everywhere."
+C00875,R02731,what_to_change,Our systems do not talk to each other so we rekey the same data twice. It is the one thing I would change.
+C00876,R02731,what_works,My manager is genuinely supportive and gives me feedback I can use. My onboarding buddy made the first weeks much easier.
+C00877,R02734,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken. Please keep it."
+C00878,R02743,what_to_change,The main issue is that feedback only arrives when something goes wrong. The rest of my experience here is positive.
+C00879,R02744,what_to_change,"Honestly, leadership talks about transparency and then reorganises without warning."
+C00880,R02744,what_works,One thing that works: since we added two people the pressure has come down a lot. My manager makes a point of recognising good work publicly.
+C00881,R02748,what_to_change,The office rules changed twice this year with no explanation. It should not be this hard.
+C00882,R02748,what_works,My onboarding buddy made the first weeks much easier.
+C00883,R02750,what_to_change,Training budget exists on paper but every request gets postponed. The same voices dominate every meeting and the rest of us stop trying.
+C00884,R02751,what_to_change,I commute an hour to sit on video calls I could take from home. The rest of my experience here is positive. There is no visible route from my role to the next one.
+C00885,R02753,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere. Otherwise this is a good place to work.
+C00886,R02753,what_works,I can raise a concern here without worrying about how it will be taken.
+C00887,R02762,what_to_change,To be direct: recognition stops at my manager and never travels further up. The rest of my experience here is positive.
+C00888,R02762,what_works,My team lead backs us up when things go wrong and that builds trust.
+C00889,R02769,what_works,One thing that works: my manager is genuinely supportive and gives me feedback I can use. Please keep it.
+C00890,R02774,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately. It is the one thing I would change. Feedback only arrives when something goes wrong.
+C00891,R02774,what_works,I can raise a concern here without worrying about how it will be taken.
+C00892,R02775,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately.
+C00893,R02777,what_to_change,Feedback only arrives when something goes wrong. This needs fixing this year.
+C00894,R02778,what_to_change,"My manager avoids difficult conversations, so problems in the team just continue."
+C00895,R02780,what_to_change,To be direct: recognition stops at my manager and never travels further up. It should not be this hard.
+C00896,R02787,what_to_change,Recognition stops at my manager and never travels further up. The rest of my experience here is positive.
+C00897,R02787,what_works,My team lead protects our workload and it makes a real difference.
+C00898,R02793,what_to_change,Training budget exists on paper but every request gets postponed. It should not be this hard.
+C00899,R02795,what_works,My team is genuinely welcoming and people look out for each other. That should be the standard everywhere.
+C00900,R02800,what_to_change,To be direct: everything important is decided in English at a speed that excludes half the room. The rest of my experience here is positive.
+C00901,R02800,what_works,The pension contribution and the extra leave days are genuinely good. That should be the standard everywhere.
+C00902,R02803,what_to_change,Recognition stops at my manager and never travels further up. This needs fixing this year.
+C00903,R02807,what_to_change,The main issue is that my salary has not kept up with inflation for two years running. This needs fixing this year.
+C00904,R02818,what_to_change,Strategy changes every quarter and nobody explains why. It is the one thing I would change.
+C00905,R02818,what_works,My manager is genuinely supportive and gives me feedback I can use. Please keep it.
+C00906,R02820,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. The rest of my experience here is positive. I commute an hour to sit on video calls I could take from home."
+C00907,R02821,what_to_change,There is no visible route from my role to the next one.
+C00908,R02821,what_works,My team lead backs us up when things go wrong and that builds trust. That should be the standard everywhere.
+C00909,R02825,what_to_change,Leadership talks about transparency and then reorganises without warning. I am already looking at other options.
+C00910,R02825,what_works,My team is genuinely welcoming and people look out for each other. Please keep it.
+C00911,R02826,what_to_change,My salary has not kept up with inflation for two years running. This needs fixing this year. The office rules changed twice this year with no explanation.
+C00912,R02829,what_to_change,Strategy changes every quarter and nobody explains why.
+C00913,R02829,what_works,I can raise a concern here without worrying about how it will be taken. My development plan is real and we actually review it.
+C00914,R02837,what_to_change,"Honestly, i raised the same issue three times and nothing came back."
+C00915,R02837,what_works,"Genuinely, the direction for the year is clear and I can see how my work fits. Please keep it. I can raise a concern here without worrying about how it will be taken."
+C00916,R02842,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately. The rest of my experience here is positive.
+C00917,R02851,what_to_change,The same voices dominate every meeting and the rest of us stop trying. This needs fixing this year.
+C00918,R02851,what_works,One thing that works: the new scheduling tool has saved us hours every week. The pension contribution and the extra leave days are genuinely good.
+C00919,R02854,what_to_change,Recognition stops at my manager and never travels further up. Otherwise this is a good place to work.
+C00920,R02854,what_works,I can raise a concern here without worrying about how it will be taken. Please keep it. My development plan is real and we actually review it.
+C00921,R02855,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately.
+C00922,R02855,what_works,My onboarding buddy made the first weeks much easier. Please keep it.
+C00923,R02856,what_works,My team lead protects our workload and it makes a real difference. The last town hall actually answered the hard questions honestly.
+C00924,R02858,what_to_change,The main issue is that the team delivered a difficult project and nobody outside noticed. The rest of my experience here is positive.
+C00925,R02861,what_to_change,"To be direct: promotions here go to people who are visible to leadership, not to people who deliver. We hear about decisions that affect us from other teams first."
+C00926,R02874,what_works,The last town hall actually answered the hard questions honestly.
+C00927,R02875,what_to_change,I have been in the same grade for four years with no conversation about what comes next.
+C00928,R02875,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. Please keep it."
+C00929,R02876,what_to_change,"Benefits are fine but the base salary is below what I am offered elsewhere. It is the main reason people are looking elsewhere. My manager avoids difficult conversations, so problems in the team just continue."
+C00930,R02877,what_to_change,I have been in the same grade for four years with no conversation about what comes next. It is the one thing I would change.
+C00931,R02877,what_works,Flexibility around school hours is the main reason I stay. That should be the standard everywhere. My team lead protects our workload and it makes a real difference.
+C00932,R02882,what_to_change,"Honestly, there is no visible route from my role to the next one. The rest of my experience here is positive."
+C00933,R02882,what_works,My onboarding buddy made the first weeks much easier. That should be the standard everywhere.
+C00934,R02889,what_works,One thing that works: the new scheduling tool has saved us hours every week.
+C00935,R02890,what_to_change,The office rules changed twice this year with no explanation.
+C00936,R02890,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken."
+C00937,R02894,what_to_change,"To be direct: town halls are broadcasts, not conversations - questions get filtered. My manager cancels our one to ones more often than we hold them."
+C00938,R02894,what_works,I can raise a concern here without worrying about how it will be taken. Please keep it.
+C00939,R02898,what_to_change,"Honestly, i have been in the same grade for four years with no conversation about what comes next. It is the one thing I would change. My first month was three days of induction and then nothing."
+C00940,R02901,what_to_change,"To be direct: the pay bands are a secret, which makes it impossible to trust the process. This needs fixing this year."
+C00941,R02901,what_works,My onboarding buddy made the first weeks much easier. Please keep it.
+C00942,R02909,what_to_change,"I did not have a laptop for my first week, which set the tone. The rest of my experience here is positive."
+C00943,R02922,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere.
+C00944,R02927,what_to_change,My salary has not kept up with inflation for two years running. It should not be this hard.
+C00945,R02930,what_to_change,Shift patterns get published too late to plan anything around them. It should not be this hard.
+C00946,R02933,what_to_change,I raised the same issue three times and nothing came back. This needs fixing this year.
+C00947,R02934,what_to_change,"Honestly, recognition stops at my manager and never travels further up. It should not be this hard."
+C00948,R02934,what_works,Flexibility around school hours is the main reason I stay. That should be the standard everywhere. The internal move I made last year was handled really well.
+C00949,R02936,what_to_change,"Honestly, the office rules changed twice this year with no explanation. The rest of my experience here is positive."
+C00950,R02937,what_to_change,"Two people left my team last year and neither was replaced, so the work just moved to us. Frankly it is exhausting."
+C00951,R02939,what_to_change,"Honestly, the pay bands are a secret, which makes it impossible to trust the process. The rest of my experience here is positive."
+C00952,R02940,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere.
+C00953,R02940,what_works,"Genuinely, the new scheduling tool has saved us hours every week. That should be the standard everywhere."
+C00954,R02944,what_to_change,"I did not have a laptop for my first week, which set the tone. Otherwise this is a good place to work. Promotions here go to people who are visible to leadership, not to people who deliver."
+C00955,R02944,what_works,The pension contribution and the extra leave days are genuinely good.
+C00956,R02945,what_to_change,The team delivered a difficult project and nobody outside noticed. I commute an hour to sit on video calls I could take from home.
+C00957,R02945,what_works,"Genuinely, my team lead protects our workload and it makes a real difference. That should be the standard everywhere. My manager makes a point of recognising good work publicly."
+C00958,R02947,what_to_change,To be direct: we hear about decisions that affect us from other teams first.
+C00959,R02947,what_works,One thing that works: since we added two people the pressure has come down a lot. My team is genuinely welcoming and people look out for each other.
+C00960,R02953,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately.
+C00961,R02953,what_works,The pension contribution and the extra leave days are genuinely good. That should be the standard everywhere.
+C00962,R02967,what_works,"Genuinely, my onboarding buddy made the first weeks much easier. I can raise a concern here without worrying about how it will be taken."
+C00963,R02983,what_works,Since we added two people the pressure has come down a lot. My onboarding buddy made the first weeks much easier.
+C00964,R02985,what_to_change,"Honestly, my salary has not kept up with inflation for two years running. It should not be this hard."
+C00965,R02988,what_works,"Genuinely, the new scheduling tool has saved us hours every week. That should be the standard everywhere."
+C00966,R02992,what_to_change,"Honestly, recognition stops at my manager and never travels further up. It is the one thing I would change."
+C00967,R02992,what_works,"Genuinely, my onboarding buddy made the first weeks much easier."
+C00968,R02997,what_to_change,The main issue is that i have been in the same grade for four years with no conversation about what comes next. Otherwise this is a good place to work.
+C00969,R02997,what_works,"One thing that works: i always know where I stand with my manager, which I value. That should be the standard everywhere."
+C00970,R02998,what_to_change,We hire externally for roles that people inside could grow into. It is the main reason people are looking elsewhere.
+C00971,R03000,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere. This needs fixing this year.
+C00972,R03000,what_works,"Genuinely, the hybrid arrangement works well for me and my team coordinates it sensibly. Please keep it. The new scheduling tool has saved us hours every week."
+C00973,R03007,what_to_change,"Honestly, good work is expected and never mentioned; mistakes are mentioned immediately."
+C00974,R03008,what_to_change,"Honestly, recognition stops at my manager and never travels further up. I am already looking at other options."
+C00975,R03008,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken. That should be the standard everywhere."
+C00976,R03010,what_works,My team is genuinely welcoming and people look out for each other.
+C00977,R03012,what_to_change,The approval process takes longer than the work itself. It is the one thing I would change.
+C00978,R03012,what_works,One thing that works: the direction for the year is clear and I can see how my work fits.
+C00979,R03014,what_to_change,"Honestly, shift patterns get published too late to plan anything around them. It is the one thing I would change. Recognition stops at my manager and never travels further up."
+C00980,R03014,what_works,My team lead backs us up when things go wrong and that builds trust.
+C00981,R03015,what_works,One thing that works: the new scheduling tool has saved us hours every week.
+C00982,R03016,what_to_change,"My manager avoids difficult conversations, so problems in the team just continue."
+C00983,R03019,what_works,My manager makes a point of recognising good work publicly. That should be the standard everywhere.
+C00984,R03020,what_works,The pension contribution and the extra leave days are genuinely good. My manager is genuinely supportive and gives me feedback I can use.
+C00985,R03021,what_to_change,To be direct: the same voices dominate every meeting and the rest of us stop trying. Otherwise this is a good place to work.
+C00986,R03021,what_works,"Genuinely, since we added two people the pressure has come down a lot. Please keep it."
+C00987,R03025,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust."
+C00988,R03028,what_to_change,To be direct: shift patterns get published too late to plan anything around them.
+C00989,R03038,what_to_change,I answer messages at 10pm because there is no other way to keep up. This needs fixing this year.
+C00990,R03038,what_works,The internal move I made last year was handled really well. That should be the standard everywhere.
+C00991,R03039,what_to_change,Our systems do not talk to each other so we rekey the same data twice.
+C00992,R03039,what_works,My team lead protects our workload and it makes a real difference. That should be the standard everywhere. My team is genuinely welcoming and people look out for each other.
+C00993,R03049,what_works,I can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C00994,R03053,what_works,The pension contribution and the extra leave days are genuinely good.
+C00995,R03057,what_to_change,The office rules changed twice this year with no explanation.
+C00996,R03062,what_to_change,"The main issue is that i did not have a laptop for my first week, which set the tone."
+C00997,R03062,what_works,My team lead protects our workload and it makes a real difference.
+C00998,R03066,what_to_change,"Honestly, good work is expected and never mentioned; mistakes are mentioned immediately."
+C00999,R03069,what_to_change,Leadership talks about transparency and then reorganises without warning. The rest of my experience here is positive.
+C01000,R03070,what_to_change,"Honestly, recognition stops at my manager and never travels further up. The rest of my experience here is positive."
+C01001,R03074,what_works,"Genuinely, my manager makes a point of recognising good work publicly."
+C01002,R03075,what_works,My team lead backs us up when things go wrong and that builds trust. Please keep it.
+C01003,R03080,what_to_change,"To be direct: town halls are broadcasts, not conversations - questions get filtered. This needs fixing this year."
+C01004,R03080,what_works,My team is genuinely welcoming and people look out for each other.
+C01005,R03092,what_works,One thing that works: flexibility around school hours is the main reason I stay. Please keep it.
+C01006,R03094,what_to_change,To be direct: my salary has not kept up with inflation for two years running.
+C01007,R03101,what_to_change,"Honestly, recognition stops at my manager and never travels further up. We are permanently short-staffed and the overtime has stopped feeling optional."
+C01008,R03105,what_to_change,The main issue is that my manager cancels our one to ones more often than we hold them. Nothing has changed since the last survey.
+C01009,R03105,what_works,The last town hall actually answered the hard questions honestly.
+C01010,R03106,what_to_change,"Honestly, good work is expected and never mentioned; mistakes are mentioned immediately."
+C01011,R03107,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C01012,R03109,what_to_change,The main issue is that we hire externally for roles that people inside could grow into. This needs fixing this year.
+C01013,R03112,what_to_change,The main issue is that we hire externally for roles that people inside could grow into. I raised the same issue three times and nothing came back.
+C01014,R03112,what_works,My manager makes a point of recognising good work publicly.
+C01015,R03117,what_works,The new scheduling tool has saved us hours every week. That should be the standard everywhere.
+C01016,R03122,what_works,My team lead backs us up when things go wrong and that builds trust.
+C01017,R03127,what_to_change,We hear about decisions that affect us from other teams first.
+C01018,R03131,what_to_change,The team delivered a difficult project and nobody outside noticed. It should not be this hard.
+C01019,R03131,what_works,"Genuinely, the new scheduling tool has saved us hours every week. That should be the standard everywhere."
+C01020,R03140,what_to_change,I have been in the same grade for four years with no conversation about what comes next. I answer messages at 10pm because there is no other way to keep up.
+C01021,R03140,what_works,One thing that works: the last town hall actually answered the hard questions honestly. That should be the standard everywhere. I can raise a concern here without worrying about how it will be taken.
+C01022,R03151,what_to_change,To be direct: benefits are fine but the base salary is below what I am offered elsewhere. The rest of my experience here is positive.
+C01023,R03151,what_works,My manager is genuinely supportive and gives me feedback I can use. The new scheduling tool has saved us hours every week.
+C01024,R03156,what_works,The direction for the year is clear and I can see how my work fits. Please keep it.
+C01025,R03159,what_works,My manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere.
+C01026,R03161,what_to_change,The office rules changed twice this year with no explanation. Otherwise this is a good place to work.
+C01027,R03161,what_works,One thing that works: my manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere.
+C01028,R03162,what_works,"I always know where I stand with my manager, which I value. That should be the standard everywhere."
+C01029,R03166,what_to_change,"Honestly, i did not have a laptop for my first week, which set the tone."
+C01030,R03167,what_to_change,"Town halls are broadcasts, not conversations - questions get filtered."
+C01031,R03170,what_to_change,We hire externally for roles that people inside could grow into. The rest of my experience here is positive.
+C01032,R03176,what_to_change,The main issue is that i have been in the same grade for four years with no conversation about what comes next.
+C01033,R03176,what_works,I can raise a concern here without worrying about how it will be taken. That should be the standard everywhere. My development plan is real and we actually review it.
+C01034,R03181,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere. Otherwise this is a good place to work.
+C01035,R03181,what_works,Flexibility around school hours is the main reason I stay. My team lead backs us up when things go wrong and that builds trust.
+C01036,R03182,what_works,My team is genuinely welcoming and people look out for each other. Please keep it.
+C01037,R03186,what_to_change,The office rules changed twice this year with no explanation. Otherwise this is a good place to work. The same voices dominate every meeting and the rest of us stop trying.
+C01038,R03186,what_works,One thing that works: my team is genuinely welcoming and people look out for each other.
+C01039,R03190,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. It should not be this hard. The approval process takes longer than the work itself."
+C01040,R03191,what_to_change,Shift patterns get published too late to plan anything around them. Otherwise this is a good place to work.
+C01041,R03191,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken.
+C01042,R03194,what_works,Flexibility around school hours is the main reason I stay. That should be the standard everywhere.
+C01043,R03209,what_works,The pension contribution and the extra leave days are genuinely good. That should be the standard everywhere. My onboarding buddy made the first weeks much easier.
+C01044,R03210,what_works,My manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere. Flexibility around school hours is the main reason I stay.
+C01045,R03213,what_to_change,Shift patterns get published too late to plan anything around them. The rest of my experience here is positive. Leadership talks about transparency and then reorganises without warning.
+C01046,R03213,what_works,My team is genuinely welcoming and people look out for each other.
+C01047,R03217,what_to_change,To be direct: new joiners are hired above people already doing the job.
+C01048,R03217,what_works,"Genuinely, flexibility around school hours is the main reason I stay. Please keep it."
+C01049,R03218,what_to_change,"Honestly, benefits are fine but the base salary is below what I am offered elsewhere."
+C01050,R03219,what_to_change,To be direct: i commute an hour to sit on video calls I could take from home.
+C01051,R03230,what_to_change,My first month was three days of induction and then nothing.
+C01052,R03233,what_to_change,The main issue is that the team delivered a difficult project and nobody outside noticed. Otherwise this is a good place to work.
+C01053,R03233,what_works,"Genuinely, the hybrid arrangement works well for me and my team coordinates it sensibly. Please keep it."
+C01054,R03234,what_to_change,I raised the same issue three times and nothing came back.
+C01055,R03237,what_works,The new scheduling tool has saved us hours every week. The pension contribution and the extra leave days are genuinely good.
+C01056,R03238,what_to_change,To be direct: recognition stops at my manager and never travels further up.
+C01057,R03238,what_works,"Genuinely, my onboarding buddy made the first weeks much easier."
+C01058,R03241,what_works,Since we added two people the pressure has come down a lot. Please keep it.
+C01059,R03244,what_to_change,"Honestly, shift patterns get published too late to plan anything around them."
+C01060,R03250,what_works,"Genuinely, the last town hall actually answered the hard questions honestly."
+C01061,R03254,what_to_change,My manager cancels our one to ones more often than we hold them. I commute an hour to sit on video calls I could take from home.
+C01062,R03257,what_to_change,"My manager avoids difficult conversations, so problems in the team just continue. Otherwise this is a good place to work."
+C01063,R03265,what_to_change,To be direct: the team delivered a difficult project and nobody outside noticed. The rest of my experience here is positive.
+C01064,R03276,what_to_change,My first month was three days of induction and then nothing. The rest of my experience here is positive.
+C01065,R03276,what_works,"Genuinely, since we added two people the pressure has come down a lot."
+C01066,R03280,what_to_change,I commute an hour to sit on video calls I could take from home. It is the one thing I would change.
+C01067,R03282,what_works,One thing that works: my manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere. Since we added two people the pressure has come down a lot.
+C01068,R03293,what_to_change,"Our systems do not talk to each other so we rekey the same data twice. I did not have a laptop for my first week, which set the tone."
+C01069,R03293,what_works,Flexibility around school hours is the main reason I stay.
+C01070,R03295,what_works,"I always know where I stand with my manager, which I value. Please keep it."
+C01071,R03296,what_to_change,The main issue is that we hire externally for roles that people inside could grow into.
+C01072,R03296,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. That should be the standard everywhere.
+C01073,R03305,what_to_change,Leadership talks about transparency and then reorganises without warning. Otherwise this is a good place to work.
+C01074,R03305,what_works,"Genuinely, my onboarding buddy made the first weeks much easier."
+C01075,R03306,what_to_change,"Honestly, the team delivered a difficult project and nobody outside noticed. It should not be this hard."
+C01076,R03306,what_works,Since we added two people the pressure has come down a lot.
+C01077,R03307,what_to_change,The same voices dominate every meeting and the rest of us stop trying. It is the one thing I would change.
+C01078,R03307,what_works,One thing that works: flexibility around school hours is the main reason I stay.
+C01079,R03308,what_to_change,"Town halls are broadcasts, not conversations - questions get filtered. The rest of my experience here is positive."
+C01080,R03311,what_to_change,My first month was three days of induction and then nothing.
+C01081,R03311,what_works,The pension contribution and the extra leave days are genuinely good. That should be the standard everywhere.
+C01082,R03314,what_to_change,"Honestly, there is no visible route from my role to the next one. It should not be this hard."
+C01083,R03315,what_to_change,The main issue is that benefits are fine but the base salary is below what I am offered elsewhere. It should not be this hard.
+C01084,R03317,what_to_change,"To be direct: leadership talks about transparency and then reorganises without warning. This needs fixing this year. Two people left my team last year and neither was replaced, so the work just moved to us."
+C01085,R03317,what_works,One thing that works: the team shout-outs in our monthly meeting are a small thing that works. Please keep it. The internal move I made last year was handled really well.
+C01086,R03322,what_works,My team lead protects our workload and it makes a real difference.
+C01087,R03323,what_to_change,The main issue is that we hire externally for roles that people inside could grow into.
+C01088,R03323,what_works,I can raise a concern here without worrying about how it will be taken.
+C01089,R03335,what_to_change,We hire externally for roles that people inside could grow into. Everything important is decided in English at a speed that excludes half the room.
+C01090,R03342,what_to_change,"Honestly, the team delivered a difficult project and nobody outside noticed. It is the one thing I would change."
+C01091,R03342,what_works,My team lead backs us up when things go wrong and that builds trust. Please keep it.
+C01092,R03344,what_to_change,Recognition stops at my manager and never travels further up.
+C01093,R03344,what_works,My onboarding buddy made the first weeks much easier. Please keep it. My team lead protects our workload and it makes a real difference.
+C01094,R03345,what_to_change,The main issue is that our systems do not talk to each other so we rekey the same data twice.
+C01095,R03345,what_works,My manager is genuinely supportive and gives me feedback I can use. That should be the standard everywhere.
+C01096,R03347,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately.
+C01097,R03355,what_to_change,My first month was three days of induction and then nothing.
+C01098,R03356,what_to_change,We hire externally for roles that people inside could grow into.
+C01099,R03364,what_to_change,The main issue is that recognition stops at my manager and never travels further up. Nothing has changed since the last survey.
+C01100,R03365,what_to_change,Our systems do not talk to each other so we rekey the same data twice. Otherwise this is a good place to work.
+C01101,R03365,what_works,My team lead backs us up when things go wrong and that builds trust. Please keep it. The pension contribution and the extra leave days are genuinely good.
+C01102,R03366,what_to_change,There is no visible route from my role to the next one.
+C01103,R03367,what_to_change,"Honestly, i answer messages at 10pm because there is no other way to keep up. It should not be this hard."
+C01104,R03368,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust. Please keep it."
+C01105,R03379,what_works,One thing that works: the last town hall actually answered the hard questions honestly.
+C01106,R03381,what_to_change,I have been in the same grade for four years with no conversation about what comes next. It is the one thing I would change.
+C01107,R03381,what_works,One thing that works: the new scheduling tool has saved us hours every week.
+C01108,R03382,what_works,"Genuinely, my manager is genuinely supportive and gives me feedback I can use."
+C01109,R03384,what_to_change,"Honestly, town halls are broadcasts, not conversations - questions get filtered. The rest of my experience here is positive."
+C01110,R03384,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust."
+C01111,R03387,what_works,My onboarding buddy made the first weeks much easier. Please keep it.
+C01112,R03392,what_works,My manager is genuinely supportive and gives me feedback I can use.
+C01113,R03396,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere. This needs fixing this year.
+C01114,R03406,what_to_change,"Honestly, new joiners are hired above people already doing the job. It should not be this hard."
+C01115,R03410,what_to_change,Holiday requests get refused because we do not have the cover. We hire externally for roles that people inside could grow into.
+C01116,R03415,what_to_change,To be direct: benefits are fine but the base salary is below what I am offered elsewhere. The rest of my experience here is positive. Good work is expected and never mentioned; mistakes are mentioned immediately.
+C01117,R03415,what_works,One thing that works: my team is genuinely welcoming and people look out for each other. That should be the standard everywhere.
+C01118,R03421,what_to_change,To be direct: feedback only arrives when something goes wrong. It is the one thing I would change.
+C01119,R03422,what_works,"Genuinely, i always know where I stand with my manager, which I value. My development plan is real and we actually review it."
+C01120,R03423,what_to_change,Our systems do not talk to each other so we rekey the same data twice. It is the one thing I would change.
+C01121,R03427,what_works,"Genuinely, my manager is genuinely supportive and gives me feedback I can use. My team is genuinely welcoming and people look out for each other."
+C01122,R03429,what_works,One thing that works: the pension contribution and the extra leave days are genuinely good. That should be the standard everywhere.
+C01123,R03436,what_to_change,The main issue is that there is no visible route from my role to the next one. It is the one thing I would change. Leadership talks about transparency and then reorganises without warning.
+C01124,R03436,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken."
+C01125,R03442,what_to_change,"Honestly, i raised the same issue three times and nothing came back. It is the one thing I would change."
+C01126,R03442,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other."
+C01127,R03450,what_works,My onboarding buddy made the first weeks much easier.
+C01128,R03452,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other."
+C01129,R03454,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately. It is the main reason people are looking elsewhere.
+C01130,R03463,what_works,One thing that works: the internal move I made last year was handled really well.
+C01131,R03466,what_works,"Genuinely, i always know where I stand with my manager, which I value."
+C01132,R03470,what_to_change,Our systems do not talk to each other so we rekey the same data twice. It is the one thing I would change.
+C01133,R03470,what_works,My team lead protects our workload and it makes a real difference.
+C01134,R03485,what_to_change,Recognition stops at my manager and never travels further up. It should not be this hard.
+C01135,R03487,what_to_change,"Honestly, new joiners are hired above people already doing the job."
+C01136,R03507,what_works,Flexibility around school hours is the main reason I stay.
+C01137,R03510,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere. It is the one thing I would change.
+C01138,R03510,what_works,One thing that works: my team is genuinely welcoming and people look out for each other. The new scheduling tool has saved us hours every week.
+C01139,R03516,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. Please keep it.
+C01140,R03520,what_to_change,New joiners are hired above people already doing the job. Otherwise this is a good place to work.
+C01141,R03520,what_works,One thing that works: the new scheduling tool has saved us hours every week. That should be the standard everywhere.
+C01142,R03530,what_works,"Genuinely, my manager is genuinely supportive and gives me feedback I can use."
+C01143,R03533,what_to_change,"Honestly, i have been in the same grade for four years with no conversation about what comes next."
+C01144,R03542,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. Please keep it. I can raise a concern here without worrying about how it will be taken.
+C01145,R03551,what_to_change,I raised the same issue three times and nothing came back.
+C01146,R03551,what_works,"Genuinely, the hybrid arrangement works well for me and my team coordinates it sensibly."
+C01147,R03553,what_to_change,To be direct: recognition stops at my manager and never travels further up.
+C01148,R03553,what_works,The last town hall actually answered the hard questions honestly.
+C01149,R03554,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process."
+C01150,R03554,what_works,"Genuinely, my development plan is real and we actually review it. That should be the standard everywhere."
+C01151,R03568,what_to_change,Training budget exists on paper but every request gets postponed.
+C01152,R03568,what_works,My onboarding buddy made the first weeks much easier. The direction for the year is clear and I can see how my work fits.
+C01153,R03570,what_to_change,The main issue is that recognition stops at my manager and never travels further up. The rest of my experience here is positive.
+C01154,R03570,what_works,My team is genuinely welcoming and people look out for each other. My team lead protects our workload and it makes a real difference.
+C01155,R03574,what_to_change,I have been in the same grade for four years with no conversation about what comes next. Feedback only arrives when something goes wrong.
+C01156,R03574,what_works,Since we added two people the pressure has come down a lot. Please keep it. The pension contribution and the extra leave days are genuinely good.
+C01157,R03577,what_to_change,"The main issue is that promotions here go to people who are visible to leadership, not to people who deliver. This needs fixing this year. Leadership talks about transparency and then reorganises without warning."
+C01158,R03577,what_works,The hybrid arrangement works well for me and my team coordinates it sensibly. Please keep it.
+C01159,R03579,what_works,"Genuinely, the internal move I made last year was handled really well. That should be the standard everywhere."
+C01160,R03580,what_works,The hybrid arrangement works well for me and my team coordinates it sensibly.
+C01161,R03584,what_to_change,"Honestly, the pay bands are a secret, which makes it impossible to trust the process. The rest of my experience here is positive. The approval process takes longer than the work itself."
+C01162,R03584,what_works,One thing that works: the team shout-outs in our monthly meeting are a small thing that works. Please keep it.
+C01163,R03588,what_to_change,My salary has not kept up with inflation for two years running. It is the one thing I would change. We are permanently short-staffed and the overtime has stopped feeling optional.
+C01164,R03588,what_works,"One thing that works: i always know where I stand with my manager, which I value. That should be the standard everywhere."
+C01165,R03592,what_works,My team is genuinely welcoming and people look out for each other. The hybrid arrangement works well for me and my team coordinates it sensibly.
+C01166,R03594,what_to_change,"The main issue is that the pay bands are a secret, which makes it impossible to trust the process. Otherwise this is a good place to work. Training budget exists on paper but every request gets postponed."
+C01167,R03594,what_works,One thing that works: my manager makes a point of recognising good work publicly.
+C01168,R03596,what_to_change,Benefits are fine but the base salary is below what I am offered elsewhere.
+C01169,R03600,what_to_change,"Promotions here go to people who are visible to leadership, not to people who deliver. Otherwise this is a good place to work."
+C01170,R03605,what_to_change,"I did not have a laptop for my first week, which set the tone. Otherwise this is a good place to work. Benefits are fine but the base salary is below what I am offered elsewhere."
+C01171,R03605,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken. That should be the standard everywhere.
+C01172,R03607,what_to_change,My first month was three days of induction and then nothing. Getting access to a tool takes weeks and nobody owns the process.
+C01173,R03607,what_works,"I always know where I stand with my manager, which I value. My manager makes a point of recognising good work publicly."
+C01174,R03627,what_to_change,"Honestly, benefits are fine but the base salary is below what I am offered elsewhere. Every week is firefighting; there is no capacity left for anything planned."
+C01175,R03627,what_works,"Genuinely, my team lead backs us up when things go wrong and that builds trust."
+C01176,R03634,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken. The last town hall actually answered the hard questions honestly."
+C01177,R03650,what_works,I can raise a concern here without worrying about how it will be taken. Please keep it. My team lead protects our workload and it makes a real difference.
+C01178,R03651,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. That should be the standard everywhere."
+C01179,R03655,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process."
+C01180,R03655,what_works,I can raise a concern here without worrying about how it will be taken. The new scheduling tool has saved us hours every week.
+C01181,R03657,what_works,One thing that works: my onboarding buddy made the first weeks much easier.
+C01182,R03660,what_to_change,"I did not have a laptop for my first week, which set the tone. Otherwise this is a good place to work."
+C01183,R03660,what_works,"Genuinely, the last town hall actually answered the hard questions honestly. My onboarding buddy made the first weeks much easier."
+C01184,R03661,what_works,One thing that works: my manager is genuinely supportive and gives me feedback I can use.
+C01185,R03662,what_to_change,Good work is expected and never mentioned; mistakes are mentioned immediately.
+C01186,R03662,what_works,The direction for the year is clear and I can see how my work fits. My onboarding buddy made the first weeks much easier.
+C01187,R03667,what_to_change,My salary has not kept up with inflation for two years running.
+C01188,R03668,what_to_change,The main issue is that i have been in the same grade for four years with no conversation about what comes next. It is the one thing I would change.
+C01189,R03668,what_works,One thing that works: my team lead backs us up when things go wrong and that builds trust. That should be the standard everywhere.
+C01190,R03669,what_to_change,"Two people left my team last year and neither was replaced, so the work just moved to us."
+C01191,R03680,what_to_change,To be direct: recognition stops at my manager and never travels further up. It should not be this hard.
+C01192,R03688,what_to_change,"Promotions here go to people who are visible to leadership, not to people who deliver. It is the one thing I would change."
+C01193,R03688,what_works,One thing that works: my team is genuinely welcoming and people look out for each other.
+C01194,R03693,what_to_change,My first month was three days of induction and then nothing. New joiners are hired above people already doing the job.
+C01195,R03693,what_works,One thing that works: the hybrid arrangement works well for me and my team coordinates it sensibly. The new scheduling tool has saved us hours every week.
+C01196,R03704,what_to_change,"Honestly, i raised the same issue three times and nothing came back. It is the main reason people are looking elsewhere."
+C01197,R03704,what_works,One thing that works: the last town hall actually answered the hard questions honestly.
+C01198,R03711,what_to_change,Leadership talks about transparency and then reorganises without warning. Nothing has changed since the last survey.
+C01199,R03712,what_to_change,I commute an hour to sit on video calls I could take from home.
+C01200,R03715,what_to_change,The main issue is that i have been in the same grade for four years with no conversation about what comes next. Frankly it is exhausting. Leadership talks about transparency and then reorganises without warning.
+C01201,R03717,what_works,The direction for the year is clear and I can see how my work fits.
+C01202,R03718,what_to_change,"The main issue is that i did not have a laptop for my first week, which set the tone. This needs fixing this year."
+C01203,R03719,what_to_change,The main issue is that new joiners are hired above people already doing the job.
+C01204,R03719,what_works,My team is genuinely welcoming and people look out for each other. Please keep it.
+C01205,R03722,what_to_change,"Honestly, recognition stops at my manager and never travels further up. It is the main reason people are looking elsewhere."
+C01206,R03724,what_to_change,"Honestly, training budget exists on paper but every request gets postponed."
+C01207,R03724,what_works,One thing that works: i can raise a concern here without worrying about how it will be taken.
+C01208,R03734,what_works,The new scheduling tool has saved us hours every week.
+C01209,R03738,what_to_change,Recognition stops at my manager and never travels further up. I am already looking at other options. Everything important is decided in English at a speed that excludes half the room.
+C01210,R03743,what_to_change,To be direct: my salary has not kept up with inflation for two years running.
+C01211,R03743,what_works,My team lead protects our workload and it makes a real difference.
+C01212,R03744,what_to_change,The team delivered a difficult project and nobody outside noticed. Frankly it is exhausting.
+C01213,R03746,what_to_change,The approval process takes longer than the work itself. It should not be this hard.
+C01214,R03746,what_works,"I always know where I stand with my manager, which I value."
+C01215,R03747,what_works,One thing that works: my manager is genuinely supportive and gives me feedback I can use.
+C01216,R03750,what_to_change,"Honestly, new joiners are hired above people already doing the job."
+C01217,R03750,what_works,The team shout-outs in our monthly meeting are a small thing that works. Please keep it.
+C01218,R03752,what_to_change,"The office rules changed twice this year with no explanation. Town halls are broadcasts, not conversations - questions get filtered."
+C01219,R03752,what_works,"Genuinely, the last town hall actually answered the hard questions honestly."
+C01220,R03753,what_to_change,"Honestly, i did not have a laptop for my first week, which set the tone. I am already looking at other options."
+C01221,R03759,what_to_change,"The pay bands are a secret, which makes it impossible to trust the process. I did not have a laptop for my first week, which set the tone."
+C01222,R03763,what_works,My manager is genuinely supportive and gives me feedback I can use. Please keep it.
+C01223,R03768,what_works,"Genuinely, the new scheduling tool has saved us hours every week. That should be the standard everywhere."
+C01224,R03769,what_to_change,The main issue is that recognition stops at my manager and never travels further up.
+C01225,R03774,what_works,My development plan is real and we actually review it. Please keep it.
+C01226,R03775,what_works,One thing that works: my team is genuinely welcoming and people look out for each other. That should be the standard everywhere.
+C01227,R03779,what_works,My team is genuinely welcoming and people look out for each other.
+C01228,R03780,what_to_change,"Honestly, recognition stops at my manager and never travels further up."
+C01229,R03780,what_works,"Genuinely, my team is genuinely welcoming and people look out for each other. My onboarding buddy made the first weeks much easier."
+C01230,R03787,what_works,My team is genuinely welcoming and people look out for each other. Please keep it.
+C01231,R03789,what_works,The internal move I made last year was handled really well.
+C01232,R03790,what_to_change,Leadership talks about transparency and then reorganises without warning.
+C01233,R03790,what_works,"Genuinely, i can raise a concern here without worrying about how it will be taken."
+C01234,R03792,what_to_change,The main issue is that getting access to a tool takes weeks and nobody owns the process. It is the one thing I would change.
