@@ -20,9 +20,9 @@ from collections import Counter, defaultdict
 import textlib as T
 import viz
 from statlib import mean, pearson
-from surveylib import (DATA, DIMENSION_ORDER, FIGURES, MIN_GROUP, dimension_score,
-                       driver_items, favourable, group_by, load_comments, load_instrument,
-                       load_responses, md_table, outcome_items, pct, respondents)
+from surveylib import (DATA, FIGURES, MIN_GROUP, dimension_score, driver_items,
+                       load_comments, load_instrument, load_responses, md_table, pct,
+                       respondents)
 
 # Which quantitative dimension each text theme should agree with. Used to
 # check the words and the numbers tell the same story - and to notice when
@@ -92,7 +92,6 @@ def run() -> str:
     responses = {r["response_id"]: r for r in rows}
     instrument = load_instrument()
     items_by_dim = driver_items(instrument)
-    outcome = outcome_items(instrument)
 
     comments = enrich(load_comments(), responses)
     truth = load_truth()
