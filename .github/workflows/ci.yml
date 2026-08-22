@@ -1,0 +1,37 @@
+name: pipeline
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run the full pipeline (nothing to install)
+        run: python3 src/run_all.py
+
+      - name: Check the outputs are reproducible from the seed
+        run: |
+          git diff --exit-code --stat -- data reports dashboard.html \
+            || (echo "::error::Regenerating changed a committed output - the pipeline is not deterministic" && exit 1)
+
+      - name: Publish the read-out and dashboard as a build artifact
+        if: matrix.python-version == '3.12'
+        uses: actions/upload-artifact@v4
+        with:
+          name: survey-read-out
+          path: |
+            reports/
+            dashboard.html

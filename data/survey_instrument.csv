@@ -1,0 +1,27 @@
+item_id,dimension,wording,type
+mgr_01,Manager Support,My manager gives me feedback that helps me improve,driver
+mgr_02,Manager Support,My manager treats me with respect,driver
+mgr_03,Manager Support,My manager is available when I need support,driver
+mgr_04,Manager Support,My manager acts on the concerns I raise,driver
+grw_01,Career Growth,I can see a realistic path to progress here,driver
+grw_02,Career Growth,I have opportunities to learn and develop,driver
+grw_03,Career Growth,Promotion decisions in my area are made fairly,driver
+rec_01,Recognition,Good work is recognised in my team,driver
+rec_02,Recognition,I receive recognition beyond my direct manager,driver
+wlb_01,Workload & Wellbeing,My workload is manageable most weeks,driver
+wlb_02,Workload & Wellbeing,I can switch off outside working hours,driver
+wlb_03,Workload & Wellbeing,My team has enough people to do the work,driver
+ldr_01,Leadership & Direction,I understand where the company is going,driver
+ldr_02,Leadership & Direction,Senior leaders communicate openly and honestly,driver
+ldr_03,Leadership & Direction,Decisions are explained well enough to act on,driver
+pay_01,Pay & Benefits,I am paid fairly for the work I do,driver
+pay_02,Pay & Benefits,Our benefits meet my needs,driver
+inc_01,Inclusion & Belonging,I can be myself at work,driver
+inc_02,Inclusion & Belonging,My opinion counts in my team,driver
+inc_03,Inclusion & Belonging,People here are treated fairly regardless of background,driver
+tls_01,Tools & Process,I have the tools I need to do my job well,driver
+tls_02,Tools & Process,Our processes help rather than get in the way,driver
+eng_01,Engagement (outcome),I am proud to work here,outcome
+eng_02,Engagement (outcome),I would go beyond what is expected to help this company succeed,outcome
+eng_03,Engagement (outcome),I see myself still working here in two years,outcome
+enps,Engagement (outcome),How likely are you to recommend this company as a place to work? (0-10),outcome
