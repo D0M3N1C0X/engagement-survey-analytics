@@ -5,6 +5,7 @@ scores with confidence intervals, a key-driver analysis that survives a bootstra
 text scored with a pipeline that reports its own error rate. Output is an **interactive
 dashboard in a single HTML file** and a written read-out.
 
+[![pipeline](https://github.com/D0M3N1C0X/engagement-survey-analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/D0M3N1C0X/engagement-survey-analytics/actions/workflows/ci.yml)
 ![python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![dependencies](https://img.shields.io/badge/dependencies-none-1baf7a)
 ![dashboard](https://img.shields.io/badge/dashboard-one%20HTML%20file-2a78d6)
@@ -13,6 +14,11 @@ dashboard in a single HTML file** and a written read-out.
 > **Synthetic data.** The survey, the answers and the comments are generated with a fixed
 > seed by [`src/generate_survey.py`](src/generate_survey.py). No real employee wrote any of
 > this. What is meant to be judged is the method.
+
+### ▶ [Open the live dashboard](https://d0m3n1c0x.github.io/engagement-survey-analytics/)
+
+Filter 2,753 survey responses by department, country, level, tenure or work model and watch
+every score, interval, theme and verbatim recompute — no install, no login.
 
 **Read the full read-out: [`reports/survey_report.md`](reports/survey_report.md)**
 
@@ -64,8 +70,10 @@ coefficients) splits the 38% of explained variance across the eight dimensions:
   engaged employee from a disengaged one here. That is an uncomfortable finding to present,
   which is exactly why it ships with a bootstrap behind it.
 
-**The company average hides the teams.** Across the teams big enough to report, the
-engagement index runs from 18% to 94%; **34 teams sit significantly below** the company score
+**The company average hides the teams.** Across the 86 teams with at least 15 respondents —
+small teams swing too much to compare — the engagement index runs from 18% to 94%, and the
+bottom decile sits at 29% against 78% at the top. **34 teams sit significantly below** the
+company score
 — their whole confidence interval is below it — and teams in the top quartile on Manager
 Support score 72% against 36% for the bottom quartile, a 37-point gap inside one company.
 
@@ -97,6 +105,11 @@ was built from, and the analysis scores itself against those labels before quoti
 
 That last number is the honest ceiling: good enough to rank themes by tone, nowhere near
 good enough to judge an individual comment — so nothing downstream does.
+
+And the F1 has a ceiling of its own worth stating: the verbatims are assembled from a
+template bank, so a keyword lexicon has an easier job here than it would on real free text.
+The evaluation proves the pipeline is *measured* and that its weak spot is known — not that
+0.93 would survive contact with a real corpus.
 
 ---
 
@@ -164,7 +177,8 @@ push to `main`.
 Built by **Domenico Perroni** — HR Operations & Advisory, People Analytics. Kraków, Poland.
 [LinkedIn](https://www.linkedin.com/in/domenico-perroni-8780981b8)
 
-Companion project: **hr-people-analytics** — attrition drivers, pay equity under the EU Pay
-Transparency Directive, and HR service-desk performance.
+**Companion project:** [hr-people-analytics](https://github.com/D0M3N1C0X/hr-people-analytics)
+— attrition drivers, pay equity under the EU Pay Transparency Directive, and HR service-desk
+performance on the same zero-dependency footing.
 
 MIT licensed. Reuse anything here.

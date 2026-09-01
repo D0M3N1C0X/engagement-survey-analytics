@@ -33,6 +33,9 @@ STOPWORDS = {
     "there", "these", "they", "thing", "things", "this", "those", "through", "to", "too",
     "under", "until", "up", "us", "very", "was", "we", "were", "what", "when", "where",
     "which", "while", "who", "whom", "why", "will", "with", "would", "you", "your", "yours",
+    # Negators carry meaning for sentiment - which reads the raw token stream and
+    # is unaffected by this list - but as standalone terms they are pure noise.
+    "no", "not", "never", "nothing", "nobody",
 }
 
 # Lemmatisation-lite. It is a set of suffix rules, not a real lemmatiser, and
@@ -53,12 +56,53 @@ def normalise(token: str) -> str:
 
 
 def tokenize(text: str, drop_stopwords: bool = True) -> list[str]:
-    tokens = [normalise(t) for t in TOKEN_RE.findall(text.lower())]
-    return [t for t in tokens if not drop_stopwords or t not in STOPWORDS]
+    """
+    Tokens, normalised, with stopwords removed.
+
+    Stopwords are checked on the raw word *and* on its normalised form: the
+    suffix rules turn "this" into "thi" and "was" into "wa", which would
+    otherwise slip past a stopword list written in ordinary English and show
+    up in the distinctive-terms table as noise.
+    """
+    out = []
+    for raw in TOKEN_RE.findall(text.lower()):
+        if drop_stopwords and raw in STOPWORDS:
+            continue
+        token = normalise(raw)
+        if drop_stopwords and token in STOPWORDS:
+            continue
+        out.append(token)
+    return out
 
 
 def bigrams(tokens: list[str]) -> list[str]:
     return [f"{a} {b}" for a, b in zip(tokens, tokens[1:])]
+
+
+SENTENCE_SPLIT = re.compile(r"[.;:!?]")
+
+
+def content_bigrams(text: str) -> list[str]:
+    """
+    Pairs of words that really sit next to each other in a sentence.
+
+    Pairing tokens *after* stopword removal invents adjacencies that nobody
+    wrote - "takes weeks and nobody owns the process" collapses into
+    "week nobody" - and those fragments then win the ranking because they are
+    rare. Splitting on sentence punctuation and keeping only pairs of adjacent
+    content words gives "approval process" and "training budget" instead.
+    """
+    out = []
+    for sentence in SENTENCE_SPLIT.split(text.lower()):
+        words = TOKEN_RE.findall(sentence)
+        for first, second in zip(words, words[1:]):
+            if first in STOPWORDS or second in STOPWORDS:
+                continue
+            a, b = normalise(first), normalise(second)
+            if a in STOPWORDS or b in STOPWORDS:
+                continue
+            out.append(f"{a} {b}")
+    return out
 
 
 # --------------------------------------------------------------------------
@@ -233,12 +277,14 @@ def tfidf_by_group(docs: dict[str, list[str]], top_n: int = 6,
     "team"); weighting by inverse document frequency across groups surfaces
     the language that is actually specific to each one.
     """
-    counts = {g: Counter(t for d in texts for t in tokenize(d) + bigrams(tokenize(d)))
+    counts = {g: Counter(t for d in texts for t in tokenize(d) + content_bigrams(d))
               for g, texts in docs.items()}
     n_groups = len(counts)
     appears = Counter()
     for counter in counts.values():
         appears.update(set(counter))
+
+    surface = surface_forms(text for texts in docs.values() for text in texts)
 
     out = {}
     for group, counter in counts.items():
@@ -248,9 +294,36 @@ def tfidf_by_group(docs: dict[str, list[str]], top_n: int = 6,
             if count < min_count or " " in term and count < min_count + 1:
                 continue
             idf = math.log(n_groups / appears[term]) + 1e-9
-            scored.append((term, count / total * idf))
-        out[group] = sorted(scored, key=lambda kv: -kv[1])[:top_n]
+            scored.append((readable(term, surface), count / total * idf))
+
+        # A bigram already carries its parts, so listing "training budget"
+        # next to "training" wastes a slot that could show something else.
+        chosen: list[tuple[str, float]] = []
+        for term, score in sorted(scored, key=lambda kv: -kv[1]):
+            if any(term in longer or longer in term for longer, _ in chosen):
+                continue
+            chosen.append((term, score))
+            if len(chosen) == top_n:
+                break
+        out[group] = chosen
     return out
+
+
+def surface_forms(texts) -> dict[str, str]:
+    """Stem -> the word people actually wrote, for anything shown to a reader.
+
+    The suffix rules are good enough to group "postponed" and "postpones", and
+    far too crude to print: nobody wants a report that says `postpon`.
+    """
+    seen: dict[str, Counter] = defaultdict(Counter)
+    for text in texts:
+        for raw in TOKEN_RE.findall(text.lower()):
+            seen[normalise(raw)][raw] += 1
+    return {stem: forms.most_common(1)[0][0] for stem, forms in seen.items()}
+
+
+def readable(term: str, surface: dict[str, str]) -> str:
+    return " ".join(surface.get(part, part) for part in term.split(" "))
 
 
 # --------------------------------------------------------------------------

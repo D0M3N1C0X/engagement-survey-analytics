@@ -162,6 +162,8 @@ Theme tagging uses a keyword lexicon that lives in [`src/textlib.py`](../src/tex
 
 Macro F1 is **0.93**. The weakest theme is **Manager relationship** (F1 0.76, 89 false positives): comments about something else that mention a manager in passing get pulled in. That is the honest cost of a keyword approach, and the reason the themes are reported as a ranked shape of the conversation rather than as exact counts.
 
+*Read that score with its ceiling in mind: these verbatims are assembled from a template bank, so a keyword lexicon has an easier job here than it would on real free text, where people paraphrase, misspell and use irony. What the evaluation establishes is that the pipeline is measured at all and that its failure mode is known - not that 0.9 would survive contact with a real corpus.*
+
 Sentiment is a word list with negation handling, not a language model. Against the labelled tone it gets **67%** of negative comments right, **71%** of positive comments right, and a respondent's average comment sentiment correlates **r = 0.28** with their own eNPS score. That is good enough to rank themes by tone and nowhere near good enough to judge an individual comment - which is why nothing downstream does.
 
 ### Volume and tone by theme
@@ -204,12 +206,12 @@ Across every department-and-theme combination, the share of comments raising a t
 
 | Department | Distinctive terms in their 'what should change' comments |
 | :--- | :--- |
-| Commercial | `gett`, `access`, `tool`, `gett access`, `access tool` |
-| Customer Service | `direct first`, `issue train`, `immediately thi`, `role`, `direct good` |
+| Commercial | `access`, `tool`, `takes week`, `avoids`, `problems` |
+| Customer Service | `role`, `route`, `training`, `budget`, `exists` |
 | Finance & Legal | `role`, `hire`, `externally`, `inside`, `grow` |
-| Operations | `firefight`, `capacity`, `plann`, `week firefight`, `firefight no` |
-| People & Workplace | `train`, `budget`, `exist`, `paper`, `postpon` |
-| Technology | `role`, `kept`, `inflation`, `runn`, `salary not` |
+| Operations | `firefighting`, `capacity`, `planned`, `access`, `tool` |
+| People & Workplace | `training`, `budget`, `exists`, `paper`, `postponed` |
+| Technology | `role`, `kept`, `inflation`, `running`, `two year` |
 
 These are terms weighted by how much *more* one group uses them than the others, so they are the language specific to that group rather than the words everybody uses.
 
