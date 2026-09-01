@@ -212,6 +212,12 @@ def run() -> str:
         "",
         f"Macro F1 is **{macro_f1:.2f}**. " + weakest_note(evaluation),
         "",
+        "*Read that score with its ceiling in mind: these verbatims are assembled from a "
+        "template bank, so a keyword lexicon has an easier job here than it would on real "
+        "free text, where people paraphrase, misspell and use irony. What the evaluation "
+        "establishes is that the pipeline is measured at all and that its failure mode is "
+        "known - not that 0.9 would survive contact with a real corpus.*",
+        "",
         "Sentiment is a word list with negation handling, not a language model. Against the "
         "labelled tone it gets "
         + ", ".join(f"**{pct(hits / total)}** of {tone} comments right"
