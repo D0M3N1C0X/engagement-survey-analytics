@@ -1,0 +1,8 @@
+# dashboard.html is a build output of src/build_dashboard.py - the deliverable,
+# but not the source. Marking it generated keeps the language bar pointing at
+# the Python that produces it, and collapses a 380 KB file in diffs.
+dashboard.html linguist-generated=true
+
+# Generated datasets: kept in the repo so the analysis is reproducible without
+# running anything, but they are not source either.
+data/*.csv linguist-generated=true
