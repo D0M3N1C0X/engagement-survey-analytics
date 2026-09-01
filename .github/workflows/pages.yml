@@ -5,6 +5,13 @@ name: dashboard
 on:
   push:
     branches: [main]
+    # Only redeploy when the published site actually changes. A commit that
+    # touches the analysis code alone does not need a Pages deployment, and
+    # tying every commit to GitHub's deployment backend means an unrelated
+    # change gets marked red whenever that backend is slow.
+    paths:
+      - dashboard.html
+      - reports/**
   workflow_dispatch:
 
 permissions:
