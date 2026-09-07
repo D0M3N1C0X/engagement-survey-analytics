@@ -175,7 +175,7 @@ push to `main`.
 ## About
 
 Built by **Domenico Perroni** — HR Operations & Advisory, People Analytics. Kraków, Poland.
-[LinkedIn](https://www.linkedin.com/in/domenico-perroni-8780981b8)
+[LinkedIn](https://www.linkedin.com/in/domenico-perroni)
 
 **Companion project:** [hr-people-analytics](https://github.com/D0M3N1C0X/hr-people-analytics)
 — attrition drivers, pay equity under the EU Pay Transparency Directive, and HR service-desk
