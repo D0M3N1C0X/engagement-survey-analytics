@@ -174,11 +174,13 @@ push to `main`.
 
 ## About
 
-Built by **Domenico Perroni** — HR Operations & Advisory, People Analytics. Kraków, Poland.
-[LinkedIn](https://www.linkedin.com/in/domenico-perroni)
+Built by **Domenico Perroni** — HR advisory, people analytics and media education, based in Kraków.
+[GitHub profile](https://github.com/D0M3N1C0X) · [LinkedIn](https://www.linkedin.com/in/domenico-perroni)
 
-**Companion project:** [hr-people-analytics](https://github.com/D0M3N1C0X/hr-people-analytics)
-— attrition drivers, pay equity under the EU Pay Transparency Directive, and HR service-desk
-performance on the same zero-dependency footing.
+**More from the same portfolio**
+
+- [hr-people-analytics](https://github.com/D0M3N1C0X/hr-people-analytics) — attrition drivers, EU pay-transparency exposure and HR service-desk performance on a synthetic 4,000-employee organisation, with the [report online](https://d0m3n1c0x.github.io/hr-people-analytics/)
+- [job-search-agent](https://github.com/D0M3N1C0X/job-search-agent) — a job search run as a pipeline: public ATS board APIs, explainable fit scoring, funnel analytics
+- [pompei-stratificata](https://github.com/D0M3N1C0X/pompei-stratificata) — Pompeii and Herculaneum from AD 79 to today, a [walkable model](https://d0m3n1c0x.github.io/pompei-stratificata/) with a sourced documentary dossier, in six languages
 
 MIT licensed. Reuse anything here.
