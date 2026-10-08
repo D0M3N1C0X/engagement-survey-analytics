@@ -168,6 +168,14 @@ Regenerates the data, runs the three analyses, writes six charts, assembles the 
 builds the dashboard. Around twelve seconds, and **no packages to install** — Python 3.10 or
 newer and nothing else.
 
+```bash
+python3 -m unittest discover -s tests
+```
+
+runs the tests, also with no packages: the hand-written statistics against known values and their
+defining properties (relative weights sum to the regression R², orthogonal drivers get their
+squared correlation, Wilson bounds), and every figure in the findings above against the read-out.
+
 To publish the dashboard as a live page, enable GitHub Pages with "GitHub Actions" as the
 source; [`.github/workflows/pages.yml`](.github/workflows/pages.yml) deploys it on every
 push to `main`.
