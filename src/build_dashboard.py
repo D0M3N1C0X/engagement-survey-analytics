@@ -92,38 +92,38 @@ STYLE = """
 <style>
 :root{
   color-scheme: light;
-  --bg:#f7f7f5; --surface:#fcfcfb; --raised:#ffffff;
-  --ink:#14161a; --secondary:#52514e; --muted:#7a7975;
-  --line:#e4e4e0; --line-strong:#d2d2cc;
-  --blue:#2a78d6; --orange:#eb6834; --aqua:#1baf7a; --red:#e34948; --neutral:#c9c8c3;
-  --good:#1baf7a; --warn:#eb6834;
+  --bg:#f5f5f7; --surface:#ffffff; --raised:#ffffff;
+  --ink:#1d1d1f; --secondary:#424245; --muted:#6e6e73;
+  --line:#e8e8ed; --line-strong:#d2d2d7;
+  --blue:#0071e3; --orange:#ff9500; --aqua:#1baf7a; --red:#d70015; --neutral:#d2d2d7;
+  --good:#1baf7a; --warn:#ff9500;
   --shadow:0 1px 2px rgba(20,22,26,.05), 0 6px 20px rgba(20,22,26,.06);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     color-scheme: dark;
-    --bg:#121211; --surface:#1a1a19; --raised:#212120;
-    --ink:#f4f4f2; --secondary:#c3c2b7; --muted:#95948c;
-    --line:#2c2c2a; --line-strong:#3d3d3a;
-    --blue:#3987e5; --orange:#d95926; --aqua:#199e70; --red:#e66767; --neutral:#4a4a46;
-    --good:#199e70; --warn:#d95926;
+    --bg:#000000; --surface:#15171c; --raised:#1d2027;
+    --ink:#f5f5f7; --secondary:#c7c9d1; --muted:#8b8f9a;
+    --line:#23262e; --line-strong:#343844;
+    --blue:#4f8cff; --orange:#ff9f0a; --aqua:#2bc48b; --red:#ff6961; --neutral:#4a4e59;
+    --good:#2bc48b; --warn:#ff9f0a;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
   }
 }
 :root[data-theme="dark"]{
   color-scheme: dark;
-  --bg:#121211; --surface:#1a1a19; --raised:#212120;
-  --ink:#f4f4f2; --secondary:#c3c2b7; --muted:#95948c;
-  --line:#2c2c2a; --line-strong:#3d3d3a;
-  --blue:#3987e5; --orange:#d95926; --aqua:#199e70; --red:#e66767; --neutral:#4a4a46;
-  --good:#199e70; --warn:#d95926;
+  --bg:#000000; --surface:#15171c; --raised:#1d2027;
+  --ink:#f5f5f7; --secondary:#c7c9d1; --muted:#8b8f9a;
+  --line:#23262e; --line-strong:#343844;
+  --blue:#4f8cff; --orange:#ff9f0a; --aqua:#2bc48b; --red:#ff6961; --neutral:#4a4e59;
+  --good:#2bc48b; --warn:#ff9f0a;
   --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
 }
 
 *{box-sizing:border-box}
 body{
   margin:0; background:var(--bg); color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:1180px; margin:0 auto; padding:clamp(1rem,3vw,2.5rem) clamp(1rem,3vw,2rem) 4rem}

@@ -9,8 +9,8 @@ Four forms, chosen for what survey data actually has to show:
     quadrant        impact against performance - where the priorities are
     diverging_bars  sentiment, which has a natural zero and two directions
 
-Colours come from a validated palette: blue #2a78d6, orange #eb6834 and aqua
-#1baf7a for categories (checked for colour-vision deficiency separation), a
+Colours come from the portfolio identity: blue #0071e3, orange #ff9500 and aqua
+#1baf7a for categories (far apart in hue and lightness for colour-vision deficiencies), a
 single blue ramp for magnitude, and blue-to-red through neutral grey for
 polarity. Every mark that carries meaning is also labelled, so nothing depends
 on colour alone.
@@ -24,20 +24,20 @@ from pathlib import Path
 W, H = 900, 520
 M = {"top": 104, "right": 56, "bottom": 88, "left": 250}
 
-FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-SURFACE = "#fcfcfb"
-INK = "#14161a"
-SECONDARY = "#52514e"
-MUTED = "#7a7975"
-GRID = "#e7e7e4"
+FONT = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+SURFACE = "#ffffff"
+INK = "#1d1d1f"
+SECONDARY = "#424245"
+MUTED = "#6e6e73"
+GRID = "#e8e8ed"
 
-BLUE, ORANGE, AQUA = "#2a78d6", "#eb6834", "#1baf7a"
-RED = "#e34948"
-NEUTRAL = "#c9c8c3"
+BLUE, ORANGE, AQUA = "#0071e3", "#ff9500", "#1baf7a"
+RED = "#d70015"
+NEUTRAL = "#d2d2d7"
 
 # One-hue sequential ramp, light to dark, for magnitude.
-SEQUENTIAL = ["#cde2fb", "#b7d3f6", "#9ec5f4", "#86b6ef", "#6da7ec",
-              "#5598e7", "#3987e5", "#2a78d6", "#256abf", "#1c5cab"]
+SEQUENTIAL = ["#dcebfb", "#c5ddf8", "#a9cdf5", "#8dbdf2", "#6faaef",
+              "#4f97ec", "#2f84e8", "#0071e3", "#0062c4", "#00529f"]
 
 
 def esc(text) -> str:

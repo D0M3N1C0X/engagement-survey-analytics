@@ -1,26 +1,31 @@
-# Engagement survey analytics: from 2,753 answers to what to do on Monday
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="site-assets/cover-dark.png">
+  <img alt="From 2,753 answers to what to do on Monday: Manager Support carries 40% of the explained variance, eNPS −12, 34 teams significantly below the company score." src="site-assets/cover-light.png">
+</picture>
 
-An employee engagement survey, analysed end to end — participation and non-response bias,
-scores with confidence intervals, a key-driver analysis that survives a bootstrap, and free
-text scored with a pipeline that reports its own error rate. Output is an **interactive
-dashboard in a single HTML file** and a written read-out.
+<p align="center">
+  <a href="https://d0m3n1c0x.github.io/engagement-survey-analytics/"><b>Open the live dashboard</b></a> ·
+  <a href="reports/survey_report.md">Read the read-out</a>
+</p>
 
-[![pipeline](https://github.com/D0M3N1C0X/engagement-survey-analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/D0M3N1C0X/engagement-survey-analytics/actions/workflows/ci.yml)
-![python](https://img.shields.io/badge/python-3.10%2B-blue)
-![dependencies](https://img.shields.io/badge/dependencies-none-1baf7a)
-![dashboard](https://img.shields.io/badge/dashboard-one%20HTML%20file-2a78d6)
-![license](https://img.shields.io/badge/license-MIT-lightgrey)
+<p align="center">
+  <a href="https://github.com/D0M3N1C0X/engagement-survey-analytics/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/D0M3N1C0X/engagement-survey-analytics/actions/workflows/ci.yml/badge.svg"></a>
+  <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-0071e3">
+  <img alt="No dependencies" src="https://img.shields.io/badge/dependencies-none-5e5ce6">
+  <img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-6e6e73">
+</p>
+
+## Why this matters
+
+An engagement survey is only worth what the company does with it on Monday. This one is analysed end to end:
+participation and non-response bias, scores with confidence intervals, a key-driver analysis that survives a
+bootstrap, and free text scored with a pipeline that reports its own error rate. The output is an **interactive
+dashboard in a single HTML file**, filterable by department, country, level, tenure or work model, and a written
+read-out for leadership.
 
 > **Synthetic data.** The survey, the answers and the comments are generated with a fixed
 > seed by [`src/generate_survey.py`](src/generate_survey.py). No real employee wrote any of
 > this. What is meant to be judged is the method.
-
-### ▶ [Open the live dashboard](https://d0m3n1c0x.github.io/engagement-survey-analytics/)
-
-Filter 2,753 survey responses by department, country, level, tenure or work model and watch
-every score, interval, theme and verbatim recompute — no install, no login.
-
-**Read the full read-out: [`reports/survey_report.md`](reports/survey_report.md)**
 
 ---
 
