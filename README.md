@@ -116,14 +116,20 @@ The evaluation proves the pipeline is *measured* and that its weak spot is known
 ## Method notes
 
 - **Wilson confidence intervals** on every rate, because survey cuts are small and
-  favourable rates sit near the ends of the scale where the textbook interval breaks.
+  favourable rates sit near the ends of the scale where the textbook interval breaks. They count
+  each item answer as one observation; answers from the same person move together, so the intervals
+  on dimension scores are narrower than a respondent-level or clustered interval would be. Read them
+  as a floor on the uncertainty.
 - **Two-proportion z-tests** for group comparisons — a department is only reported as below
   average when the difference survives a test.
 - **Johnson's relative weights** for driver impact, plus **120 bootstrap resamples** to show
   which parts of the ranking are real. The report says explicitly which dimensions swap
   places and should not be argued about.
 - **A confidentiality threshold of five respondents**, enforced in the report, the team
-  lists and the dashboard.
+  lists and the dashboard. In this demo the dashboard carries the synthetic row-level answers so its
+  filters work offline, and comments keep their department, country and tenure labels; with real
+  responses the page would receive only aggregated cells, comments would lose fine labels, and
+  combinations of filters would be checked against differencing.
 - **Association, not causation.** Cross-sectional survey data cannot prove that improving a
   driver raises engagement; the report says so wherever a number could be read as a promise.
 
