@@ -96,6 +96,7 @@ STYLE = """
   --ink:#1d1d1f; --secondary:#424245; --muted:#6e6e73;
   --line:#e8e8ed; --line-strong:#d2d2d7;
   --blue:#0071e3; --orange:#ff9500; --aqua:#1baf7a; --red:#d70015; --neutral:#d2d2d7;
+  --on-blue:#ffffff; --on-red:#ffffff; --on-neutral:#1d1d1f;
   --good:#1baf7a; --warn:#ff9500;
   --shadow:0 1px 2px rgba(20,22,26,.05), 0 6px 20px rgba(20,22,26,.06);
 }
@@ -106,6 +107,7 @@ STYLE = """
     --ink:#f5f5f7; --secondary:#c7c9d1; --muted:#8b8f9a;
     --line:#23262e; --line-strong:#343844;
     --blue:#4f8cff; --orange:#ff9f0a; --aqua:#2bc48b; --red:#ff6961; --neutral:#4a4e59;
+    --on-blue:#000000; --on-red:#000000; --on-neutral:#ffffff;
     --good:#2bc48b; --warn:#ff9f0a;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
   }
@@ -116,6 +118,7 @@ STYLE = """
   --ink:#f5f5f7; --secondary:#c7c9d1; --muted:#8b8f9a;
   --line:#23262e; --line-strong:#343844;
   --blue:#4f8cff; --orange:#ff9f0a; --aqua:#2bc48b; --red:#ff6961; --neutral:#4a4e59;
+  --on-blue:#000000; --on-red:#000000; --on-neutral:#ffffff;
   --good:#2bc48b; --warn:#ff9f0a;
   --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
 }
@@ -260,7 +263,7 @@ BODY = """
         <section class="panel">
           <h2>What people wrote</h2>
           <p class="hint">Verbatims from the selected group. Choose a theme to narrow them.</p>
-          <div id="verbatims" class="verbatims"></div>
+          <div id="verbatims" class="verbatims" tabindex="0" role="region" aria-label="Verbatims"></div>
         </section>
       </div>
 
@@ -384,12 +387,12 @@ function enpsChart(current) {
   const e = current.enps;
   if (!e) return '<p class="hint">No rated responses in this group.</p>';
   const parts = [
-    {label: 'Detractors', value: e.detractors / e.rated, colour: 'var(--red)'},
-    {label: 'Passives', value: e.passives / e.rated, colour: 'var(--neutral)'},
-    {label: 'Promoters', value: e.promoters / e.rated, colour: 'var(--blue)'},
+    {label: 'Detractors', value: e.detractors / e.rated, colour: 'var(--red)', ink: 'var(--on-red)'},
+    {label: 'Passives', value: e.passives / e.rated, colour: 'var(--neutral)', ink: 'var(--on-neutral)'},
+    {label: 'Promoters', value: e.promoters / e.rated, colour: 'var(--blue)', ink: 'var(--on-blue)'},
   ];
   const segments = parts.map(part => `
-    <span class="enps-seg" style="width:${(part.value * 100).toFixed(1)}%;background:${part.colour}"
+    <span class="enps-seg" style="width:${(part.value * 100).toFixed(1)}%;background:${part.colour};color:${part.ink}"
           data-tip="${part.label}: ${pct(part.value)} (${Math.round(part.value * e.rated).toLocaleString('en-GB')} people)">
       ${part.value > 0.12 ? pct(part.value) : ''}</span>`).join('');
   const legend = parts.map(part =>
