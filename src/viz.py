@@ -83,6 +83,10 @@ def dot_plot_ci(path, labels, values, lows, highs, title, subtitle="",
     left, right = M["left"], W - M["right"]
     top, bottom = M["top"], H - M["bottom"]
     body = frame(title, subtitle)
+    if not values:
+        body.append(text(W / 2, H / 2, "No reportable scores in this selection",
+                         size=15, color=MUTED, anchor="middle"))
+        return save(Path(path), body)
 
     lo = min(min(lows), reference or 1) * 0.92
     hi = max(max(highs), reference or 0) * 1.04
@@ -133,6 +137,10 @@ def heatmap(path, row_labels, col_labels, matrix, title, subtitle="",
     top = M["top"]
     right, bottom = W - 40, H - 96
     body = frame(title, subtitle)
+    if not row_labels or not col_labels:
+        body.append(text(W / 2, H / 2, "No reportable groups in this selection",
+                         size=15, color=MUTED, anchor="middle"))
+        return save(Path(path), body)
 
     flat = [v for row in matrix for v in row if v == v]
     lo, hi = (min(flat), max(flat)) if flat else (0, 1)
@@ -239,6 +247,10 @@ def diverging_bars(path, labels, values, counts, title, subtitle="",
     left, right = M["left"], W - M["right"]
     top, bottom = M["top"], H - M["bottom"]
     body = frame(title, subtitle)
+    if not values:
+        body.append(text(W / 2, H / 2, "No themes meet the reporting threshold",
+                         size=15, color=MUTED, anchor="middle"))
+        return save(Path(path), body)
 
     extent = max(abs(min(values)), abs(max(values))) * 1.25 or 1
     centre = (left + right) / 2
@@ -285,6 +297,10 @@ def histogram(path, values, title, subtitle="", bins=14, xlabel="", ylabel="team
     left, right = 96, W - 56
     top, bottom = M["top"], H - M["bottom"]
     body = frame(title, subtitle)
+    if not values:
+        body.append(text(W / 2, H / 2, "No teams meet the reporting threshold",
+                         size=15, color=MUTED, anchor="middle"))
+        return save(Path(path), body)
 
     lo, hi = min(values), max(values)
     width = (hi - lo) / bins or 1
@@ -311,7 +327,7 @@ def histogram(path, values, title, subtitle="", bins=14, xlabel="", ylabel="team
                          color=MUTED, anchor="middle"))
 
     for value, label, colour in markers:
-        x = left + (value - lo) / (hi - lo) * (right - left)
+        x = left + (value - lo) / (hi - lo or 1) * (right - left)
         body.append(f'<line x1="{x:.1f}" y1="{top - 12}" x2="{x:.1f}" y2="{bottom}" '
                     f'stroke="{colour}" stroke-width="2" stroke-dasharray="5 4"/>')
         body.append(text(x, top - 20, label, size=12, color=colour, anchor="middle",

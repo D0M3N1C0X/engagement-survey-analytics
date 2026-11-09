@@ -10,17 +10,20 @@ the confidentiality threshold.
 from __future__ import annotations
 
 import csv
+import os
 from collections import defaultdict
 from pathlib import Path
 
-from statlib import mean, two_proportion_z, wilson_interval
+from statlib import bootstrap_mean_interval, mean
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-FIGURES = ROOT / "reports" / "figures"
+DATA = Path(os.environ.get("SURVEY_DATA_DIR", ROOT / "data")).expanduser().resolve()
+OUTPUT = Path(os.environ.get("SURVEY_OUTPUT_DIR", ROOT / "reports")).expanduser().resolve()
+FIGURES = OUTPUT / "figures"
+PRIVATE_MODE = os.environ.get("SURVEY_PRIVATE_MODE") == "1"
 
-SURVEY_NAME = "Voice 2026"
-FIELD_WINDOW = "4-22 May 2026"
+SURVEY_NAME = os.environ.get("SURVEY_NAME", "Voice 2026")
+FIELD_WINDOW = os.environ.get("SURVEY_FIELD_WINDOW", "4-22 May 2026")
 
 # Confidentiality: no score is ever published for a group below this many
 # respondents. It is the promise that makes people answer honestly, and
@@ -50,8 +53,9 @@ SEGMENTS = ["department", "country", "job_level", "tenure_band", "work_model"]
 
 def load_instrument() -> dict[str, dict]:
     """item_id -> {dimension, wording, type}."""
-    return {r["item_id"]: r for r in csv.DictReader(
-        (DATA / "survey_instrument.csv").open(encoding="utf-8"))}
+    return {r["item_id"].strip(): {key: value.strip() for key, value in r.items()}
+            for r in csv.DictReader(
+                (DATA / "survey_instrument.csv").open(encoding="utf-8-sig", newline=""))}
 
 
 def driver_items(instrument: dict[str, dict]) -> dict[str, list[str]]:
@@ -70,7 +74,8 @@ def outcome_items(instrument: dict[str, dict]) -> list[str]:
 def load_responses() -> list[dict]:
     rows = []
     instrument = load_instrument()
-    for r in csv.DictReader((DATA / "survey_responses.csv").open(encoding="utf-8")):
+    for r in csv.DictReader((DATA / "survey_responses.csv").open(encoding="utf-8-sig", newline="")):
+        r = {key: value.strip() for key, value in r.items()}
         r["responded"] = r["responded"] == "1"
         r["shift_worker"] = r["shift_worker"] == "1"
         r["enps"] = int(r["enps"]) if r["enps"] else None
@@ -83,15 +88,23 @@ def load_responses() -> list[dict]:
 
 def load_teams() -> dict[str, dict]:
     teams = {}
-    for r in csv.DictReader((DATA / "teams.csv").open(encoding="utf-8")):
+    for r in csv.DictReader((DATA / "teams.csv").open(encoding="utf-8-sig", newline="")):
+        r = {key: value.strip() for key, value in r.items()}
         r["team_size"] = int(r["team_size"])
-        r["manager_tenure_months"] = int(r["manager_tenure_months"])
+        r["manager_tenure_months"] = int(r.get("manager_tenure_months") or 0)
         teams[r["team_id"]] = r
     return teams
 
 
 def load_comments() -> list[dict]:
-    return list(csv.DictReader((DATA / "survey_comments.csv").open(encoding="utf-8")))
+    path = DATA / "survey_comments.csv"
+    if not path.exists():
+        return []
+    rows = list(csv.DictReader(path.open(encoding="utf-8-sig", newline="")))
+    for row in rows:
+        for key in ("comment_id", "response_id", "question"):
+            row[key] = row[key].strip()
+    return rows
 
 
 def respondents(rows: list[dict]) -> list[dict]:
@@ -111,16 +124,29 @@ def favourable(values: list[int]) -> tuple[int, int, float]:
     return (k, len(valid), k / len(valid))
 
 
+def respondent_favourable(row: dict, items: list[str]) -> float | None:
+    """Favourable share for one respondent, keeping the person as the analysis unit."""
+    values = [row[item] for item in items if row.get(item)]
+    if not values:
+        return None
+    return sum(1 for value in values if value in FAVOURABLE_POINTS) / len(values)
+
+
 def dimension_values(rows: list[dict], items: list[str]) -> list[int]:
     """Every item answer inside a dimension, pooled across respondents."""
     return [r[item] for r in rows for item in items if r.get(item)]
 
 
 def dimension_score(rows: list[dict], items: list[str]) -> dict:
-    k, n, rate = favourable(dimension_values(rows, items))
-    low, high = wilson_interval(k, n)
+    eligible = [(r, respondent_favourable(r, items)) for r in rows]
+    eligible = [(r, score) for r, score in eligible if score is not None]
+    person_rates = [score for _row, score in eligible]
+    rate = mean(person_rates)
+    low, high = bootstrap_mean_interval(
+        person_rates, clusters=[r.get("team_id") for r, _score in eligible])
     scores = [r[item] for r in rows for item in items if r.get(item)]
-    return {"favourable": rate, "n_answers": n, "n_respondents": len(rows),
+    return {"favourable": rate, "n_answers": len(scores),
+            "n_respondents": len(person_rates),
             "ci_low": low, "ci_high": high, "mean": mean(scores) if scores else float("nan")}
 
 
@@ -172,23 +198,29 @@ def reportable(group: list[dict]) -> bool:
 
 def segment_comparison(rows: list[dict], key: str, items: list[str]) -> list[dict]:
     """
-    Favourable rate per segment, tested against everyone outside that segment.
+    Descriptive respondent-level favourable rates by segment.
 
-    Reporting a segment as 'below average' without a test is how survey
-    read-outs turn sampling noise into performance management.
+    Items from one respondent are not independent observations, so segments
+    use one mean per respondent and bootstrap those people as the sampling unit.
+    These intervals are descriptive; this function makes no significance claim.
     """
     out = []
-    all_k, all_n, _ = favourable(dimension_values(rows, items))
+    all_values = [score for r in rows
+                  if (score := respondent_favourable(r, items)) is not None]
+    company_rate = mean(all_values)
     for value, group in sorted(group_by(rows, key).items()):
-        if not reportable(group):
-            out.append({"segment": value, "n": len(group), "suppressed": True})
+        eligible = [(r, respondent_favourable(r, items)) for r in group]
+        eligible = [(r, score) for r, score in eligible if score is not None]
+        person_rates = [score for _row, score in eligible]
+        if len(person_rates) < MIN_GROUP:
+            out.append({"segment": value, "n": len(person_rates), "suppressed": True})
             continue
-        k, n, rate = favourable(dimension_values(group, items))
-        z, p = two_proportion_z(k, n, all_k - k, all_n - n)
-        low, high = wilson_interval(k, n)
-        out.append({"segment": value, "n": len(group), "suppressed": False,
+        rate = mean(person_rates)
+        low, high = bootstrap_mean_interval(
+            person_rates, seed=17, clusters=[r.get("team_id") for r, _score in eligible])
+        out.append({"segment": value, "n": len(person_rates), "suppressed": False,
                     "favourable": rate, "ci_low": low, "ci_high": high,
-                    "z": z, "p": p, "vs_company": rate - all_k / all_n})
+                    "vs_company": rate - company_rate})
     return out
 
 
@@ -197,9 +229,17 @@ def response_rate(rows: list[dict], key: str) -> list[dict]:
     out = []
     for value, group in sorted(group_by(rows, key).items()):
         answered = sum(1 for r in group if r["responded"])
-        low, high = wilson_interval(answered, len(group))
+        if len(group) < MIN_GROUP or answered < MIN_GROUP:
+            out.append({"segment": value, "invited": len(group), "responded": answered,
+                        "rate": float("nan"), "ci_low": float("nan"),
+                        "ci_high": float("nan"), "suppressed": True})
+            continue
+        rates = [1.0 if row["responded"] else 0.0 for row in group]
+        low, high = bootstrap_mean_interval(
+            rates, seed=19, clusters=[row.get("team_id") for row in group])
         out.append({"segment": value, "invited": len(group), "responded": answered,
-                    "rate": answered / len(group), "ci_low": low, "ci_high": high})
+                    "rate": answered / len(group), "ci_low": low, "ci_high": high,
+                    "suppressed": False})
     return out
 
 
@@ -214,10 +254,12 @@ def representation_gap(rows: list[dict], key: str) -> list[dict]:
     out = []
     for value, group in sorted(group_by(rows, key).items()):
         invited_share = len(group) / len(rows)
-        respondent_share = sum(1 for r in answered if r[key] == value) / len(answered)
+        respondent_count = sum(1 for r in answered if r[key] == value)
+        respondent_share = respondent_count / len(answered)
         out.append({"segment": value, "invited_share": invited_share,
                     "respondent_share": respondent_share,
-                    "gap_pp": (respondent_share - invited_share) * 100})
+                    "gap_pp": (respondent_share - invited_share) * 100,
+                    "suppressed": respondent_count < MIN_GROUP or len(group) < MIN_GROUP})
     return sorted(out, key=lambda d: d["gap_pp"])
 
 
@@ -226,10 +268,22 @@ def pct(x: float, digits: int = 0) -> str:
 
 
 def md_table(headers: list[str], rows: list[list], align: str = "") -> str:
+    def cell(value) -> str:
+        return (str(value).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                .replace("|", "&#124;").replace("\r", " ").replace("\n", " ")
+                .replace("[", "\\[").replace("]", "\\]"))
+
     align = align or "l" * len(headers)
     sep = {"l": ":---", "r": "---:", "c": ":---:"}
-    out = ["| " + " | ".join(str(h) for h in headers) + " |",
+    out = ["| " + " | ".join(cell(h) for h in headers) + " |",
            "| " + " | ".join(sep[a] for a in align) + " |"]
     for row in rows:
-        out.append("| " + " | ".join(str(c) for c in row) + " |")
+        out.append("| " + " | ".join(cell(c) for c in row) + " |")
     return "\n".join(out)
+
+
+def md_text(value: str) -> str:
+    """Render an external label as plain Markdown text, not raw HTML or markup."""
+    return (str(value).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            .replace("|", "&#124;").replace("\r", " ").replace("\n", " ")
+            .replace("[", "\\[").replace("]", "\\]").replace("`", "\\`"))

@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="site-assets/cover-dark.png">
-  <img alt="From 2,753 answers to what to do on Monday: Manager Support carries 40% of the explained variance, eNPS −12, 34 teams significantly below the company score." src="site-assets/cover-light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="site-assets/cover-dark.svg" type="image/svg+xml">
+  <img alt="Synthetic survey analysis: Manager Support carries 40% of explained variance, eNPS −12, with exploratory team-level comparisons." src="site-assets/cover-light.svg">
 </picture>
 
 <p align="center">
@@ -17,11 +17,10 @@
 
 ## Why this matters
 
-An engagement survey is only worth what the company does with it on Monday. This one is analysed end to end:
-participation and non-response bias, scores with confidence intervals, a key-driver analysis that survives a
-bootstrap, and free text scored with a pipeline that reports its own error rate. The output is an **interactive
-dashboard in a single HTML file**, filterable by department, country, level, tenure or work model, and a written
-read-out for leadership.
+This repository now has two clear paths: a reproducible synthetic demo and a separate local-only
+CSV analysis workflow. The read-out covers participation, respondent-level scores, exploratory
+key-driver analysis and measured free-text methods. It remains an analysis prototype, not a
+hosted or validated production HR service.
 
 > **Synthetic data.** The survey, the answers and the comments are generated with a fixed
 > seed by [`src/generate_survey.py`](src/generate_survey.py). No real employee wrote any of
@@ -31,18 +30,52 @@ read-out for leadership.
 
 ## The interactive part
 
-`dashboard.html` is the deliverable an HR team would actually use: filter by department,
-country, level, tenure or work model, and every number — scores, confidence intervals,
-eNPS, themes, verbatims — recomputes in the browser. No server, no libraries, no build step.
+`dashboard.html` is the synthetic demo: filter by department, country, level, tenure or work
+model, and the scores, confidence intervals, eNPS and themes recompute in the browser. It is
+self-contained, with no server, libraries or build step.
 
 ```bash
 python3 src/run_all.py && open dashboard.html
 ```
 
-It also enforces the rule the report is built on: **filter below five respondents and it
-refuses to show scores**, masking the tiles as well as the charts. Confidentiality is what
-makes people answer honestly, and a dashboard that quietly reports on a team of three is how
-a company loses its next survey.
+It also enforces a minimum group size of five for reported scores and hides the exact count
+when a filter falls below that threshold. The demo is synthetic; this interface safeguard
+does not make a real-data HTML file anonymous or prevent access to its embedded payload.
+
+## Analyse a survey locally
+
+The public workflow above regenerates only the synthetic demo. For a private CSV export,
+run the separate local entry point. It reads files on your computer and makes no network
+requests:
+
+```bash
+python3 src/local_run.py \
+  --data-dir /secure/path/survey-csv \
+  --output-dir /secure/path/new-analysis-folder \
+  --survey-name "Employee survey" \
+  --field-window "1-30 September 2026"
+```
+
+The input follows the schemas in [`data/README.md`](data/README.md): one row per invitee in
+`survey_responses.csv`, matching survey instrument and team roster files, and the eight
+supported driver dimensions. `survey_comments.csv` is optional. The optional
+`comment_themes_truth.csv` is only for an independently labelled reference set. The tool
+checks IDs, joins, score ranges and team sizes, then applies the minimum group size to
+reported results. The eight-driver model runs only when at least 50 complete responses span
+five or more teams; otherwise the report explains why it was skipped.
+Use pseudonymous response IDs and keep both source and output folders outside this repository.
+The output folder must be new or empty.
+
+Local mode writes an aggregate Markdown report, SVG charts and an optional offline HTML
+dashboard. The report omits raw comments and team identifiers. The dashboard omits free text
+and rare filter labels, but embeds respondent-level scores and segment indexes to make its
+filters work. It is confidential data, not anonymised data or an access-control mechanism;
+store it only in an approved, access-controlled location. To avoid creating the dashboard,
+add `--report-only`.
+
+The five-person suppression rule is a product safeguard, not a GDPR guarantee. Review lawful
+basis, purpose, retention, access and small-group disclosure risks with the organisation's
+privacy specialist before using employee data.
 
 ---
 
@@ -50,9 +83,7 @@ a company loses its next survey.
 
 **Participation is the first finding, not a footnote.** 72.4% responded — but 61% in
 Operations against 83% in Finance & Legal, and 57% among shift workers against 79% at a desk.
-The people under most pressure are the least likely to answer, so the company scores below
-are more likely to be flattering than harsh. That direction of error is stated up front and
-carried through the report.
+Those gaps show who is represented; they do not tell us what non-respondents would have said.
 
 **The headline is an engagement index of 54% favourable and an eNPS of −12.** Career Growth
 scores lowest at 32% favourable, Inclusion & Belonging highest at 79%.
@@ -75,17 +106,17 @@ coefficients) splits the 38% of explained variance across the eight dimensions:
   engaged employee from a disengaged one here. That is an uncomfortable finding to present,
   which is exactly why it ships with a bootstrap behind it.
 
-**The company average hides the teams.** Across the 86 teams with at least 15 respondents —
-small teams swing too much to compare — the engagement index runs from 18% to 94%, and the
-bottom decile sits at 29% against 78% at the top. **34 teams sit significantly below** the
-company score
-— their whole confidence interval is below it — and teams in the top quartile on Manager
-Support score 72% against 36% for the bottom quartile, a 37-point gap inside one company.
+**The company average hides the teams.** Across 86 teams with at least 15 respondents, the
+respondent-level engagement index runs from 18% to 94%; its bottom decile is 29% against 80%
+at the top. Nineteen teams have a 95% bootstrap interval below the observed company mean. This is an
+exploratory screen, without multiplicity adjustment, and the company mean includes those
+teams. Teams in the top quartile on Manager Support score 72% against 36% in the bottom
+quartile, a 37-point descriptive gap inside this synthetic company.
 
-**The free text agrees with the numbers.** Across every department-and-theme combination,
-the share of comments raising a theme correlates **r = −0.67** with the favourable score on
-the matching dimension — two instruments, same story, which is the answer to a leadership
-team that wants to dismiss verbatims as the vocal minority.
+**The free-text pattern is exploratory.** Across 44 eligible department-and-theme
+combinations, the share of distinct commenters raising a theme correlates **r = −0.55** with
+the favourable score on the mapped dimension. This is a descriptive cross-check, not
+independent validation or evidence that commenters represent the workforce.
 
 ![Theme sentiment](reports/figures/05_theme_sentiment.svg)
 
@@ -106,10 +137,10 @@ was built from, and the analysis scores itself against those labels before quoti
 | Macro F1 across ten themes | **0.93** |
 | Weakest theme (Manager relationship) | comments that mention a manager in passing get pulled in |
 | Sentiment vs the labelled tone | 67% of negative, 71% of positive comments correct |
-| Respondent's average comment sentiment vs their own eNPS | **r = 0.28** |
+| Respondent's average comment sentiment vs their own eNPS (descriptive) | **r = 0.28** |
 
-That last number is the honest ceiling: good enough to rank themes by tone, nowhere near
-good enough to judge an individual comment — so nothing downstream does.
+That correlation is descriptive and not an external validation. The text pipeline does not
+judge an individual employee or comment.
 
 And the F1 has a ceiling of its own worth stating: the verbatims are assembled from a
 template bank, so a keyword lexicon has an easier job here than it would on real free text.
@@ -120,21 +151,19 @@ The evaluation proves the pipeline is *measured* and that its weak spot is known
 
 ## Method notes
 
-- **Wilson confidence intervals** on every rate, because survey cuts are small and
-  favourable rates sit near the ends of the scale where the textbook interval breaks. They count
-  each item answer as one observation; answers from the same person move together, so the intervals
-  on dimension scores are narrower than a respondent-level or clustered interval would be. Read them
-  as a floor on the uncertainty.
-- **Two-proportion z-tests** for group comparisons — a department is only reported as below
-  average when the difference survives a test.
-- **Johnson's relative weights** for driver impact, plus **120 bootstrap resamples** to show
-  which parts of the ranking are real. The report says explicitly which dimensions swap
+- **Team-cluster bootstrap intervals** for company and department means when multiple teams
+  contribute; one-team subsets fall back to resampling respondents. Team scores resample people
+  within the team. Each person contributes one mean score per measure, so a respondent with more
+  answered items does not count as more independent evidence.
+- **Descriptive group comparisons** for departments and teams. No significance claim is
+  made, and the team intervals are not adjusted for multiple comparisons.
+- **Johnson's relative weights** for driver impact, plus **120 team-cluster bootstrap resamples**
+  to show which parts of the ranking are stable. The report says explicitly which dimensions swap
   places and should not be argued about.
-- **A confidentiality threshold of five respondents**, enforced in the report, the team
-  lists and the dashboard. In this demo the dashboard carries the synthetic row-level answers so its
-  filters work offline, and comments keep their department, country and tenure labels; with real
-  responses the page would receive only aggregated cells, comments would lose fine labels, and
-  combinations of filters would be checked against differencing.
+- **A five-respondent reporting threshold** for score cells and theme contributors. The
+  public dashboard embeds synthetic row-level answers. Local mode omits text and rare filter
+  labels, but its HTML still embeds respondent-level scores; this is confidential data, not
+  anonymised data or an access-control mechanism.
 - **Association, not causation.** Cross-sectional survey data cannot prove that improving a
   driver raises engagement; the report says so wherever a number could be read as a promise.
 
@@ -151,14 +180,15 @@ correlation matrix.
 ├── src/
 │   ├── generate_survey.py        synthetic survey: instrument, answers, verbatims
 │   ├── surveylib.py              favourable scoring, eNPS, segments, the confidentiality gate
-│   ├── statlib.py                Wilson intervals, z-tests, OLS, Jacobi eigen, relative weights
+│   ├── statlib.py                cluster bootstrap, OLS, Jacobi eigen, relative weights
 │   ├── textlib.py                tokeniser, theme lexicon, sentiment, TF-IDF, redaction
 │   ├── viz.py                    dot plot with CIs, heatmap, quadrant, diverging bars
 │   ├── analysis_scores.py        module 1 - participation and scores
 │   ├── analysis_drivers.py       module 2 - key driver analysis
 │   ├── analysis_text.py          module 3 - free text, scored before it is believed
 │   ├── build_dashboard.py        payload + HTML + JS for the dashboard
-│   └── run_all.py                the whole pipeline, one command
+│   ├── run_all.py                synthetic demo pipeline
+│   └── local_run.py              validated local CSV workflow
 ├── data/                         generated CSVs + data dictionary
 └── reports/
     ├── survey_report.md          the written read-out
@@ -176,16 +206,16 @@ python3 src/run_all.py
 ```
 
 Regenerates the data, runs the three analyses, writes six charts, assembles the read-out and
-builds the dashboard. Around twelve seconds, and **no packages to install** — Python 3.10 or
-newer and nothing else.
+builds the dashboard. It took about 17 seconds in the tested environment. **No packages to
+install** — Python 3.10 or newer and nothing else.
 
 ```bash
 python3 -m unittest discover -s tests
 ```
 
-runs the tests, also with no packages: the hand-written statistics against known values and their
-defining properties (relative weights sum to the regression R², orthogonal drivers get their
-squared correlation, Wilson bounds), and every figure in the findings above against the read-out.
+runs the tests, also with no packages: bootstrap reproducibility, respondent-level scoring,
+local CSV validation, the hand-written statistics against known values and their defining
+properties, and every figure in the findings above against the read-out.
 
 To publish the dashboard as a live page, enable GitHub Pages with "GitHub Actions" as the
 source; [`.github/workflows/pages.yml`](.github/workflows/pages.yml) deploys it on every

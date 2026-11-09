@@ -21,19 +21,20 @@ import random
 import viz
 from statlib import mean, pearson, quantile, relative_weights, ols_standardised
 from surveylib import (DIMENSION_ORDER, FIGURES, dimension_score, driver_items,
-                       engagement_index, favourable, group_by, load_instrument,
+                       engagement_index, group_by, load_instrument,
                        load_responses, md_table, outcome_items, pct,
-                       respondent_dimension_means, respondents)
+                       respondent_dimension_means, respondent_favourable, respondents)
 
 BOOTSTRAP_REPS = 120
 BOOTSTRAP_SEED = 11
 
 
 def build_matrix(answered: list[dict], items_by_dim: dict, outcome: list[str]
-                 ) -> tuple[list[list[float]], list[float]]:
+                 ) -> tuple[list[list[float]], list[float], list[str]]:
     """One row per respondent: eight dimension means, plus the engagement index."""
     columns: list[list[float]] = [[] for _ in DIMENSION_ORDER]
     y: list[float] = []
+    clusters: list[str] = []
     for row in answered:
         dims = respondent_dimension_means(row, items_by_dim)
         index = engagement_index(row, outcome)
@@ -42,19 +43,28 @@ def build_matrix(answered: list[dict], items_by_dim: dict, outcome: list[str]
         for i, dim in enumerate(DIMENSION_ORDER):
             columns[i].append(dims[dim])
         y.append(index)
-    return columns, y
+        clusters.append(row.get("team_id", row["response_id"]))
+    return columns, y, clusters
 
 
-def bootstrap_weights(columns: list[list[float]], y: list[float]) -> list[list[float]]:
-    """Relative weights recomputed on resampled respondents, to test the ranking."""
+def bootstrap_weights(columns: list[list[float]], y: list[float],
+                      clusters: list[str]) -> list[list[float]]:
+    """Relative weights recomputed on resampled teams, preserving respondent clusters."""
     rng = random.Random(BOOTSTRAP_SEED)
-    n = len(y)
+    by_cluster: dict[str, list[int]] = {}
+    for i, cluster in enumerate(clusters):
+        by_cluster.setdefault(cluster, []).append(i)
+    cluster_ids = list(by_cluster)
     draws = []
     for _ in range(BOOTSTRAP_REPS):
-        idx = [rng.randrange(n) for _ in range(n)]
+        sampled_clusters = rng.choices(cluster_ids, k=len(cluster_ids))
+        idx = [i for cluster in sampled_clusters for i in by_cluster[cluster]]
         sample_cols = [[col[i] for i in idx] for col in columns]
         sample_y = [y[i] for i in idx]
-        weights, _r2 = relative_weights(sample_cols, sample_y)
+        try:
+            weights, _r2 = relative_weights(sample_cols, sample_y)
+        except (ValueError, ZeroDivisionError):
+            continue
         draws.append(weights)
     return draws
 
@@ -66,15 +76,31 @@ def run() -> str:
     items_by_dim = driver_items(instrument)
     outcome = outcome_items(instrument)
 
-    columns, y = build_matrix(answered, items_by_dim, outcome)
-    weights, r2 = relative_weights(columns, y)
-    betas, r2_ols = ols_standardised(columns, y)
+    columns, y, clusters = build_matrix(answered, items_by_dim, outcome)
+    if len(y) < 50:
+        return ("## 2. What actually drives engagement\n\nKey-driver analysis was skipped: "
+                f"only {len(y)} complete respondents are available; at least 50 are required "
+                "for this exploratory eight-driver model.")
+    if len(set(clusters)) < 5:
+        return ("## 2. What actually drives engagement\n\nKey-driver analysis was skipped: "
+                "complete responses cover fewer than five teams, which is too little cluster "
+                "variation for a team-bootstrap ranking.")
+    try:
+        weights, r2 = relative_weights(columns, y)
+        betas, _r2_ols = ols_standardised(columns, y)
+    except (ValueError, ZeroDivisionError):
+        return ("## 2. What actually drives engagement\n\nKey-driver analysis was skipped: "
+                "the complete-case data do not support a stable eight-driver model.")
     correlations = [pearson(col, y) for col in columns]
 
     scores = {dim: dimension_score(answered, items_by_dim[dim])["favourable"]
               for dim in DIMENSION_ORDER}
 
-    draws = bootstrap_weights(columns, y)
+    draws = bootstrap_weights(columns, y, clusters)
+    if len(draws) < 30:
+        return ("## 2. What actually drives engagement\n\nKey-driver analysis was skipped: "
+                "fewer than 30 valid bootstrap resamples supported the model. Check the "
+                "number of complete responses and whether any survey dimensions are redundant.")
     intervals = []
     for i in range(len(DIMENSION_ORDER)):
         column = [d[i] for d in draws]
@@ -112,14 +138,29 @@ def run() -> str:
     for team_id, group in group_by(answered, "team_id").items():
         if len(group) < 10:
             continue
-        _k, _n, driver_rate = favourable([r[i] for r in group
-                                          for i in items_by_dim[top] if r.get(i)])
-        _k2, _n2, engagement = favourable([r[i] for r in group for i in outcome if r.get(i)])
+        driver_rates = [value for r in group
+                        if (value := respondent_favourable(r, items_by_dim[top])) is not None]
+        engagement_rates = [value for r in group
+                            if (value := respondent_favourable(r, outcome)) is not None]
+        if len(driver_rates) < 10 or len(engagement_rates) < 10:
+            continue
+        driver_rate, engagement = mean(driver_rates), mean(engagement_rates)
         team_rows.append((driver_rate, engagement))
     team_rows.sort(key=lambda t: t[0])
-    quartile = max(1, len(team_rows) // 4)
-    bottom_q = mean([e for _d, e in team_rows[:quartile]])
-    top_q = mean([e for _d, e in team_rows[-quartile:]])
+    if len(team_rows) >= 4:
+        quartile = max(1, len(team_rows) // 4)
+        bottom_q = mean([e for _d, e in team_rows[:quartile]])
+        top_q = mean([e for _d, e in team_rows[-quartile:]])
+        team_contrast = (
+            f"Among {len(team_rows)} teams with at least 10 complete respondents, those in the "
+            f"top quartile on {top} score **{pct(top_q)}** on the engagement index, against "
+            f"**{pct(bottom_q)}** for the bottom quartile - a descriptive "
+            f"**{(top_q - bottom_q) * 100:.0f} percentage point** difference. This is an "
+            "observed, unadjusted contrast between teams, not evidence that changing the driver "
+            "would cause the difference."
+        )
+    else:
+        team_contrast = "Too few teams have 10 complete respondents for a stable team contrast."
 
     md = [
         "## 2. What actually drives engagement",
@@ -148,8 +189,8 @@ def run() -> str:
         "",
         "### How much of this ranking can we trust",
         "",
-        f"The weights were recomputed on **{BOOTSTRAP_REPS} bootstrap resamples** of the "
-        "respondent pool. The rank range column shows where each dimension landed across "
+        f"The weights were recomputed on **{len(draws)} valid team-cluster bootstrap resamples**. "
+        "The rank range column shows where each dimension landed across "
         "those runs.",
         "",
         stability_note(table),
@@ -169,14 +210,7 @@ def run() -> str:
         "",
         "### What the gap is worth",
         "",
-        f"Rather than extrapolate from the model, compare like with like: among teams with "
-        f"at least 10 respondents, those in the **top quartile on {top}** score "
-        f"**{pct(top_q)}** on the engagement index, against **{pct(bottom_q)}** for the "
-        f"bottom quartile - a **{(top_q - bottom_q) * 100:.0f} percentage point** difference. "
-        "That is an observed contrast between teams, not a promise about what a programme "
-        "would deliver; teams differ in more ways than one dimension. It does say that the "
-        "difference between a good and a poor experience of "
-        f"{top.lower()} is visible at the size that matters.",
+        team_contrast,
         "",
     ]
     return "\n".join(md)

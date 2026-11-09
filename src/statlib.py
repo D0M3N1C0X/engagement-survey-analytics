@@ -1,16 +1,17 @@
 """
 Statistics for survey work - pure standard library.
 
-Survey analysis needs a different toolkit from a headcount analysis: almost
-everything is a proportion, groups are small enough that intervals matter, and
-the drivers are heavily correlated with each other. So this module carries
-Wilson intervals, two-proportion tests, and Johnson's relative weight analysis
-on top of the usual regression machinery.
+The reporting pipeline uses respondent-level scores, team-cluster bootstrap
+intervals and Johnson's relative weight analysis. Wilson intervals and
+two-proportion tests remain available for independent proportion checks, but
+the product reports no unadjusted significance tests for repeated-item or
+multiple-group comparisons.
 """
 
 from __future__ import annotations
 
 import math
+import random
 
 
 # --------------------------------------------------------------------------
@@ -37,6 +38,39 @@ def quantile(xs: list[float], q: float) -> float:
     pos = (len(s) - 1) * q
     lo, hi = math.floor(pos), math.ceil(pos)
     return s[lo] + (s[hi] - s[lo]) * (pos - lo)
+
+
+def bootstrap_mean_interval(xs: list[float], confidence: float = 0.95,
+                            reps: int = 2000, seed: int = 11,
+                            clusters: list[str] | None = None) -> tuple[float, float]:
+    """Percentile interval for a mean, resampling clusters when they are supplied."""
+    if not 0 < confidence < 1:
+        raise ValueError("confidence must be between 0 and 1")
+    if reps < 1:
+        raise ValueError("reps must be positive")
+    if clusters is not None and len(clusters) != len(xs):
+        raise ValueError("clusters must have one label per value")
+    if not xs:
+        return float("nan"), float("nan")
+    if len(xs) == 1:
+        return xs[0], xs[0]
+
+    rng = random.Random(seed)
+    grouped = {}
+    if clusters is not None:
+        for value, cluster in zip(xs, clusters):
+            grouped.setdefault(cluster, []).append(value)
+    draws = []
+    if len(grouped) > 1:
+        cluster_values = list(grouped.values())
+        for _ in range(reps):
+            sampled_clusters = rng.choices(cluster_values, k=len(cluster_values))
+            sample = [value for group in sampled_clusters for value in group]
+            draws.append(mean(sample))
+    else:
+        draws = [mean(rng.choices(xs, k=len(xs))) for _ in range(reps)]
+    tail = (1 - confidence) / 2
+    return quantile(draws, tail), quantile(draws, 1 - tail)
 
 
 def zscores(xs: list[float]) -> list[float]:

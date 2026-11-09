@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 1024" role="img" aria-labelledby="title desc">
+  <title id="title">People analytics and employee engagement survey</title>
+  <desc id="desc">Synthetic survey analysis with respondent-level statistics, exploratory team comparisons and transparent text analytics.</desc>
+  <rect width="2048" height="1024" fill="#101114"/>
+  <rect x="112" y="102" width="7" height="35" rx="3.5" fill="#4f8cff"/>
+  <text x="140" y="129" fill="#4f8cff" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="3">PEOPLE ANALYTICS · EMPLOYEE ENGAGEMENT SURVEY</text>
+  <text x="112" y="264" fill="#f5f5f7" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="92" font-weight="720" letter-spacing="-3">From survey data to better</text>
+  <text x="112" y="367" fill="#f5f5f7" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="92" font-weight="720" letter-spacing="-3">Monday decisions.</text>
+  <text x="116" y="452" fill="#c7c9d1" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="32">A reproducible synthetic demo of engagement scores, respondent-level uncertainty,</text>
+  <text x="116" y="495" fill="#c7c9d1" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="32">exploratory key-driver analysis and measured free-text methods.</text>
+
+  <line x1="112" y1="580" x2="1936" y2="580" stroke="#30323a" stroke-width="2"/>
+  <line x1="720" y1="624" x2="720" y2="836" stroke="#30323a" stroke-width="2"/>
+  <line x1="1328" y1="624" x2="1328" y2="836" stroke="#30323a" stroke-width="2"/>
+
+  <text x="116" y="720" fill="#f5f5f7" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="92" font-weight="700">40%</text>
+  <text x="120" y="773" fill="#c7c9d1" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="27">of explained variance in the demo</text>
+  <text x="120" y="809" fill="#c7c9d1" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="27">is associated with Manager Support</text>
+
+  <text x="780" y="720" fill="#f5f5f7" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="92" font-weight="700">−12</text>
+  <text x="784" y="773" fill="#c7c9d1" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="27">synthetic employee NPS</text>
+  <text x="784" y="809" fill="#c7c9d1" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="27">for the generated survey sample</text>
+
+  <text x="1388" y="705" fill="#4f8cff" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="39" font-weight="700" letter-spacing="1">EXPLORATORY</text>
+  <text x="1392" y="773" fill="#c7c9d1" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="27">Team comparisons use respondent-level</text>
+  <text x="1392" y="809" fill="#c7c9d1" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="27">intervals; no significance claims.</text>
+
+  <line x1="112" y1="884" x2="1936" y2="884" stroke="#30323a" stroke-width="2"/>
+  <text x="116" y="945" fill="#9a9da6" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="24">github.com/D0M3N1C0X/engagement-survey-analytics</text>
+  <rect x="1478" y="906" width="204" height="54" rx="27" fill="#1d2027" stroke="#343844" stroke-width="2"/>
+  <text x="1580" y="941" text-anchor="middle" fill="#e5e6eb" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600">Python · no deps</text>
+  <rect x="1700" y="906" width="236" height="54" rx="27" fill="#1d2027" stroke="#343844" stroke-width="2"/>
+  <text x="1818" y="941" text-anchor="middle" fill="#e5e6eb" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="21" font-weight="600">Live demo</text>
+</svg>
