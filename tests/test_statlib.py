@@ -26,6 +26,30 @@ class Proportions(unittest.TestCase):
         self.assertAlmostEqual(z, (0.60 - 0.45) / math.sqrt(pooled * (1 - pooled) * (2 / 100)))
         self.assertAlmostEqual(p, math.erfc(abs(z) / math.sqrt(2)))
 
+    def test_respondent_bootstrap_is_reproducible_and_handles_boundaries(self):
+        xs = [0.0, 0.25, 0.75, 1.0]
+        first = statlib.bootstrap_mean_interval(xs, reps=500, seed=7)
+        second = statlib.bootstrap_mean_interval(xs, reps=500, seed=7)
+        self.assertEqual(first, second)
+        self.assertLessEqual(first[0], sum(xs) / len(xs))
+        self.assertGreaterEqual(first[1], sum(xs) / len(xs))
+        self.assertEqual(statlib.bootstrap_mean_interval([0.4]), (0.4, 0.4))
+        self.assertTrue(all(math.isnan(v) for v in statlib.bootstrap_mean_interval([])))
+        with self.assertRaises(ValueError):
+            statlib.bootstrap_mean_interval(xs, confidence=1.0)
+
+    def test_cluster_bootstrap_preserves_within_team_dependence(self):
+        xs = [0.0] * 10 + [1.0] * 10
+        clusters = ["team-a"] * 10 + ["team-b"] * 10
+        person_interval = statlib.bootstrap_mean_interval(xs, reps=500, seed=3)
+        team_interval = statlib.bootstrap_mean_interval(xs, reps=500, seed=3, clusters=clusters)
+        self.assertEqual(team_interval,
+                         statlib.bootstrap_mean_interval(xs, reps=500, seed=3, clusters=clusters))
+        self.assertLess(team_interval[0], person_interval[0])
+        self.assertGreater(team_interval[1], person_interval[1])
+        with self.assertRaisesRegex(ValueError, "one label per value"):
+            statlib.bootstrap_mean_interval(xs, clusters=["one"])
+
 
 class LinearAlgebra(unittest.TestCase):
     def test_jacobi_eigen_reconstructs_the_matrix(self):

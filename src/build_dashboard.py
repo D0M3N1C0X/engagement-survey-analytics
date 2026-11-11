@@ -21,7 +21,7 @@ import sys
 from pathlib import Path
 
 import textlib as T
-from surveylib import (DIMENSION_ORDER, FIELD_WINDOW, MIN_GROUP, ROOT, SEGMENTS,
+from surveylib import (DIMENSION_ORDER, FIELD_WINDOW, MIN_GROUP, OUTPUT, PRIVATE_MODE, ROOT, SEGMENTS,
                        SURVEY_NAME, driver_items, load_comments, load_instrument,
                        load_responses, outcome_items)
 
@@ -35,14 +35,33 @@ def build_payload() -> dict:
     items_by_dim = driver_items(instrument)
     outcome = outcome_items(instrument)
 
-    levels = {key: sorted({r[key] for r in rows}) for key in SEGMENTS}
+    levels = {}
+    value_map = {}
+    for key in SEGMENTS:
+        raw_values = sorted({r[key] for r in rows})
+        if PRIVATE_MODE:
+            respondent_counts = {
+                value: sum(1 for row in rows if row[key] == value and row["responded"])
+                for value in raw_values
+            }
+            common = [value for value in raw_values if respondent_counts[value] >= MIN_GROUP]
+            rare = [value for value in raw_values if respondent_counts[value] < MIN_GROUP]
+            labels = common + (["Suppressed categories"] if rare else [])
+            value_map[key] = {value: value if value in common else "Suppressed categories"
+                              for value in raw_values}
+            levels[key] = labels
+        else:
+            value_map[key] = {value: value for value in raw_values}
+            levels[key] = raw_values
     index = {key: {value: i for i, value in enumerate(values)} for key, values in levels.items()}
+    team_levels = sorted({row["team_id"] for row in rows})
+    team_index = {team_id: i for i, team_id in enumerate(team_levels)}
 
     people = []
     person_index = {}
     for i, row in enumerate(rows):
         person_index[row["response_id"]] = i
-        record = [index[key][row[key]] for key in SEGMENTS]
+        record = [index[key][value_map[key][row[key]]] for key in SEGMENTS]
         record.append(1 if row["responded"] else 0)
 
         if row["responded"]:
@@ -54,18 +73,20 @@ def build_payload() -> dict:
                 record += [sum(1 for a in dim_answers if a >= 4), len(dim_answers)]
         else:
             record += [0, 0, -1] + [0, 0] * len(DIMENSION_ORDER)
+        record.append(team_index[row["team_id"]])
         people.append(record)
 
     themes = list(T.THEME_LEXICON)
     theme_index = {theme: i for i, theme in enumerate(themes)}
 
     comments = []
-    for comment in load_comments():
-        text, _redacted = T.redact(comment["comment_text"])
-        tags = [theme_index[t] for t in T.tag_themes(text)]
-        comments.append([person_index[comment["response_id"]],
-                         QUESTIONS.index(comment["question"]),
-                         round(T.sentiment(text), 2), tags, text])
+    if not PRIVATE_MODE:
+        for comment in load_comments():
+            text, _redacted = T.redact(comment["comment_text"])
+            tags = [theme_index[t] for t in T.tag_themes(text)]
+            comments.append([person_index[comment["response_id"]],
+                             QUESTIONS.index(comment["question"]),
+                             round(T.sentiment(text), 2), tags, text])
 
     return {
         "meta": {
@@ -74,6 +95,8 @@ def build_payload() -> dict:
             "invited": len(rows),
             "responded": sum(1 for r in rows if r["responded"]),
             "minGroup": MIN_GROUP,
+            "private": PRIVATE_MODE,
+            "teamClusters": len(team_levels),
         },
         "segmentKeys": SEGMENTS,
         "segmentLabels": {"department": "Department", "country": "Country",
@@ -132,6 +155,10 @@ body{
 .wrap{max-width:1180px; margin:0 auto; padding:clamp(1rem,3vw,2.5rem) clamp(1rem,3vw,2rem) 4rem}
 
 header.masthead{border-bottom:1px solid var(--line-strong); padding-bottom:1.25rem; margin-bottom:1.5rem}
+.masthead-top{display:flex; justify-content:space-between; align-items:center; gap:1rem}
+.theme-toggle{cursor:pointer; white-space:nowrap}
+.privacy-banner{margin:0 0 1.25rem; padding:.8rem 1rem; border:1px solid var(--warn); border-radius:9px;
+  color:var(--secondary); background:var(--surface); font-size:.84rem}
 .eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600}
 h1{font-size:clamp(1.5rem,3.2vw,2.1rem); margin:.35rem 0 .3rem; letter-spacing:-.015em}
 .sub{color:var(--secondary); font-size:.95rem; margin:0}
@@ -210,6 +237,8 @@ td.r,th.r{text-align:right}
 .theme-count{font-size:.8rem; color:var(--secondary); white-space:nowrap; font-variant-numeric:tabular-nums}
 
 .verbatims{display:flex; flex-direction:column; gap:.7rem; max-height:30rem; overflow-y:auto; padding-right:.3rem}
+.verbatim-tools{display:flex; align-items:center; gap:.6rem; margin:0 0 .7rem; color:var(--muted); font-size:.8rem}
+.verbatim-tools select{max-width:14rem}
 .verbatim{border-left:3px solid var(--line-strong); padding:.15rem 0 .15rem .75rem}
 .verbatim p{margin:0 0 .2rem; font-size:.88rem}
 .verbatim .who{font-size:.74rem; color:var(--muted)}
@@ -233,11 +262,18 @@ footer{margin-top:1.5rem; font-size:.78rem; color:var(--muted); border-top:1px s
 BODY = """
 <div class="wrap">
   <header class="masthead">
-    <p class="eyebrow" id="eyebrow"></p>
-    <h1>Employee engagement, by whoever you need to look at</h1>
+    <div class="masthead-top">
+      <p class="eyebrow" id="eyebrow"></p>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Change colour theme">Theme: system</button>
+    </div>
+    <h1>Explore employee experience across the organisation</h1>
     <p class="sub">Filter the survey and every number below recomputes. Scores are hidden
       for any group smaller than <span id="min-group"></span> respondents.</p>
   </header>
+
+  <div class="privacy-banner hidden" id="privacy-banner" role="note">
+    <strong>Local confidential output.</strong> This HTML embeds respondent-level survey scores and segment values so its filters work offline. It contains no free-text comments and sends no data over the network. Keep it in an approved, access-controlled location; do not publish or email it.
+  </div>
 
   <section class="controls" id="controls" aria-label="Filters"></section>
 
@@ -262,7 +298,15 @@ BODY = """
 
         <section class="panel">
           <h2>What people wrote</h2>
-          <p class="hint">Verbatims from the selected group. Choose a theme to narrow them.</p>
+          <p class="hint" id="verbatim-hint">Comments from the selected group. Choose a theme to narrow them.</p>
+          <div class="verbatim-tools" id="verbatim-tools">
+            <label for="verbatim-sort">Sort</label>
+            <select id="verbatim-sort">
+              <option value="balanced">Balanced sample</option>
+              <option value="critical">Most critical first</option>
+              <option value="positive">Most positive first</option>
+            </select>
+          </div>
           <div id="verbatims" class="verbatims" tabindex="0" role="region" aria-label="Verbatims"></div>
         </section>
       </div>
@@ -283,11 +327,7 @@ BODY = """
     </div>
   </div>
 
-  <footer>
-    Synthetic data, generated with a fixed seed - no real employee responses. Built by
-    <code>python3 src/build_dashboard.py</code>; every figure recomputes in the browser from
-    the embedded response-level data.
-  </footer>
+  <footer id="footer-note"></footer>
 </div>
 <div class="tooltip" id="tooltip" role="status"></div>
 """
@@ -298,19 +338,49 @@ const DATA = __PAYLOAD__;
 const SEG = DATA.segmentKeys;
 const NDIM = DATA.dimensions.length;
 const OFFSET = {seg: 0, responded: SEG.length, engK: SEG.length + 1, engN: SEG.length + 2,
-                enps: SEG.length + 3, dims: SEG.length + 4};
+                enps: SEG.length + 3, dims: SEG.length + 4,
+                team: SEG.length + 4 + NDIM * 2};
 const state = {filters: {}, theme: null};
 const tooltip = document.getElementById('tooltip');
+let verbatimSort = 'balanced';
 
 const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 const pct = (x, d = 0) => (x * 100).toFixed(d) + '%';
 
-function wilson(k, n, z = 1.96) {
-  if (!n) return [NaN, NaN];
-  const p = k / n, d = 1 + z * z / n;
-  const centre = (p + z * z / (2 * n)) / d;
-  const margin = z * Math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d;
-  return [Math.max(0, centre - margin), Math.min(1, centre + margin)];
+function bootstrapMeanInterval(values, clusters = null, reps = 1000, seed = 31) {
+  if (!values.length) return [NaN, NaN];
+  if (values.length === 1) return [values[0], values[0]];
+  if (clusters && clusters.length !== values.length) throw new Error('Bootstrap cluster labels do not match values');
+  let state = seed >>> 0;
+  const randomIndex = n => {
+    state ^= state << 13; state ^= state >>> 17; state ^= state << 5;
+    return (state >>> 0) % n;
+  };
+  const draws = [];
+  const clusterMap = new Map();
+  if (clusters) values.forEach((value, i) => {
+    if (!clusterMap.has(clusters[i])) clusterMap.set(clusters[i], []);
+    clusterMap.get(clusters[i]).push(value);
+  });
+  if (clusterMap.size > 1) {
+    const groups = Array.from(clusterMap.values());
+    for (let r = 0; r < reps; r++) {
+      let total = 0, count = 0;
+      for (let i = 0; i < groups.length; i++) {
+        const group = groups[randomIndex(groups.length)];
+        for (const value of group) { total += value; count++; }
+      }
+      draws.push(total / count);
+    }
+  } else {
+    for (let r = 0; r < reps; r++) {
+      let total = 0;
+      for (let i = 0; i < values.length; i++) total += values[randomIndex(values.length)];
+      draws.push(total / values.length);
+    }
+  }
+  draws.sort((a, b) => a - b);
+  return [draws[Math.floor(0.025 * (reps - 1))], draws[Math.ceil(0.975 * (reps - 1))]];
 }
 
 function matches(person) {
@@ -323,19 +393,31 @@ function matches(person) {
 function summarise(people) {
   const respondents = people.filter(p => p[OFFSET.responded] === 1);
   const out = {invited: people.length, n: respondents.length, dims: [], enps: null};
-  let engK = 0, engN = 0, promoters = 0, passives = 0, detractors = 0, rated = 0;
+  const engagementValues = [], engagementClusters = [];
+  let promoters = 0, passives = 0, detractors = 0, rated = 0;
   for (const p of respondents) {
-    engK += p[OFFSET.engK]; engN += p[OFFSET.engN];
+    if (p[OFFSET.engN]) {
+      engagementValues.push(p[OFFSET.engK] / p[OFFSET.engN]);
+      engagementClusters.push(p[OFFSET.team]);
+    }
     const score = p[OFFSET.enps];
     if (score >= 0) { rated++; if (score >= 9) promoters++; else if (score >= 7) passives++; else detractors++; }
   }
-  out.engagement = engN ? engK / engN : NaN;
-  out.engagementCI = wilson(engK, engN);
+  out.engagement = engagementValues.length
+    ? engagementValues.reduce((a, b) => a + b, 0) / engagementValues.length : NaN;
+  out.engagementCI = bootstrapMeanInterval(engagementValues, engagementClusters);
   out.enps = rated ? {score: (promoters - detractors) / rated * 100, promoters, passives, detractors, rated} : null;
   for (let d = 0; d < NDIM; d++) {
     let k = 0, n = 0;
-    for (const p of respondents) { k += p[OFFSET.dims + d * 2]; n += p[OFFSET.dims + d * 2 + 1]; }
-    out.dims.push({name: DATA.dimensions[d], favourable: n ? k / n : NaN, k, n, ci: wilson(k, n)});
+    const shares = [], clusters = [];
+    for (const p of respondents) {
+      const favourable = p[OFFSET.dims + d * 2], answers = p[OFFSET.dims + d * 2 + 1];
+      k += favourable; n += answers;
+      if (answers) { shares.push(favourable / answers); clusters.push(p[OFFSET.team]); }
+    }
+    const rate = shares.length ? shares.reduce((a, b) => a + b, 0) / shares.length : NaN;
+    out.dims.push({name: DATA.dimensions[d], favourable: rate, k, n,
+                   people: shares.length, ci: bootstrapMeanInterval(shares, clusters)});
   }
   return out;
 }
@@ -351,11 +433,13 @@ function commentsFor(indices) {
 
 function dimensionChart(current) {
   const rows = current.dims.map((d, i) => ({...d, company: COMPANY.dims[i].favourable}))
-                          .sort((a, b) => b.favourable - a.favourable);
+                          .sort((a, b) => (b.people >= DATA.meta.minGroup ? b.favourable : -Infinity)
+                                       - (a.people >= DATA.meta.minGroup ? a.favourable : -Infinity));
   const bars = rows.map(row => {
+    if (row.people < DATA.meta.minGroup) return `<div class="dim-row"><span class="dim-name">${row.name}</span><span class="dim-track"></span><span class="dim-value">—</span></div>`;
     const delta = row.favourable - row.company;
     const colour = delta < -0.05 ? 'var(--orange)' : 'var(--blue)';
-    const tip = `${row.n.toLocaleString('en-GB')} answers · 95% CI ${pct(row.ci[0])}–${pct(row.ci[1])} · company ${pct(row.company)}`;
+    const tip = `${row.people.toLocaleString('en-GB')} respondents · 95% bootstrap interval ${pct(row.ci[0])}–${pct(row.ci[1])} · company ${pct(row.company)}`;
     return `<div class="dim-row" data-tip="${tip}">
       <span class="dim-name">${row.name}</span>
       <span class="dim-track">
@@ -376,16 +460,18 @@ function dimensionTable(current) {
   const rows = current.dims.map((d, i) => ({...d, company: COMPANY.dims[i].favourable}))
                           .sort((a, b) => b.favourable - a.favourable);
   return `<table><thead><tr><th>Dimension</th><th class="r">Favourable</th>
-    <th class="r">95% CI</th><th class="r">Company</th><th class="r">Gap</th></tr></thead><tbody>` +
-    rows.map(r => `<tr><td>${r.name}</td><td class="r">${pct(r.favourable)}</td>
-      <td class="r">${pct(r.ci[0])}–${pct(r.ci[1])}</td><td class="r">${pct(r.company)}</td>
-      <td class="r">${((r.favourable - r.company) * 100).toFixed(1)} pp</td></tr>`).join('') +
+      <th class="r">95% bootstrap interval</th><th class="r">Company</th><th class="r">Gap</th></tr></thead><tbody>` +
+    rows.map(r => `<tr><td>${r.name}</td><td class="r">${r.people < DATA.meta.minGroup ? '—' : pct(r.favourable)}</td>
+      <td class="r">${r.people < DATA.meta.minGroup ? '—' : `${pct(r.ci[0])}–${pct(r.ci[1])}`}</td>
+      <td class="r">${COMPANY.dims[DATA.dimensions.indexOf(r.name)].people < DATA.meta.minGroup ? '—' : pct(r.company)}</td>
+      <td class="r">${r.people < DATA.meta.minGroup || COMPANY.dims[DATA.dimensions.indexOf(r.name)].people < DATA.meta.minGroup ? '—' : `${((r.favourable - r.company) * 100).toFixed(1)} pp`}</td></tr>`).join('') +
     '</tbody></table>';
 }
 
 function enpsChart(current) {
   const e = current.enps;
   if (!e) return '<p class="hint">No rated responses in this group.</p>';
+  if (e.rated < DATA.meta.minGroup) return '<p class="hint">eNPS is hidden below the reporting threshold.</p>';
   const parts = [
     {label: 'Detractors', value: e.detractors / e.rated, colour: 'var(--red)', ink: 'var(--on-red)'},
     {label: 'Passives', value: e.passives / e.rated, colour: 'var(--neutral)', ink: 'var(--on-neutral)'},
@@ -412,13 +498,21 @@ function sentimentColour(score) {
 }
 
 function renderThemes(comments) {
-  const counts = new Array(DATA.themes.length).fill(0);
-  const sentiment = new Array(DATA.themes.length).fill(0);
-  for (const c of comments) for (const t of c[3]) { counts[t]++; sentiment[t] += c[2]; }
+  if (DATA.meta.private) return '<p class="hint">Free-text themes are available in the local aggregate report. The interactive HTML omits comments and respondent-level text tags.</p>';
+  const authors = Array.from({length: DATA.themes.length}, () => new Map());
+  for (const c of comments) for (const t of c[3]) {
+    if (!authors[t].has(c[0])) authors[t].set(c[0], []);
+    authors[t].get(c[0]).push(c[2]);
+  }
+  const counts = authors.map(group => group.size);
+  const sentiment = authors.map(group => {
+    const values = Array.from(group.values(), xs => xs.reduce((a, b) => a + b, 0) / xs.length);
+    return values.length ? values.reduce((a, b) => a + b, 0) / values.length : 0;
+  });
   const max = Math.max(1, ...counts);
   const rows = DATA.themes.map((name, i) => ({name, i, count: counts[i],
                                               tone: counts[i] ? sentiment[i] / counts[i] : 0}))
-                          .filter(r => r.count > 0)
+                          .filter(r => r.count >= DATA.meta.minGroup)
                           .sort((a, b) => b.count - a.count);
   if (!rows.length) return '<p class="hint">Nobody in this group left a comment.</p>';
   return rows.map(r => `
@@ -427,22 +521,36 @@ function renderThemes(comments) {
         <span class="theme-name"><span class="dot" style="background:${sentimentColour(r.tone)}"></span>${r.name}</span>
         <span class="theme-meter"><span style="width:${(r.count / max * 100).toFixed(1)}%; background:${sentimentColour(r.tone)}"></span></span>
       </span>
-      <span class="theme-count">${r.count} · ${r.tone >= 0 ? '+' : ''}${r.tone.toFixed(2)}</span>
+        <span class="theme-count">${r.count} people · ${r.tone >= 0 ? '+' : ''}${r.tone.toFixed(2)}</span>
     </button>`).join('');
 }
 
 function renderVerbatims(comments) {
+  if (DATA.meta.private) return '<p class="hint">Verbatim text is withheld from the local interactive dashboard.</p>';
   let pool = comments;
   if (state.theme !== null) pool = pool.filter(c => c[3].includes(state.theme));
   if (!pool.length) return '<p class="hint">No comments match this selection.</p>';
-  const sorted = pool.slice().sort((a, b) => a[2] - b[2]).slice(0, 40);
+  const authorCount = new Set(pool.map(c => c[0])).size;
+  if (authorCount < DATA.meta.minGroup) return `<p class="hint">Text hidden: fewer than ${DATA.meta.minGroup} distinct respondents contributed.</p>`;
+  const byTone = pool.slice().sort((a, b) => a[2] - b[2]);
+  let sorted;
+  if (verbatimSort === 'critical') sorted = byTone.slice(0, 40);
+  else if (verbatimSort === 'positive') sorted = byTone.slice(-40).reverse();
+  else {
+    sorted = [];
+    let low = 0, high = byTone.length - 1;
+    while (sorted.length < Math.min(40, byTone.length)) {
+      sorted.push(byTone[low++]);
+      if (low <= high && sorted.length < 40) sorted.push(byTone[high--]);
+    }
+  }
   return sorted.map(c => {
     const person = DATA.people[c[0]];
     const where = SEG.map((key, i) => DATA.segments[key][person[i]]);
     const tone = c[2] < -0.15 ? 'negative' : c[2] > 0.15 ? 'positive' : '';
     return `<div class="verbatim ${tone}">
       <p>${escapeHtml(c[4])}</p>
-      <span class="who">${DATA.questions[c[1]]} · ${where[0]}, ${where[1]} · ${where[3]} tenure</span>
+      <span class="who">${DATA.questions[c[1]]} · ${escapeHtml(where[0])}, ${escapeHtml(where[1])} · ${escapeHtml(where[3])} tenure</span>
     </div>`;
   }).join('');
 }
@@ -459,8 +567,8 @@ function renderTiles(current) {
   // leaving the headline scores on screen would break the same promise.
   if (current.n < DATA.meta.minGroup) {
     return [
-      {label: 'Respondents', value: current.n.toLocaleString('en-GB'),
-       note: `of ${current.invited.toLocaleString('en-GB')} invited`},
+      {label: 'Respondents', value: 'Below threshold',
+       note: 'fewer than the minimum reportable group'},
       {label: 'Engagement index', value: '—', note: 'below reporting threshold'},
       {label: 'eNPS', value: '—', note: 'below reporting threshold'},
       {label: 'Lowest scoring', value: '—', note: 'below reporting threshold'},
@@ -468,18 +576,22 @@ function renderTiles(current) {
         <div class="value">${t.value}</div><div class="note">${t.note}</div></div>`).join('');
   }
   const deltaEngagement = current.engagement - COMPANY.engagement;
-  const deltaEnps = current.enps && COMPANY.enps ? current.enps.score - COMPANY.enps.score : 0;
+  const deltaEnps = current.enps && COMPANY.enps && current.enps.rated >= DATA.meta.minGroup
+    && COMPANY.enps.rated >= DATA.meta.minGroup ? current.enps.score - COMPANY.enps.score : 0;
   const tiles = [
     {label: 'Respondents', value: current.n.toLocaleString('en-GB'),
      note: `${pct(responseRate, 0)} of ${current.invited.toLocaleString('en-GB')} invited`},
     {label: 'Engagement index', value: pct(current.engagement),
-     note: `95% CI ${pct(current.engagementCI[0], 1)}–${pct(current.engagementCI[1], 1)}`,
+     note: `95% bootstrap interval ${pct(current.engagementCI[0], 1)}–${pct(current.engagementCI[1], 1)}`,
      delta: deltaEngagement},
-    {label: 'eNPS', value: current.enps ? (current.enps.score >= 0 ? '+' : '') + current.enps.score.toFixed(0) : '—',
-     note: current.enps ? `${pct(current.enps.detractors / current.enps.rated)} detractors` : '',
+    {label: 'eNPS', value: current.enps && current.enps.rated >= DATA.meta.minGroup
+       ? (current.enps.score >= 0 ? '+' : '') + current.enps.score.toFixed(0) : '—',
+     note: current.enps && current.enps.rated >= DATA.meta.minGroup
+       ? `${pct(current.enps.detractors / current.enps.rated)} detractors` : 'below reporting threshold',
      delta: deltaEnps / 100},
     {label: 'Lowest scoring', value: lowest(current).short,
-     note: `${pct(lowest(current).favourable)} favourable`},
+     note: Number.isFinite(lowest(current).favourable)
+       ? `${pct(lowest(current).favourable)} favourable` : 'below dimension reporting threshold'},
   ];
   return tiles.map(t => `<div class="tile">
       <div class="label">${t.label}</div>
@@ -492,7 +604,9 @@ function renderTiles(current) {
 }
 
 function lowest(current) {
-  const sorted = current.dims.slice().sort((a, b) => a.favourable - b.favourable);
+  const sorted = current.dims.filter(d => d.people >= DATA.meta.minGroup)
+                             .sort((a, b) => a.favourable - b.favourable);
+  if (!sorted.length) return {short: '—', favourable: NaN};
   const worst = sorted[0];
   return {...worst, short: worst.name.split(' & ')[0]};
 }
@@ -511,8 +625,8 @@ function render() {
   document.getElementById('content').classList.toggle('hidden', suppressed);
   if (suppressed) {
     document.getElementById('suppressed').innerHTML =
-      `<strong>Results hidden.</strong> This selection contains ${current.n} respondent${current.n === 1 ? '' : 's'},
-       below the reporting threshold of ${DATA.meta.minGroup}. Confidentiality is what makes people
+      `<strong>Results hidden.</strong> This selection is below the reporting threshold of ${DATA.meta.minGroup} respondents.
+       Confidentiality is what makes people
        answer honestly, so the page will not show scores this small — widen the filter.`;
     return;
   }
@@ -532,7 +646,7 @@ function buildControls() {
       <label for="f-${key}">${DATA.segmentLabels[key]}</label>
       <select id="f-${key}" data-key="${key}">
         <option value="">All</option>
-        ${DATA.segments[key].map((v, i) => `<option value="${i}">${v}</option>`).join('')}
+        ${DATA.segments[key].map((v, i) => `<option value="${i}">${escapeHtml(v)}</option>`).join('')}
       </select>
     </div>`).join('') + '<button class="reset" id="reset">Reset filters</button>';
 
@@ -575,6 +689,26 @@ document.addEventListener('mousemove', event => {
 
 document.getElementById('eyebrow').textContent =
   `${DATA.meta.survey} · ${DATA.meta.field} · ${DATA.meta.responded.toLocaleString('en-GB')} of ${DATA.meta.invited.toLocaleString('en-GB')} responded`;
+if (DATA.meta.private) {
+  document.getElementById('privacy-banner').classList.remove('hidden');
+  document.getElementById('verbatim-tools').classList.add('hidden');
+  document.getElementById('verbatim-hint').textContent = 'Free-text is processed only in the aggregate report.';
+  document.getElementById('footer-note').textContent = 'Local confidential output. Respondent-level survey values are embedded for offline filtering; free-text comments are omitted. No data is sent over the network.';
+} else {
+  document.getElementById('footer-note').innerHTML = 'Synthetic data, generated with a fixed seed - no real employee responses. Built by <code>python3 src/build_dashboard.py</code>; figures recompute in the browser from the embedded response-level demo data.';
+}
+document.getElementById('theme-toggle').addEventListener('click', event => {
+  const root = document.documentElement;
+  const current = root.dataset.theme || 'system';
+  const next = current === 'system' ? 'light' : current === 'light' ? 'dark' : 'system';
+  if (next === 'system') delete root.dataset.theme;
+  else root.dataset.theme = next;
+  event.currentTarget.textContent = `Theme: ${next}`;
+});
+document.getElementById('verbatim-sort').addEventListener('change', event => {
+  verbatimSort = event.target.value;
+  render();
+});
 document.getElementById('min-group').textContent = DATA.meta.minGroup;
 buildControls();
 render();
@@ -590,10 +724,12 @@ def main() -> None:
     fragment = "--fragment" in sys.argv
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     if fragment:
-        target = Path(args[0]) if args else ROOT / "dashboard.fragment.html"
+        target = Path(args[0]) if args else (OUTPUT / "dashboard.fragment.html" if PRIVATE_MODE
+                                             else ROOT / "dashboard.fragment.html")
         target.write_text(content, encoding="utf-8")
     else:
-        target = ROOT / "dashboard.html"
+        target = OUTPUT / "dashboard.html" if PRIVATE_MODE else ROOT / "dashboard.html"
+        target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(
             '<!doctype html><html lang="en"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1">'

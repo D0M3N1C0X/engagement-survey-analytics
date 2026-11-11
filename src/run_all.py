@@ -23,11 +23,25 @@ import analysis_scores
 import analysis_text
 import build_dashboard
 import generate_survey
-from surveylib import FIELD_WINDOW, MIN_GROUP, ROOT, SURVEY_NAME
+from surveylib import FIELD_WINDOW, MIN_GROUP, OUTPUT, PRIVATE_MODE, ROOT, SURVEY_NAME, md_text
 
-REPORT = ROOT / "reports" / "survey_report.md"
+REPORT = OUTPUT / "survey_report.md"
 
-HEADER = f"""# {SURVEY_NAME} - survey read-out
+if PRIVATE_MODE:
+    HEADER = f"""# {md_text(SURVEY_NAME)} - local survey read-out
+
+**Fieldwork:** {md_text(FIELD_WINDOW)}
+**Generated locally** from the documented CSV schema. Survey files are read from the selected local directory.
+
+> This report withholds verbatims and identifying team labels. The optional interactive HTML dashboard contains
+> respondent-level scores and demographic segments; keep it in an approved, access-controlled location and do not
+> publish or email it.
+
+---
+
+"""
+else:
+    HEADER = f"""# {SURVEY_NAME} - survey read-out
 
 **Fieldwork:** {FIELD_WINDOW}
 **Population:** a synthetic European services group - 3,800 employees, 149 teams,
@@ -44,36 +58,51 @@ reproduced from the code in this repository
 
 """
 
+if PRIVATE_MODE:
+    TEXT_LIMIT = """**Free text.** Themes and sentiment use the transparent keyword and word-list methods in `src/textlib.py`.
+No ground-truth labels were supplied for this client corpus, so this run reports no accuracy estimate. The exported
+report and dashboard withhold verbatim text; theme aggregates are withheld when fewer than five distinct respondents
+contribute. Automated redaction is not a substitute for human review before any separate sharing of source comments.
+"""
+else:
+    TEXT_LIMIT = """**Free text.** Themes are assigned by a keyword lexicon and sentiment by a word list with
+negation handling - both in `src/textlib.py`, both readable and arguable. Neither is a language model, and the report
+states the measured precision, recall and error rates before drawing on the results. Comments are analysed only in
+aggregate; nothing is ever inferred about an individual, and verbatims are published only from groups above the
+threshold, after an automated pass that strips names, emails and phone numbers.
+"""
+
 FOOTER = f"""
 ---
 
 ## Method, assumptions and limits
 
-**Favourable scoring.** A dimension's score is the share of answers in the top two points
-of the five-point scale, pooled across the items in that dimension. Every rate is reported
-with a **Wilson confidence interval**, which behaves properly near 0% and 100% where the
-textbook interval produces impossible bounds. Group comparisons use a two-proportion
-z-test rather than an eyeballed gap.
+**Favourable scoring.** Each respondent contributes one favourable share per score or
+dimension, so people who answered more items do not count as more independent evidence.
+95% intervals for company and department means resample teams when multiple teams contribute;
+one-team subsets resample respondents. Team scores resample respondents within their team.
+These intervals show sampling variation under this design; they do not correct non-response
+bias or turn exploratory cuts into causal findings.
 
-**Confidentiality.** No score is published for any group below **{MIN_GROUP} respondents** -
-in the report, in the team lists, and in the dashboard, where filtering below the threshold
-masks the tiles as well as the charts. This is the promise that makes people answer
-honestly; it is worth more than any single cut of the data.
+**Confidentiality.** Reported aggregate cells require at least **{MIN_GROUP} respondents**.
+The public synthetic demo embeds row-level synthetic data so filters work offline. Local
+mode omits free text and rare filter labels, and withholds team identifiers from reports;
+its optional HTML still embeds respondent-level scores and segment indexes. The local file
+is confidential and is not an access-control mechanism.
 
 **Key driver analysis.** Engagement is modelled from the eight dimension scores using
 Johnson's relative weight analysis. Ordinary regression coefficients are unstable when
 predictors are as correlated as survey dimensions are: they hand shared variance to
 whichever driver wins a near-tie. Relative weights split the explained variance sensibly,
-and a **bootstrap over resampled respondents** shows which parts of the resulting ranking
-survive resampling and which do not. Standardised betas and simple correlations are
+and a **bootstrap over resampled teams** shows which parts of the resulting ranking survive
+resampling and which do not. Standardised betas and simple correlations are
 reported alongside, so the reader can see all three agree on the top of the list.
 
-**Free text.** Themes are assigned by a keyword lexicon and sentiment by a word list with
-negation handling - both in `src/textlib.py`, both readable and arguable. Neither is a
-language model, and the report states the measured precision, recall and error rates
-before drawing on the results. Comments are analysed only in aggregate; nothing is ever
-inferred about an individual, and verbatims are published only from groups above the
-threshold, after an automated pass that strips names, emails and phone numbers.
+**Group comparisons.** Department and team cuts are descriptive. They use respondent-level
+means and intervals, but do not claim statistical significance and are not adjusted for
+multiple comparisons. The company mean includes the teams being compared.
+
+{TEXT_LIMIT}
 
 **Limits.** One survey, one moment, one organisation. Cross-sectional data cannot establish
 that improving a driver *causes* engagement to rise - the driver analysis ranks
@@ -83,9 +112,12 @@ pressure, so company-level scores are more likely to be flattering than harsh.
 """
 
 
-def main() -> None:
-    print("1/4  generating the synthetic survey")
-    generate_survey.main()
+def run_pipeline(generate_synthetic: bool = True, write_dashboard: bool = True) -> None:
+    if generate_synthetic:
+        print("1/4  generating the synthetic survey")
+        generate_survey.main()
+    else:
+        print("1/4  using the validated local survey files")
 
     print("\n2/4  running analyses")
     sections = []
@@ -99,14 +131,21 @@ def main() -> None:
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     body = "\n\n".join(section.rstrip() + "\n" for section in sections)
     REPORT.write_text(HEADER + body + FOOTER, encoding="utf-8")
-    figures = sorted((ROOT / "reports" / "figures").glob("*.svg"))
+    figures = sorted((OUTPUT / "figures").glob("*.svg"))
     print(f"     reports/survey_report.md  ({REPORT.stat().st_size / 1024:.0f} KB)")
     print(f"     reports/figures/          ({len(figures)} charts)")
 
-    print("\n4/4  building the dashboard")
-    build_dashboard.main()
+    if write_dashboard:
+        print("\n4/4  building the dashboard")
+        build_dashboard.main()
+    else:
+        print("\n4/4  dashboard skipped")
 
-    print("\nDone. Open dashboard.html in a browser, or read reports/survey_report.md.")
+    print(f"\nDone. Read {REPORT}.")
+
+
+def main() -> None:
+    run_pipeline()
 
 
 if __name__ == "__main__":
