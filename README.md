@@ -42,6 +42,20 @@ It also enforces a minimum group size of five for reported scores and hides the 
 when a filter falls below that threshold. The demo is synthetic; this interface safeguard
 does not make a real-data HTML file anonymous or prevent access to its embedded payload.
 
+## Try it on your own survey
+
+**[The survey check](https://d0m3n1c0x.github.io/engagement-survey-analytics/tool/)** runs the core of this
+read-out on any survey export, in the browser: load the answers (one row per person, a team column, questions
+scored 1 to 5) and, optionally, the questionnaire. You get each dimension's favourable score with a
+team-clustered bootstrap interval, the eNPS, what drives engagement (Johnson's relative weights, only with 50
+complete respondents in five or more teams) and results by team, with every team under five respondents
+hidden, not even its count shown. Results export to Excel; the file never leaves the computer.
+
+Its engine, [`web/engine.js`](web/engine.js), is checked on every change against
+[`src/tool_reference.py`](src/tool_reference.py) on this repository's data and 25 random surveys: 3,111 values
+agree. Building that check found a real bug in the read-out's loader: an eNPS of 0, the strongest detractor,
+was read as no answer. It is fixed; the headline eNPS stays −12.
+
 ## Analyse a survey locally
 
 The public workflow above regenerates only the synthetic demo. For a private CSV export,

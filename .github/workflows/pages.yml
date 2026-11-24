@@ -13,6 +13,9 @@ on:
       - dashboard.html
       - reports/**
       - site-assets/**
+      - web/**
+      - data/survey_responses.csv
+      - data/survey_instrument.csv
   workflow_dispatch:
 
 permissions:
@@ -44,6 +47,10 @@ jobs:
           mkdir -p site
           cp dashboard.html site/index.html
           cp -r reports site/reports
+          mkdir -p site/tool
+          cp -R web/* site/tool/
+          cp data/survey_responses.csv site/tool/sample_survey_responses.csv
+          cp data/survey_instrument.csv site/tool/sample_survey_instrument.csv
 
       - name: Add the link preview
         run: |

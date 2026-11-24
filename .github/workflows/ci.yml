@@ -25,6 +25,9 @@ jobs:
       - name: Tests (standard library only)
         run: python3 -m unittest discover -s tests -v
 
+      - name: The browser tool's engine gives Python's answers
+        run: node tests/js/check_engine.mjs
+
       - name: Check the outputs are reproducible from the seed
         run: |
           git diff --exit-code --stat -- data reports dashboard.html \

@@ -24,6 +24,7 @@ import analysis_text
 import analysis_turnover
 import build_dashboard
 import generate_survey
+import tool_reference
 from surveylib import FIELD_WINDOW, MIN_GROUP, OUTPUT, PRIVATE_MODE, ROOT, SURVEY_NAME, md_text
 
 REPORT = OUTPUT / "survey_report.md"
@@ -140,6 +141,8 @@ def run_pipeline(generate_synthetic: bool = True, write_dashboard: bool = True) 
     if write_dashboard:
         print("\n4/4  building the dashboard")
         build_dashboard.main()
+    if not PRIVATE_MODE:
+        print(f"     tests/fixtures/tool_vectors.json ({tool_reference.write_vectors()} cases for the browser tool)")
     else:
         print("\n4/4  dashboard skipped")
 

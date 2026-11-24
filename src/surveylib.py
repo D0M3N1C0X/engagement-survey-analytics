@@ -80,7 +80,9 @@ def load_responses() -> list[dict]:
         r["shift_worker"] = r["shift_worker"] == "1"
         r["enps"] = int(r["enps"]) if r["enps"] else None
         for item_id in instrument:
-            if item_id in r:
+            # eNPS is in the instrument too and already converted above: converting it again turned a 0 (the
+            # strongest detractor) into "no answer". Only text values are converted here.
+            if item_id in r and isinstance(r[item_id], str):
                 r[item_id] = int(r[item_id]) if r[item_id] else None
         rows.append(r)
     return rows

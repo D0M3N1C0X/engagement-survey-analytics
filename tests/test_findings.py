@@ -40,5 +40,38 @@ class SurveyAndTurnover(unittest.TestCase):
         self.assertGreater(low, high)
 
 
+class ToolVectors(unittest.TestCase):
+    """The committed cases the browser tool is checked on are what the Python reference computes today (within 1e-9)."""
+
+    def test_the_vectors_are_current(self):
+        import json
+        import sys
+        sys.path.insert(0, str(ROOT / "src"))
+        import tool_reference as ref
+
+        with (ROOT / "tests" / "fixtures" / "tool_vectors.json").open(encoding="utf-8") as fh:
+            committed = json.load(fh)
+
+        def close(a, b, path):
+            if isinstance(b, dict):
+                self.assertEqual(set(a), set(b), path)
+                for k in b:
+                    close(a[k], b[k], f"{path}.{k}")
+            elif isinstance(b, list):
+                self.assertEqual(len(a), len(b), path)
+                for i, (x, y) in enumerate(zip(a, b)):
+                    close(x, y, f"{path}[{i}]")
+            elif isinstance(b, float):
+                self.assertAlmostEqual(a, b, delta=1e-9 * max(1.0, abs(b)), msg=path)
+            else:
+                self.assertEqual(a, b, path)
+
+        for case in committed["cases"]:
+            dims = dict(case["dims"])
+            rows = ref.repo_case()[0] if "source" in case else case["rows"]
+            fresh = json.loads(json.dumps(ref.analyse(rows, dims, case["outcome"])))
+            close(fresh, case["result"], case["name"])
+
+
 if __name__ == "__main__":
     unittest.main()
