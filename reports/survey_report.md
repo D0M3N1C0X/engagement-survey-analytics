@@ -296,6 +296,27 @@ The survey is confidential, so no answer can be traced to a person; resignations
 
 *Team counts are no more variable than a Poisson model allows (dispersion 0.95), so the intervals need no widening.*
 
+
+## 5. Did the action plan work? Two waves, and the trap between them
+
+A year after the first survey, half of the teams in the bottom third on Manager Support had a manager-support action plan, the half drawn at random. Teams are compared, never people: the survey is anonymous at both waves. Teams with at least 5 respondents in both waves are kept.
+
+| Teams | Count | Wave 1 | Wave 2 | Change | Response rate |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| Action plan | 23 | 48.0% | 63.3% | +15.2 pts | 73% → 73% |
+| Eligible, no plan | 24 | 44.1% | 45.4% | +1.2 pts | 69% → 67% |
+| All other teams | 96 | 84.1% | 80.3% | -3.8 pts | 74% → 74% |
+
+![Manager Support a year apart](figures/09_action_plan_waves.svg)
+
+**Before and after is not the effect.** The action teams rose **+15.2 points**. The eligible teams that had no plan moved **+1.2 points** with nothing done, and the strongest teams -3.8: teams picked for a low score were partly unlucky, and the luck does not repeat. That is regression to the mean, and a before-and-after comparison credits it to the plan. Here the bounce is small, because Manager Support differences between teams are mostly real; on a noisier score, or smaller teams, it can be most of the change.
+
+**The effect of the plan is the difference: +14.0 points** of Manager Support favourable (95% interval +7.8 to +20.4, resampling teams). On engagement the same comparison gives +10.3 points (+4.0 to +16.5).
+
+**Checked against the truth.** The generator knows what the plan did: **+8.2 points** for the people in those teams. The interval covers it; the naive before-and-after, +15.2, is 1.9 times the real effect. The difference in differences lands 5.8 points above the truth as well, about 1.8 standard errors: with 23 and 24 teams a side, an honest estimate is a wide one, and the interval is the part to report.
+
+**What makes this possible is the comparison group.** Had every weak team received the plan, nothing in the data could separate the plan from the bounce. Piloting it on part of the eligible teams, chosen at random or in a fixed order, costs a year's wait for the rest and is what turns a survey into evidence.
+
 ---
 
 ## Method, assumptions and limits
