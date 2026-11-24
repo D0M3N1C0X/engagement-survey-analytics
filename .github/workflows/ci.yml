@@ -41,3 +41,35 @@ jobs:
           path: |
             reports/
             dashboard.html
+
+  workbook:
+    # The Excel twin: rebuilt from the data, compared with the committed file, recalculated by LibreOffice,
+    # and every figure on its Reconciliation sheet checked against the Python pipeline.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install LibreOffice and the workbook's tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends libreoffice-calc
+          pip install -r tools/requirements.txt
+
+      - name: Rebuild the workbook; its content must be the committed one
+        run: |
+          python tools/build_workbook.py
+          excel-twin same-as-git deliverables/engagement_survey.xlsx
+
+      - name: Recalculate it and reconcile every figure
+        run: |
+          excel-twin recalc deliverables/engagement_survey.xlsx build/
+          excel-twin check build/engagement_survey.xlsx
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: workbook-recalculated
+          path: build/engagement_survey.xlsx
