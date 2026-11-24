@@ -23,9 +23,11 @@ class SurveyAndTurnover(unittest.TestCase):
 
     def test_the_followup_holds_team_totals_only(self):
         import csv
-        rows = list(csv.DictReader((ROOT / "data" / "team_followup.csv").open(encoding="utf-8")))
+        with (ROOT / "data" / "team_followup.csv").open(encoding="utf-8") as fh:
+            rows = list(csv.DictReader(fh))
         self.assertEqual(set(rows[0]), {"team_id", "headcount_at_survey", "voluntary_exits_12m", "involuntary_exits_12m"})
-        teams = {r["team_id"]: int(r["team_size"]) for r in csv.DictReader((ROOT / "data" / "teams.csv").open(encoding="utf-8"))}
+        with (ROOT / "data" / "teams.csv").open(encoding="utf-8") as fh:
+            teams = {r["team_id"]: int(r["team_size"]) for r in csv.DictReader(fh)}
         self.assertEqual({r["team_id"]: int(r["headcount_at_survey"]) for r in rows}, teams)
 
     def test_the_report_states_the_team_rule_and_the_quartile_gap(self):

@@ -19,14 +19,16 @@ import random
 # --------------------------------------------------------------------------
 
 def mean(xs: list[float]) -> float:
-    return sum(xs) / len(xs) if xs else float("nan")
+    # math.fsum is exactly rounded, so a mean is the same on every Python version; plain sum() changed in 3.12
+    # and moved a bootstrap interval's endpoint across a rounding boundary between versions.
+    return math.fsum(xs) / len(xs) if xs else float("nan")
 
 
 def sd(xs: list[float]) -> float:
     if len(xs) < 2:
         return float("nan")
     m = mean(xs)
-    return math.sqrt(sum((x - m) ** 2 for x in xs) / (len(xs) - 1))
+    return math.sqrt(math.fsum((x - m) ** 2 for x in xs) / (len(xs) - 1))
 
 
 def quantile(xs: list[float], q: float) -> float:
@@ -80,8 +82,8 @@ def zscores(xs: list[float]) -> list[float]:
 
 def pearson(xs: list[float], ys: list[float]) -> float:
     mx, my = mean(xs), mean(ys)
-    num = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
-    den = math.sqrt(sum((x - mx) ** 2 for x in xs) * sum((y - my) ** 2 for y in ys))
+    num = math.fsum((x - mx) * (y - my) for x, y in zip(xs, ys))
+    den = math.sqrt(math.fsum((x - mx) ** 2 for x in xs) * math.fsum((y - my) ** 2 for y in ys))
     return num / den if den else float("nan")
 
 
