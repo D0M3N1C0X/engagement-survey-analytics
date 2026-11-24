@@ -43,6 +43,21 @@ class LocalInputContract(unittest.TestCase):
         self.assertEqual(summary["respondents"], 2753)
         self.assertGreater(summary["comments"], 0)
 
+    def test_team_followup_is_optional_and_checked_when_present(self):
+        validate_dataset(self.data)                                    # absent: fine
+        shutil.copy2(ROOT / "data" / "team_followup.csv", self.data / "team_followup.csv")
+        validate_dataset(self.data)                                    # the synthetic file: fine
+        path = self.data / "team_followup.csv"
+        with path.open(encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+        rows[0]["voluntary_exits_12m"] = str(int(rows[0]["headcount_at_survey"]) + 1)
+        with path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+        with self.assertRaisesRegex(DatasetError, "between 0 and the headcount"):
+            validate_dataset(self.data)
+
     def test_duplicate_response_id_is_rejected(self):
         self._rewrite_responses(lambda rows, _headers: rows[1].update(
             response_id=rows[0]["response_id"]))

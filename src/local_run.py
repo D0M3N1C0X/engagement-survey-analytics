@@ -18,6 +18,8 @@ BASE_RESPONSE_FIELDS = {
 TEAM_FIELDS = {"team_id", "department", "team_size"}
 INSTRUMENT_FIELDS = {"item_id", "dimension", "wording", "type"}
 COMMENT_FIELDS = {"comment_id", "response_id", "question", "comment_text"}
+# Optional: resignations per team in the twelve months after fieldwork, aggregated from the HRIS.
+FOLLOWUP_FIELDS = {"team_id", "headcount_at_survey", "voluntary_exits_12m"}
 COMMENT_QUESTIONS = {"what_to_change", "what_works"}
 REQUIRED_SEGMENTS = {"department", "country", "job_level", "tenure_band", "work_model"}
 SUPPORTED_DIMENSIONS = {
@@ -178,6 +180,24 @@ def validate_dataset(data_dir: Path) -> dict[str, int]:
             if not row["comment_text"].strip():
                 raise DatasetError(f"survey_comments.csv row {line}: comment_text is blank")
             comment_ids.add(comment_id)
+
+    followup_path = data_dir / "team_followup.csv"
+    if followup_path.exists():
+        follow_headers, follow_rows = _read_csv(followup_path)
+        _require_fields("team_followup.csv", follow_headers, FOLLOWUP_FIELDS)
+        known_teams = {row["team_id"].strip() for row in teams}
+        seen = set()
+        for line, row in enumerate(follow_rows, start=2):
+            team_id = row["team_id"].strip()
+            if team_id not in known_teams or team_id in seen:
+                raise DatasetError(f"team_followup.csv row {line}: team_id is unknown or duplicated")
+            try:
+                head, exits = int(row["headcount_at_survey"]), int(row["voluntary_exits_12m"])
+            except ValueError as exc:
+                raise DatasetError(f"team_followup.csv row {line}: headcount and exits must be whole numbers") from exc
+            if head <= 0 or not 0 <= exits <= head:
+                raise DatasetError(f"team_followup.csv row {line}: exits must be between 0 and the headcount")
+            seen.add(team_id)
 
     truth_path = data_dir / "comment_themes_truth.csv"
     if truth_path.exists():

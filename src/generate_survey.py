@@ -601,6 +601,35 @@ def write_instrument(path: Path) -> None:
     write_csv(path, rows)
 
 
+def simulate_followup(teams: list[dict], responses: list[dict]) -> list[dict]:
+    """Who leaves in the twelve months after fieldwork, counted per team.
+
+    A separate random stream, drawn after everything else, so the survey files stay byte-identical. The monthly
+    hazard runs on the same latent engagement and manager support that drive the answers, for respondents and
+    non-respondents alike: the survey cannot see the people who did not answer, but they still leave.
+    Only team totals are written, as an HR team would hold them: the survey is confidential, so exits can be
+    set against answers team by team, never person by person.
+    """
+    follow = random.Random(SEED + 1)
+    exits = {t["team_id"]: [0, 0] for t in teams}
+    for r in responses:
+        logit = (-4.50 - 0.55 * r["_engagement"] - 0.30 * r["_latent"]["Manager Support"]
+                 + 0.35 * int(r["shift_worker"]) + 0.45 * (r["tenure_band"] == "< 1 year")
+                 - 0.25 * (r["job_level"] in ("Manager", "Senior leader")))
+        p_month = 1 / (1 + math.exp(-logit))
+        for _ in range(12):
+            u = follow.random()
+            if u < p_month:
+                exits[r["team_id"]][0] += 1
+                break
+            if u < p_month + 0.0018:
+                exits[r["team_id"]][1] += 1
+                break
+    return [{"team_id": t["team_id"], "headcount_at_survey": t["team_size"],
+             "voluntary_exits_12m": exits[t["team_id"]][0], "involuntary_exits_12m": exits[t["team_id"]][1]}
+            for t in teams]
+
+
 def main() -> None:
     DATA.mkdir(parents=True, exist_ok=True)
 
@@ -622,7 +651,12 @@ def main() -> None:
                 "true_themes": "; ".join(THEME_LABELS[t] for t in c["_true_themes"]),
                 "true_tone": c["_true_tone"]} for c in comments])
 
+    followup = simulate_followup(teams, responses)
+    write_csv(DATA / "team_followup.csv", followup)
+
     answered = sum(r["responded"] for r in responses)
+    print(f"team_followup.csv      : {sum(f['voluntary_exits_12m'] for f in followup):>6,} resignations in the "
+          "twelve months after fieldwork")
     print(f"teams.csv              : {len(teams):>6,} teams")
     print(f"survey_responses.csv   : {len(responses):>6,} invited, {answered:,} responded "
           f"({answered / len(responses):.1%})")

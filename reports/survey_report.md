@@ -259,6 +259,43 @@ Verbatims are published only from groups with at least 5 distinct respondents; a
 > — Customer Service, < 1 year tenure
 >
 
+
+## 4. Does the survey tell us who will leave? Only team by team
+
+The survey is confidential, so no answer can be traced to a person; resignations sit in the HRIS. The only honest join is the team: each team's scores at fieldwork against its resignations over the next twelve months. **144 teams** with at least 5 respondents cover 3,771 employees and 427 resignations (11.3%); 5 smaller teams, 29 people, are left out by the same rule that protects them everywhere else.
+
+![Team engagement against resignations](figures/07_team_engagement_vs_exits.svg)
+
+| Teams by engagement | Score range | Teams | Employees | Resigned | Rate |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| Lowest quarter | 0%-38% | 36 | 911 | 153 | 16.8% |
+| Second | 39%-53% | 36 | 1,026 | 126 | 12.3% |
+| Third | 53%-64% | 36 | 913 | 81 | 8.9% |
+| Highest quarter | 64%-94% | 36 | 921 | 67 | 7.3% |
+
+**The lowest-scoring quarter of teams lost 16.8% of its people in a year; the highest, 7.3%.** Every 10 points of team engagement go with **0.85 times** the resignation rate (95% interval 0.80-0.90, departments held constant).
+
+![Rate ratios by dimension](figures/08_dimension_rate_ratios.svg)
+
+| Dimension | Rate ratio per SD of team score | 95% interval | p |
+| :--- | ---: | ---: | ---: |
+| Recognition | 0.74 | 0.66-0.82 | &lt;0.001 |
+| Career Growth | 0.75 | 0.66-0.84 | &lt;0.001 |
+| Manager Support | 0.75 | 0.68-0.82 | &lt;0.001 |
+| Workload &amp; Wellbeing | 0.86 | 0.73-1.01 | 0.064 |
+| Tools &amp; Process | 0.87 | 0.75-1.01 | 0.064 |
+| Inclusion &amp; Belonging | 0.88 | 0.79-0.98 | 0.015 |
+| Leadership &amp; Direction | 0.90 | 0.81-1.01 | 0.063 |
+| Pay &amp; Benefits | 0.92 | 0.81-1.03 | 0.155 |
+
+**Recognition, Career Growth and Manager Support lead, and cannot be told apart**: a team one standard deviation higher on any of them loses people at 0.74 to 0.75 times the rate, with intervals that overlap. Manager Support is also the strongest driver of engagement in section 2. Pay & Benefits, the loudest theme in the comments, has the weakest link to who stays. Each dimension is read on its own and the eight move together, so the order matters more than the exact sizes.
+
+**Participation.** With engagement held constant, every 10 points of response rate go with 0.99 times the resignation rate (95% interval 0.89-1.10): no clear link once engagement is known.
+
+**What it does not say.** These are team averages. They show where to look and how much a team's climate is worth in people kept; they say nothing about which individuals will leave, and nothing here should be used to guess. The survey's confidentiality is what makes people answer honestly; spending it on a prediction would cost the next survey its answers.
+
+*Team counts are no more variable than a Poisson model allows (dispersion 0.95), so the intervals need no widening.*
+
 ---
 
 ## Method, assumptions and limits

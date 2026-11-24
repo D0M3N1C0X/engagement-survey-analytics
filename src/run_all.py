@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import analysis_drivers
 import analysis_scores
 import analysis_text
+import analysis_turnover
 import build_dashboard
 import generate_survey
 from surveylib import FIELD_WINDOW, MIN_GROUP, OUTPUT, PRIVATE_MODE, ROOT, SURVEY_NAME, md_text
@@ -123,7 +124,8 @@ def run_pipeline(generate_synthetic: bool = True, write_dashboard: bool = True) 
     sections = []
     for name, module in (("participation & scores", analysis_scores),
                          ("key drivers", analysis_drivers),
-                         ("free text", analysis_text)):
+                         ("free text", analysis_text),
+                         ("survey and turnover", analysis_turnover)):
         sections.append(module.run())
         print(f"     - {name}")
 
