@@ -164,7 +164,7 @@ Macro F1 is **0.93**. The weakest theme is **Manager relationship** (F1 0.76, 89
 
 *These demo comments are assembled from a template bank, which makes a keyword lexicon's job easier than on real free text. The measured scores are not an estimate of performance on employee comments.*
 
-Sentiment is a word list with negation handling, not a language model. On this synthetic labelled corpus it gets **67%** of negative comments right, **71%** of positive comments right. Across 878 respondents with comments and eNPS, mean comment sentiment correlates descriptively at **r = 0.28** with eNPS. This is not an external validation and is not used to infer individual attitudes.
+Sentiment is a word list with negation handling, not a language model. On this synthetic labelled corpus it gets **67%** of negative comments right, **71%** of positive comments right. Across 879 respondents with comments and eNPS, mean comment sentiment correlates descriptively at **r = 0.28** with eNPS. This is not an external validation and is not used to infer individual attitudes.
 
 ### Volume and tone by theme
 
@@ -191,8 +191,8 @@ Sentiment is a word list with negation handling, not a language model. On this s
 | :--- | ---: | ---: | ---: |
 | Manager relationship | 16% | 9% | **1.7x** |
 | Recognition | 18% | 16% | **1.2x** |
+| Workload &amp; staffing | 13% | 11% | **1.1x** |
 | Joining &amp; onboarding | 11% | 9% | **1.1x** |
-| Workload &amp; staffing | 12% | 11% | **1.1x** |
 | Inclusion &amp; voice | 4% | 5% | **0.9x** |
 | Career &amp; progression | 21% | 25% | **0.8x** |
 

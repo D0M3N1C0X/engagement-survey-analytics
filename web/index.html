@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'">
+<title>Survey check</title>
+<meta name="description" content="Your engagement survey, analysed on your computer: scores with intervals, eNPS, what drives engagement, results by team with the five-respondent rule. Nothing leaves the computer.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Survey check">
+<meta property="og:description" content="Scores with intervals, eNPS, key drivers and results by team, from your own survey export. Groups under five never shown. Nothing leaves the computer.">
+<meta property="og:url" content="https://d0m3n1c0x.github.io/engagement-survey-analytics/tool/">
+<meta property="og:image" content="https://d0m3n1c0x.github.io/engagement-survey-analytics/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="design/strumenti.css">
+<style>
+  #colonne, #risultati { display: none; }
+  .s-table th:first-child, .s-table td:first-child { text-align: left; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.muted-cell { text-align: left; color: var(--muted); font-style: italic; }
+  .bar { display: inline-block; height: 10px; border-radius: 5px; background: var(--accent); vertical-align: middle; }
+  .note { color: var(--muted); font-size: 14px; margin-top: 10px; }
+  .items input { min-height: 40px; width: 100%; font: 400 15px var(--font); padding: 6px 10px; border: 1px solid var(--line);
+    border-radius: 8px; background: var(--surface); color: var(--ink); }
+  .roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 12px 0 18px; }
+  .roles label { font-weight: 600; display: grid; gap: 6px; }
+  @media print { #carica, #colonne, .s-privacy, .s-actions { display: none !important; } #risultati { display: block !important; } }
+</style>
+</head>
+<body>
+<div class="s-page">
+  <div class="s-top">
+    <a class="s-brand" href="../" data-i18n="brand">Engagement survey</a>
+    <div class="s-lang" data-lang-switch role="group" aria-label="Language · Lingua">
+      <button type="button" data-lang="en">EN</button><button type="button" data-lang="it">IT</button>
+    </div>
+  </div>
+  <header class="s-hero">
+    <p class="s-eyebrow" data-i18n="eyebrow">Survey check · from your own survey export</p>
+    <h1 data-i18n="title">What does your survey say, and what moves it?</h1>
+    <p data-i18n="lead">Load the answers, one row per person. You get each dimension's favourable score with an honest interval, the eNPS, what drives engagement, and results by team, with every group under five respondents hidden.</p>
+  </header>
+  <div class="s-privacy" role="note">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+    <span data-i18n="privacy">Your file stays on this computer: it is read by this page and sent nowhere. Go offline after the page has loaded and it still works.</span>
+  </div>
+
+  <section class="s-card" id="carica" aria-labelledby="h-file">
+    <h2 id="h-file"><span class="s-step">1</span><span data-i18n="step1">Your survey answers</span></h2>
+    <p class="s-sub" data-i18n="step1sub">An Excel or CSV export with one row per person: a team or department column and the questions scored 1 to 5. A questionnaire file (item, dimension, type) is optional and saves you naming the dimensions.</p>
+    <div class="s-drops">
+      <label class="s-drop" id="drop-a"><input type="file" id="file-a" accept=".xlsx,.csv,text/csv">
+        <strong data-i18n="dropA">Answers</strong><span id="name-a" data-i18n="dropHint">.xlsx or .csv</span></label>
+      <label class="s-drop" id="drop-q"><input type="file" id="file-q" accept=".xlsx,.csv,text/csv">
+        <strong data-i18n="dropQ">Questionnaire (optional)</strong><span id="name-q" data-i18n="dropHint">.xlsx or .csv</span></label>
+    </div>
+    <div class="s-actions"><button type="button" class="s-btn" id="esempio" data-i18n="sample">Try it on the example: 3,800 invitees</button></div>
+    <div class="s-msg is-error" id="errore" role="alert"></div>
+  </section>
+
+  <section class="s-card" id="colonne" aria-labelledby="h-col">
+    <h2 id="h-col"><span class="s-step">2</span><span data-i18n="step2">Check the columns</span></h2>
+    <div class="roles">
+      <label><span data-i18n="rGroup">Team or department *</span><select class="s-select" id="r-group"></select></label>
+      <label><span data-i18n="rResp">Responded (1/0), if invitees are listed</span><select class="s-select" id="r-resp"></select></label>
+      <label><span data-i18n="rEnps">eNPS question (0-10)</span><select class="s-select" id="r-enps"></select></label>
+      <label><span data-i18n="rOutcome">Which dimension is engagement? *</span><select class="s-select" id="r-outcome"></select></label>
+    </div>
+    <p class="s-sub" data-i18n="itemsSub">Questions scored 1 to 5, and the dimension each belongs to. Clear a name to leave a question out.</p>
+    <div class="s-table-wrap items"><table class="s-table" id="tab-items"></table></div>
+    <div class="s-actions"><button type="button" class="s-btn is-primary" id="calcola" data-i18n="run">Show the results</button></div>
+    <div class="s-msg is-info" id="avviso" role="status"></div>
+  </section>
+
+  <section id="risultati" aria-live="polite">
+    <div class="s-kpis" id="kpis"></div>
+    <section class="s-card"><h2 data-i18n="dimTitle">Dimension scores</h2>
+      <p class="s-sub" data-i18n="dimSub">The share of each person's answers that are favourable (4 or 5), averaged over people. The interval resamples whole teams, because people in a team answer alike.</p>
+      <div class="s-table-wrap"><table class="s-table" id="tab-dim"></table></div></section>
+    <section class="s-card"><h2 data-i18n="drvTitle">What drives engagement</h2><p class="s-sub" id="drv-sub"></p>
+      <div class="s-table-wrap"><table class="s-table" id="tab-drv"></table></div>
+      <p class="note" data-i18n="drvNote">Relative weights (Johnson's method): each dimension's share of the variation in engagement the dimensions explain together. Dimensions move together, so this is the honest way to rank them; it shows where to look, not what causes what.</p></section>
+    <section class="s-card"><h2 data-i18n="grpTitle">By team</h2>
+      <p class="s-sub" data-i18n="grpSub">Favourable scores per team. Teams under five respondents are never shown, not even their number of respondents.</p>
+      <div class="s-table-wrap"><table class="s-table" id="tab-grp"></table></div></section>
+    <div class="s-actions">
+      <button type="button" class="s-btn is-primary" id="scarica" data-i18n="download">Download the results (Excel)</button>
+      <button type="button" class="s-btn" id="stampa" data-i18n="print">Print</button>
+    </div>
+  </section>
+  <footer class="s-foot"><p data-i18n-html="foot">The calculations are the same as the <a href="https://github.com/D0M3N1C0X/engagement-survey-analytics">read-out's</a>, checked against its Python on every change. Built by Domenico Perroni.</p></footer>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
