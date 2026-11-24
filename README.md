@@ -122,6 +122,24 @@ independent validation or evidence that commenters represent the workforce.
 
 ---
 
+## Does the survey tell us who will leave? Only team by team
+
+The survey is confidential, so no answer can be traced to a person, and resignations sit in the HRIS.
+The only honest join is the team: each team's scores at fieldwork against its resignations over the
+next twelve months ([`data/team_followup.csv`](data/team_followup.csv), team totals only). That answers
+the question leadership asks, *do low-scoring teams lose more people?*, and refuses the one it
+sometimes asks, *which of the people who answered badly will leave?*
+
+**The lowest-scoring quarter of teams lost 16.8% of its people in a year; the highest, 7.3%.** Every
+10 points of team engagement go with 0.85 times the resignation rate (0.80-0.90, Poisson with headcount
+as exposure, departments held constant). Recognition, Career Growth and Manager Support lead and cannot
+be told apart; Pay & Benefits, the loudest theme in the comments, has the weakest link to who stays.
+
+![Team engagement against resignations](reports/figures/07_team_engagement_vs_exits.svg)
+
+In local mode, add an optional `team_followup.csv` (team, headcount, resignations) and the read-out
+gains this section; without it, it says so and skips it.
+
 ## The part most survey projects skip: scoring the text pipeline
 
 Themes come from a keyword lexicon and sentiment from a word list with negation handling —

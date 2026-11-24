@@ -250,3 +250,35 @@ def relative_weights(predictors: list[list[float]], outcome: list[float]
     raw = [sum((delta[i][j] ** 2) * (beta_star[j] ** 2) for j in range(k)) for i in range(k)]
     r2 = sum(raw)
     return ([w / r2 for w in raw] if r2 else [0.0] * k), r2
+
+
+def poisson_regression(X: list[list[float]], counts: list[int], exposure: list[float],
+                       max_iter: int = 50, tol: float = 1e-10) -> dict:
+    """Counts per group against group-level predictors, with log(exposure) as offset (IRLS).
+
+    Returns coefficients, standard errors and p-values; exp(coef) is a rate ratio: how many times the
+    exit rate changes per unit of the predictor. The Pearson dispersion is reported too, because team
+    counts are usually more variable than Poisson allows, and the standard errors are widened by its
+    square root when it exceeds one (quasi-Poisson), so an overdispersed fit does not look surer than it is.
+    """
+    n, k = len(X), len(X[0])
+    offset = [math.log(e) for e in exposure]
+    beta = [math.log(max(sum(counts), 0.5) / sum(exposure))] + [0.0] * (k - 1)
+    dev = float("inf")
+    for _ in range(max_iter):
+        mu = [math.exp(o + sum(b * x for b, x in zip(beta, row))) for o, row in zip(offset, X)]
+        info = [[sum(m * row[i] * row[j] for m, row in zip(mu, X)) for j in range(k)] for i in range(k)]
+        score = [sum((y - m) * row[i] for y, m, row in zip(counts, mu, X)) for i in range(k)]
+        inv = invert(info)
+        beta = [b + sum(inv[i][j] * score[j] for j in range(k)) for i, b in enumerate(beta)]
+        new = 2 * sum((y * math.log(y / m) if y else 0.0) - (y - m) for y, m in zip(counts, mu))
+        if abs(new - dev) < tol:
+            break
+        dev = new
+    mu = [math.exp(o + sum(b * x for b, x in zip(beta, row))) for o, row in zip(offset, X)]
+    inv = invert([[sum(m * row[i] * row[j] for m, row in zip(mu, X)) for j in range(k)] for i in range(k)])
+    dispersion = sum((y - m) ** 2 / m for y, m in zip(counts, mu)) / max(n - k, 1)
+    scale = math.sqrt(max(1.0, dispersion))
+    se = [math.sqrt(inv[i][i]) * scale for i in range(k)]
+    return {"coef": beta, "se": se, "p": [two_sided_p(b / s) for b, s in zip(beta, se)],
+            "dispersion": dispersion, "n": n}

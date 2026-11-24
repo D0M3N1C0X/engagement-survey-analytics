@@ -338,3 +338,36 @@ def histogram(path, values, title, subtitle="", bins=14, xlabel="", ylabel="team
                 f'font-size="12" fill="{MUTED}" text-anchor="middle" '
                 f'transform="rotate(-90 26 {(top + bottom) / 2:.1f})">{esc(ylabel)}</text>')
     return save(Path(path), body)
+
+
+def team_scatter(path, xs, ys, sizes, title, subtitle="", xlabel="", ylabel="", curve=None,
+                 x_fmt=lambda v: f"{v:.0%}", y_fmt=lambda v: f"{v:.0%}") -> Path:
+    """One dot per team, area by headcount, with an optional fitted curve [(x, y), ...]."""
+    left, right = 96, W - 56
+    top, bottom = M["top"], H - M["bottom"]
+    body = frame(title, subtitle)
+    x_lo, x_hi = 0.0, 1.0
+    y_hi = max(max(ys), max((y for _, y in curve), default=0)) * 1.1 or 0.1
+    sx = lambda v: left + (v - x_lo) / (x_hi - x_lo) * (right - left)
+    sy = lambda v: bottom - v / y_hi * (bottom - top)
+    step = 0.05 if y_hi <= 0.3 else 0.1
+    t = 0.0
+    while t <= y_hi + 1e-9:
+        body.append(f'<line x1="{left}" y1="{sy(t):.1f}" x2="{right}" y2="{sy(t):.1f}" stroke="{GRID}" stroke-width="1"/>')
+        body.append(text(left - 10, sy(t) + 4, y_fmt(t), size=12, color=MUTED, anchor="end"))
+        t += step
+    for i in range(6):
+        v = i / 5
+        body.append(text(sx(v), bottom + 24, x_fmt(v), size=12, color=MUTED, anchor="middle"))
+    biggest = max(sizes)
+    for x, y, s in zip(xs, ys, sizes):
+        r = 3 + 9 * math.sqrt(s / biggest)
+        body.append(f'<circle cx="{sx(x):.1f}" cy="{sy(y):.1f}" r="{r:.1f}" fill="{BLUE}" fill-opacity="0.35" '
+                    f'stroke="{BLUE}" stroke-width="1"/>')
+    if curve:
+        d = " ".join(f"{'M' if i == 0 else 'L'}{sx(x):.1f},{sy(y):.1f}" for i, (x, y) in enumerate(curve))
+        body.append(f'<path d="{d}" fill="none" stroke="{ORANGE}" stroke-width="3" stroke-linecap="round"/>')
+    body.append(text((left + right) / 2, H - 30, xlabel, size=12, color=MUTED, anchor="middle"))
+    body.append(f'<text x="26" y="{(top + bottom) / 2:.1f}" font-family="{FONT}" font-size="12" fill="{MUTED}" '
+                f'text-anchor="middle" transform="rotate(-90 26 {(top + bottom) / 2:.1f})">{esc(ylabel)}</text>')
+    return save(Path(path), body)

@@ -92,3 +92,35 @@ class RelativeWeights(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PoissonRates(unittest.TestCase):
+    def test_one_binary_predictor_returns_the_ratio_of_rates(self):
+        # two groups of teams: 30 exits in 400 person-years against 12 in 300
+        X = [[1.0, 1.0], [1.0, 1.0], [1.0, 0.0], [1.0, 0.0]]
+        counts, exposure = [18, 12, 5, 7], [250.0, 150.0, 120.0, 180.0]
+        fit = statlib.poisson_regression(X, counts, exposure)
+        self.assertAlmostEqual(math.exp(fit["coef"][0]), 12 / 300, places=9)
+        self.assertAlmostEqual(math.exp(fit["coef"][1]), (30 / 400) / (12 / 300), places=9)
+        # the standard error of a log rate ratio is sqrt(1/a + 1/b), widened only if overdispersed
+        se = math.sqrt(1 / 30 + 1 / 12) * math.sqrt(max(1.0, fit["dispersion"]))
+        self.assertAlmostEqual(fit["se"][1], se, places=6)
+
+    def test_recovers_a_known_rate_ratio(self):
+        rng = random.Random(5)
+        X, counts, exposure = [], [], []
+        for _ in range(3000):
+            x = rng.gauss(0, 1)
+            e = rng.randint(5, 40)
+            lam = e * 0.1 * math.exp(-0.4 * x)
+            # Poisson draw by inversion
+            k, p, u = 0, math.exp(-lam), rng.random()
+            c = p
+            while u > c:
+                k += 1
+                p *= lam / k
+                c += p
+            X.append([1.0, x]); counts.append(k); exposure.append(float(e))
+        fit = statlib.poisson_regression(X, counts, exposure)
+        self.assertLess(abs(fit["coef"][1] + 0.4), 3 * fit["se"][1])     # within sampling error
+        self.assertAlmostEqual(fit["dispersion"], 1.0, delta=0.1)
