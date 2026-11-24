@@ -1,11 +1,13 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="site-assets/cover-dark.svg" type="image/svg+xml">
-  <img alt="Synthetic survey analysis: Manager Support carries 40% of explained variance, eNPS −12, with exploratory team-level comparisons." src="site-assets/cover-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="site-assets/cover-dark.png">
+  <img alt="What the survey says, and whether acting on it worked: 16.8% resigned in the lowest-scoring quarter of teams against 7.3% in the highest; the action plan worth +14.0 points against its comparison group, truth +8.2; 223 figures reconciled with Excel." src="site-assets/cover-light.png">
 </picture>
 
 <p align="center">
   <a href="https://d0m3n1c0x.github.io/engagement-survey-analytics/"><b>Open the live dashboard</b></a> ·
-  <a href="reports/survey_report.md">Read the read-out</a>
+  <a href="https://d0m3n1c0x.github.io/engagement-survey-analytics/tool/"><b>Try it on your own survey</b></a> ·
+  <a href="reports/survey_report.md">Read the read-out</a> ·
+  <a href="deliverables/engagement_survey.xlsx">The workbook</a>
 </p>
 
 <p align="center">
@@ -55,6 +57,21 @@ Its engine, [`web/engine.js`](web/engine.js), is checked on every change against
 [`src/tool_reference.py`](src/tool_reference.py) on this repository's data and 25 random surveys: 3,111 values
 agree. Building that check found a real bug in the read-out's loader: an eNPS of 0, the strongest detractor,
 was read as no answer. It is fixed; the headline eNPS stays −12.
+
+## The workbook
+
+[`deliverables/engagement_survey.xlsx`](deliverables/engagement_survey.xlsx) holds the read-out's core
+figures as live formulas over the 3,800 invitee rows: each respondent's favourable share per dimension is a
+formula, and the other sheets average them into the dimension scores by department, the response rates, the
+eNPS and the team table that sets engagement against resignations by quartile. Its Reconciliation sheet sets
+223 figures against the Python values; CI recalculates the file with LibreOffice and fails if one disagrees,
+through [excel-twin](https://github.com/D0M3N1C0X/excel-twin). The pipeline stays standard-library only:
+
+```bash
+pip install -r tools/requirements.txt
+python3 tools/build_workbook.py
+excel-twin recalc deliverables/engagement_survey.xlsx build/ && excel-twin check build/engagement_survey.xlsx
+```
 
 ## Analyse a survey locally
 
