@@ -154,6 +154,20 @@ be told apart; Pay & Benefits, the loudest theme in the comments, has the weakes
 In local mode, add an optional `team_followup.csv` (team, headcount, resignations) and the read-out
 gains this section; without it, it says so and skips it.
 
+## Did the action plan work? Two waves, and the trap between them
+
+A year after the first survey, half of the teams in the bottom third on Manager Support had a
+manager-support action plan, that half drawn at random. The action teams rose **+15.2 points**; the
+eligible teams with no plan moved +1.2 with nothing done, and the strongest teams fell 3.8: teams
+picked for a low score were partly unlucky, and a before-and-after comparison credits the bounce to
+the plan. Against the comparison group the plan is worth **+14.0 points** (95% interval +7.8 to
++20.4, resampling teams). The generator knows the truth, **+8.2**: the interval covers it, and the
+estimate lands above it by chance, which with 23 teams a side is what an honest estimate looks like.
+The lesson for a real organisation is the design, not the number: pilot a plan on part of the eligible
+teams, and the second survey becomes evidence.
+
+![Manager Support a year apart](reports/figures/09_action_plan_waves.svg)
+
 ## The part most survey projects skip: scoring the text pipeline
 
 Themes come from a keyword lexicon and sentiment from a word list with negation handling —

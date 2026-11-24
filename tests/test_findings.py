@@ -73,5 +73,25 @@ class ToolVectors(unittest.TestCase):
             close(fresh, case["result"], case["name"])
 
 
+class TwoWaves(unittest.TestCase):
+    """The plan's effect is estimated against a comparison group, and the interval covers the generator's truth."""
+
+    def test_the_interval_covers_the_true_effect_and_beats_before_and_after(self):
+        report = (ROOT / "reports" / "survey_report.md").read_text(encoding="utf-8")
+        section = report[report.index("## 5."):]
+        self.assertIn("The interval covers it", section)
+        naive = float(re.search(r"The action teams rose \*\*([+-][\d.]+) points", section).group(1))
+        truth = float(re.search(r"what the plan did: \*\*([+-][\d.]+) points", section).group(1))
+        self.assertGreater(naive, truth)
+
+    def test_actions_only_go_to_eligible_teams(self):
+        import csv
+        with (ROOT / "data" / "team_actions.csv").open(encoding="utf-8") as fh:
+            rows = list(csv.DictReader(fh))
+        self.assertTrue(all(r["eligible"] == "1" for r in rows if r["action"] == "1"))
+        eligible = sum(r["eligible"] == "1" for r in rows)
+        self.assertEqual(sum(r["action"] == "1" for r in rows), eligible // 2)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -371,3 +371,29 @@ def team_scatter(path, xs, ys, sizes, title, subtitle="", xlabel="", ylabel="", 
     body.append(f'<text x="26" y="{(top + bottom) / 2:.1f}" font-family="{FONT}" font-size="12" fill="{MUTED}" '
                 f'text-anchor="middle" transform="rotate(-90 26 {(top + bottom) / 2:.1f})">{esc(ylabel)}</text>')
     return save(Path(path), body)
+
+
+def paired_bars(path, groups, before, after, title, subtitle="", labels=("wave 1", "wave 2"),
+                fmt=lambda v: f"{v:.0%}") -> Path:
+    """Two bars per group, before and after, with the change written above."""
+    left, right = 96, W - 56
+    top, bottom = M["top"] + 10, H - M["bottom"]
+    body = frame(title, subtitle)
+    hi = max(max(before), max(after)) * 1.18 or 1
+    sy = lambda v: bottom - v / hi * (bottom - top)
+    slot = (right - left) / len(groups)
+    bw = min(slot * 0.28, 70)
+    for i, (g, b, a) in enumerate(zip(groups, before, after)):
+        cx = left + slot * (i + 0.5)
+        for x, v, colour in ((cx - bw - 4, b, GRID), (cx + 4, a, BLUE)):
+            body.append(f'<rect x="{x:.1f}" y="{sy(v):.1f}" width="{bw:.1f}" height="{bottom - sy(v):.1f}" rx="4" fill="{colour}"/>')
+            body.append(text(x + bw / 2, sy(v) - 8, fmt(v), size=12, color=SECONDARY, anchor="middle"))
+        change = a - b
+        body.append(text(cx, top - 4, f"{'+' if change >= 0 else '−'}{abs(change) * 100:.1f} pts", size=14,
+                         color=INK, anchor="middle", weight="600"))
+        body.append(text(cx, bottom + 24, g, size=12.5, color=SECONDARY, anchor="middle"))
+    for k, (lab, colour) in enumerate(zip(labels, (GRID, BLUE))):
+        x = right - 200 + k * 100
+        body.append(f'<rect x="{x}" y="{M["top"] - 34}" width="12" height="12" rx="2" fill="{colour}"/>')
+        body.append(text(x + 18, M["top"] - 24, lab, size=12, color=MUTED))
+    return save(Path(path), body)

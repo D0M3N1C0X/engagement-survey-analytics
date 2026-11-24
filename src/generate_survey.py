@@ -630,6 +630,58 @@ def simulate_followup(teams: list[dict], responses: list[dict]) -> list[dict]:
             for t in teams]
 
 
+ACTION_EFFECT = 0.18     # latent shift in manager quality where the action plan ran
+
+
+def simulate_wave2(teams: list[dict], responses: list[dict]) -> tuple[list[dict], list[dict], float]:
+    """A second survey a year on, after a manager-support action plan in half of the weakest teams.
+
+    The teams in the bottom third on Manager Support at wave 1 are eligible; half of them, drawn at random,
+    get the action (a pilot design), which raises their manager quality by ACTION_EFFECT. Every other latent
+    is unchanged, so any movement in the other teams is noise and regression to the mean: the weakest teams
+    at wave 1 were partly unlucky, and score better next time with nothing done. Separate random streams,
+    drawn after everything else, keep wave 1's files byte-identical.
+
+    Returns the wave-2 answers, the action table and the true effect: the expected rise in Manager Support
+    favourable for wave-2 respondents in action teams, from the generator's own probabilities.
+    """
+    global rng
+    mgr_items = [i for i, (dim, _t, _b) in ITEMS.items() if dim == "Manager Support"]
+    scores = {}
+    for t in teams:
+        members = [r for r in responses if r["team_id"] == t["team_id"] and r["responded"]]
+        if len(members) >= 5:
+            shares = [sum(1 for i in mgr_items if r[i] >= 4) / len(mgr_items) for r in members]
+            scores[t["team_id"]] = sum(shares) / len(shares)
+    ranked = sorted(scores, key=lambda k: (scores[k], k))
+    eligible = sorted(ranked[:len(ranked) // 3])
+    random.Random(SEED + 3).shuffle(eligible)
+    action = set(eligible[:len(eligible) // 2])
+    eligible = set(eligible)
+
+    rng = random.Random(SEED + 2)
+    wave2_teams = [dict(t, _manager_quality=t["_manager_quality"] + (ACTION_EFFECT if t["team_id"] in action else 0.0))
+                   for t in teams]
+    rows = make_responses(wave2_teams)
+    for r in rows:
+        r["response_id"] = "W2-" + r["response_id"][1:]
+        if r["submitted_date"]:
+            r["submitted_date"] = r["submitted_date"].replace("2026", "2027")
+
+    shift = ACTION_EFFECT * 1.10                       # Manager Support carries manager quality at 1.10
+    with_action, without = [], []
+    for r in rows:
+        if r["team_id"] in action and r["responded"]:
+            for i in mgr_items:
+                latent = r["_latent"]["Manager Support"] + ITEMS[i][2]
+                with_action.append(phi((latent - CUTS[2]) / 0.5))
+                without.append(phi((latent - shift - CUTS[2]) / 0.5))
+    truth = sum(with_action) / len(with_action) - sum(without) / len(without)
+    table = [{"team_id": t["team_id"], "eligible": int(t["team_id"] in eligible), "action": int(t["team_id"] in action)}
+             for t in teams]
+    return rows, table, truth
+
+
 def main() -> None:
     DATA.mkdir(parents=True, exist_ok=True)
 
@@ -653,6 +705,14 @@ def main() -> None:
 
     followup = simulate_followup(teams, responses)
     write_csv(DATA / "team_followup.csv", followup)
+
+    wave2, actions, truth = simulate_wave2(teams, responses)
+    write_csv(DATA / "survey_responses_wave2.csv", wave2)
+    write_csv(DATA / "team_actions.csv", actions)
+    # The true effect, for evaluation only, like comment_themes_truth.csv: a real project never has it.
+    write_csv(DATA / "action_truth.csv", [{"dimension": "Manager Support", "true_effect": round(truth, 6)}])
+    print(f"survey_responses_wave2 : {len(wave2):>6,} invited, {sum(r['responded'] for r in wave2):,} responded; "
+          f"{sum(a['action'] for a in actions)} teams had the action plan (true effect +{truth:.1%})")
 
     answered = sum(r["responded"] for r in responses)
     print(f"team_followup.csv      : {sum(f['voluntary_exits_12m'] for f in followup):>6,} resignations in the "

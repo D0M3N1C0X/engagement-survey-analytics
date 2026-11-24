@@ -22,6 +22,7 @@ import analysis_drivers
 import analysis_scores
 import analysis_text
 import analysis_turnover
+import analysis_waves
 import build_dashboard
 import generate_survey
 import tool_reference
@@ -126,7 +127,8 @@ def run_pipeline(generate_synthetic: bool = True, write_dashboard: bool = True) 
     for name, module in (("participation & scores", analysis_scores),
                          ("key drivers", analysis_drivers),
                          ("free text", analysis_text),
-                         ("survey and turnover", analysis_turnover)):
+                         ("survey and turnover", analysis_turnover),
+                         ("two waves", analysis_waves)):
         sections.append(module.run())
         print(f"     - {name}")
 

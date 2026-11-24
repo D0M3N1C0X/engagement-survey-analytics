@@ -199,6 +199,24 @@ def validate_dataset(data_dir: Path) -> dict[str, int]:
                 raise DatasetError(f"team_followup.csv row {line}: exits must be between 0 and the headcount")
             seen.add(team_id)
 
+    wave2_path, actions_path = data_dir / "survey_responses_wave2.csv", data_dir / "team_actions.csv"
+    if wave2_path.exists() != actions_path.exists():
+        raise DatasetError("survey_responses_wave2.csv and team_actions.csv go together: provide both or neither")
+    if wave2_path.exists():
+        wave2_headers, wave2 = _read_csv(wave2_path)
+        _require_fields("survey_responses_wave2.csv", wave2_headers, {"team_id", "responded"})
+        action_headers, action_rows = _read_csv(actions_path)
+        _require_fields("team_actions.csv", action_headers, {"team_id", "eligible", "action"})
+        known_teams = {row["team_id"].strip() for row in teams}
+        for line, row in enumerate(wave2, start=2):
+            if row["team_id"].strip() not in known_teams:
+                raise DatasetError(f"survey_responses_wave2.csv row {line}: team_id is unknown")
+        for line, row in enumerate(action_rows, start=2):
+            if row["team_id"].strip() not in known_teams or row["eligible"].strip() not in ("0", "1") \
+                    or row["action"].strip() not in ("0", "1") or (row["action"].strip() == "1" and row["eligible"].strip() != "1"):
+                raise DatasetError(f"team_actions.csv row {line}: unknown team, or eligible/action not 0/1, "
+                                   "or an action team that was not eligible")
+
     truth_path = data_dir / "comment_themes_truth.csv"
     if truth_path.exists():
         truth_headers, truth_rows = _read_csv(truth_path)
